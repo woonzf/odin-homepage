@@ -5,10 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
   <script defer src="bundle.js"></script></head>
-  <body class="select-none">
-    <div class="w-full fixed top-0 left-0 z-[99] backdrop-blur-sm">
+  <body class="text-lg select-none">
+    <div class="bg-white w-full sticky top-0 left-0 z-[99] lg:fixed">
       <header
-        class="max-w-[1000px] mx-auto px-5 py-2 flex justify-end items-center gap-1"
+        class="max-w-screen-lg mx-auto px-10 py-2 flex justify-end items-center gap-1"
       >
         <nav>
           <button>HOME</button>
@@ -19,26 +19,53 @@
         <button>MODE</button>
       </header>
     </div>
-    <div class="max-w-[1000px] mx-auto px-5">
-      <main class="flex flex-col gap-5">
-        <section class="h-[100vh] flex justify-center items-center">
-          <div class="h-[400px] w-full mx-[10%] flex">
-            <div class="mr-5 flex flex-col justify-between flex-1">
-              <div class="text-6xl font-bold animate-hello">
+    <div class="max-w-screen-lg mx-auto px-10 overflow-hidden">
+      <main class="flex flex-col gap-10">
+        <section class="h-[50vh] lg:h-[100vh] flex justify-center items-center">
+          <div class="w-full flex flex-col justify-center gap-4">
+            <div class="flex gap-4">
+              <div
+                class="text-[9vw] md:text-[7vw] xl:text-[5vw] leading-none font-bold animate-hello"
+              >
                 <p>hello<span class="text-yellow-500">.</span></p>
                 <p>world<span class="text-yellow-500">.</span></p>
               </div>
-              <div class="text-3xl text-right self-end">
+              <div class="flex w-full">
+                <div class="w-full">
+                  <div
+                    class="w-full border-t-2 border-slate-300 animate-line-w"
+                  ></div>
+                </div>
+                <div
+                  class="h-full border-r-2 border-slate-300 animate-line-h"
+                ></div>
+              </div>
+            </div>
+            <div class="flex gap-4">
+              <div class="flex w-full">
+                <div class="h-full">
+                  <div
+                    class="h-full border-l-2 border-slate-300 animate-line-h"
+                  ></div>
+                </div>
+                <div
+                  class="w-full border-b-2 border-slate-300 animate-line-w"
+                ></div>
+              </div>
+              <div
+                class="text-[7vw] md:text-[5vw] xl:text-[3vw] leading-none text-right flex-shrink-0 animate-name"
+              >
                 <p>Woon Zhen Fei</p>
                 <p class="font-bold">Web Developer</p>
               </div>
             </div>
-            <div class="h-full w-[300px] border border-dashed">Placeholder</div>
           </div>
         </section>
-        <section>
-          <p>ABOUT ME</p>
-          <p>
+        <section class="-mt-10 border-b-2 border-slate-300">
+          <p class="text-3xl font-bold">
+            about<span class="text-yellow-500">.</span>
+          </p>
+          <p class="py-5">
             Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sint
             magnam aut laudantium voluptate asperiores adipisci deleniti!
             Repellat obcaecati aliquam qui provident accusamus aut nisi quasi
@@ -46,9 +73,11 @@
           </p>
         </section>
         <section>
-          <p>PROJECTS</p>
+          <p class="text-3xl font-bold">
+            projects<span class="text-yellow-500">.</span>
+          </p>
           <section
-            class="w-full flex gap-5 overflow-x-auto snap-x snap-mandatory scroll-smooth"
+            class="w-full py-5 flex gap-5 overflow-x-auto snap-x snap-mandatory scroll-smooth"
           >
             <section class="w-full p-2 flex-shrink-0 snap-center">
               <div class="grid grid-cols-2 gap-5">
@@ -97,9 +126,11 @@
       </main>
     </div>
     <div class="bg-slate-200 w-full mt-5">
-      <footer class="max-w-[1000px] mx-auto px-5">
-        <p>CONTACT</p>
-        <p>
+      <footer class="max-w-screen-lg mx-auto px-10 py-5">
+        <p class="text-3xl font-bold">
+          contact<span class="text-yellow-500">.</span>
+        </p>
+        <p class="py-5">
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos
           dignissimos, provident voluptate neque iure atque maiores aspernatur
           perferendis quidem iste laboriosam fugiat vel aliquam ea saepe

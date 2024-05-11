@@ -17,3 +17,60 @@
     opacity: 1;
   }
 }
+
+.animate-name {
+  will-change: animation;
+  animation: slide-in 1s 1 0.5s;
+  animation-fill-mode: forwards;
+  opacity: 0;
+}
+
+@keyframes slide-in {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+
+  50% {
+    opacity: 1;
+  }
+
+  to {
+    transform: translateX(0%);
+    opacity: 1;
+  }
+}
+
+.animate-line-h {
+  will-change: animation;
+  animation: draw-h 2s 1;
+  animation-fill-mode: forwards;
+  height: 0;
+}
+
+@keyframes draw-h {
+  from {
+    height: 0;
+  }
+
+  to {
+    height: 100%;
+  }
+}
+
+.animate-line-w {
+  will-change: animation;
+  animation: draw-w 2s 1;
+  animation-fill-mode: forwards;
+  width: 0;
+}
+
+@keyframes draw-w {
+  from {
+    width: 0;
+  }
+
+  to {
+    width: 100%;
+  }
+}
