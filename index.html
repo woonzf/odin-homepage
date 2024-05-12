@@ -22,14 +22,17 @@
     <div class="max-w-screen-lg mx-auto px-10 overflow-hidden">
       <main class="flex flex-col gap-10">
         <section class="h-[50vh] lg:h-[100vh] flex justify-center items-center">
-          <div class="w-[80%] flex flex-col justify-center gap-2">
-            <div class="flex gap-2 relative">
+          <div class="w-[80%] flex flex-col justify-center gap-2 relative">
+            <div
+              class="h-full w-[110%] absolute left-[-5%] z-[-1]"
+              id="bg-hello"
+            >
+              <div class="bg-slate-100 h-full w-full -rotate-[10deg]"></div>
+            </div>
+            <div class="flex gap-2">
               <div
-                class="text-[9vw] md:text-[7vw] xl:text-[5vw] leading-none font-bold relative"
+                class="text-[9vw] md:text-[7vw] xl:text-[5vw] leading-none font-bold"
               >
-                <div class="h-full w-full absolute" id="bg-hello">
-                  <div class="bg-slate-100 h-full w-full -rotate-[30deg]"></div>
-                </div>
                 <p class="animate-hello">
                   hello<span class="text-yellow-500">.</span>
                 </p>
