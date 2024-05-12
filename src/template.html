@@ -6,17 +6,27 @@
     <title>Document</title>
   </head>
   <body class="bg-white text-slate-900 text-lg select-none">
-    <div class="bg-white w-full sticky top-0 left-0 z-[99] lg:fixed">
+    <div
+      class="bg-white h-[5vh] w-full fixed top-0 left-0 z-[99]"
+      id="header-wrapper"
+    >
       <header
-        class="max-w-screen-lg mx-auto px-10 py-2 flex justify-end items-center gap-1"
+        class="h-full max-w-screen-lg mx-auto px-10 py-2 font-bold flex justify-end items-center gap-4"
       >
         <nav>
-          <button>HOME</button>
-          <button>ABOUT</button>
-          <button>PROJECTS</button>
-          <button>CONTACT</button>
+          <button>home</button>
         </nav>
-        <button>MODE</button>
+        <button
+          class="h-[80%] border border-slate-300 rounded-full"
+          id="btn-dark-mode"
+        >
+          <div class="h-full px-1 flex justify-between items-center relative">
+            <span
+              class="bg-slate-900 h-[90%] w-[45%] rounded-full absolute left-0.5"
+              id="dark-mode-ball"
+            ></span>
+          </div>
+        </button>
       </header>
     </div>
     <div class="max-w-screen-lg mx-auto px-10 overflow-hidden">

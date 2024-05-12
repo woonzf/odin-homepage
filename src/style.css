@@ -2,6 +2,14 @@
 @tailwind components;
 @tailwind utilities;
 
+#dark-mode-ball {
+  transition: transform 0.3s linear;
+}
+
+#dark-mode-ball.dark {
+  transform: translateX(100%);
+}
+
 .animate-hello {
   will-change: animation;
   animation: reveal 3s 1;
