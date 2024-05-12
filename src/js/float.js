@@ -10,9 +10,12 @@ const float = (() => {
   }
 
   function _floatHello() {
-    let percentage = (window.scrollY / heightScroll) * 100;
-    bgHello.style.transform = `translateY(-${percentage}%)`;
-    console.log(percentage);
+    const percent = _getScrollPercent() * 0.5;
+    bgHello.style.transform = `translateY(-${percent}%)`;
+  }
+
+  function _getScrollPercent() {
+    return (window.scrollY / heightScroll) * 100;
   }
 
   return { init };
