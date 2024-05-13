@@ -33,7 +33,7 @@ body * {
 }
 
 #dark-mode-ball.dark {
-  transform: translateX(110%);
+  transform: translateX(115%);
 }
 
 #perspective {
@@ -42,11 +42,11 @@ body * {
 }
 
 .bg-hello-design {
-  transform: rotateY(-60deg) rotateX(10deg);
+  transform: rotateY(-60deg) rotateX(10deg) translateY(10%);
 }
 
 .bg-hello-design-2 {
-  transform: rotateY(-60deg) rotateX(10deg) translateY(-15%);
+  transform: rotateY(-60deg) rotateX(10deg) translateY(-10%);
 }
 
 .animate-bg-hello {
