@@ -36,6 +36,47 @@ body * {
   transform: translateX(110%);
 }
 
+#perspective {
+  -webkit-perspective: 500px;
+  perspective: 500px;
+}
+
+.bg-hello-design {
+  transform: rotateY(-60deg) rotateX(10deg);
+}
+
+.bg-hello-design-2 {
+  transform: rotateY(-60deg) rotateX(10deg) translateY(-15%);
+}
+
+.animate-bg-hello {
+  will-change: animation;
+  animation: slide-down 1.5s 1 0.5s;
+  animation-fill-mode: forwards;
+}
+
+.animate-bg-hello-2 {
+  will-change: animation;
+  animation: slide-down 1.5s 1 0.75s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes slide-down {
+  from {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+
+  50% {
+    opacity: 0.9;
+  }
+
+  to {
+    transform: translateY(0%);
+    opacity: 0.9;
+  }
+}
+
 .animate-hello {
   will-change: animation;
   animation: reveal 3s 1;
