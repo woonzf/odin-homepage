@@ -9,17 +9,27 @@ const darkMode = (() => {
   }
 
   function _detectDarkMode() {
+    if (localStorage.theme === "dark") {
+      _toggle();
+      return;
+    }
+
     if (
       window.matchMedia &&
       window.matchMedia("(prefers-color-scheme: dark)").matches
     ) {
+      localStorage.setItem("theme", "dark");
       _toggle();
-    }
+    } else localStorage.setItem("theme", "light");
   }
 
   function _toggle() {
     ball.classList.toggle("dark");
     html.classList.toggle("dark");
+
+    if (!html.classList.contains("dark"))
+      localStorage.setItem("theme", "light");
+    else localStorage.setItem("theme", "dark");
   }
 
   return { init };
