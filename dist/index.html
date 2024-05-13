@@ -5,24 +5,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
   <script defer src="bundle.js"></script></head>
-  <body class="bg-white text-slate-900 text-lg select-none">
+  <body
+    class="bg-white dark:bg-dark text-slate-900 dark:text-dark text-lg select-none"
+  >
     <div
-      class="bg-white h-[5vh] w-full fixed top-0 left-0 z-[99]"
-      id="header-wrapper"
+      class="bg-white dark:bg-dark h-14 w-full text-xl lg:text-2xl fixed top-0 left-0 z-[99]"
     >
       <header
         class="h-full max-w-screen-lg mx-auto px-10 py-2 font-bold flex justify-end items-center gap-4"
       >
         <nav>
-          <button>home</button>
+          <button>home<span class="text-yellow-500">.</span></button>
         </nav>
         <button
-          class="h-[80%] border border-slate-300 rounded-full"
+          class="h-[50%] aspect-[2/1] border border-slate-600 dark:border-slate-200 rounded-full"
           id="btn-dark-mode"
         >
-          <div class="h-full px-1 flex justify-between items-center relative">
+          <div class="h-full w-full flex justify-between items-center relative">
             <span
-              class="bg-slate-900 h-[90%] w-[45%] rounded-full absolute left-0.5"
+              class="bg-footer-dark dark:bg-white h-[90%] w-[45%] rounded-full absolute top-[1px] left-[1px]"
               id="dark-mode-ball"
             ></span>
           </div>
@@ -31,13 +32,19 @@
     </div>
     <div class="max-w-screen-lg mx-auto px-10 overflow-hidden">
       <main class="flex flex-col gap-10">
-        <section class="h-[50vh] lg:h-[100vh] flex justify-center items-center">
-          <div class="w-[80%] flex flex-col justify-center gap-2 relative">
+        <section
+          class="h-[50vh] lg:h-[100vh] mt-14 lg:mt-0 flex justify-center items-center"
+        >
+          <div
+            class="w-[80%] md:w-[70%] lg:w-[60%] flex flex-col justify-center gap-2 relative"
+          >
             <div
               class="h-full w-[110%] absolute left-[-5%] z-[-1]"
               id="bg-hello"
             >
-              <div class="bg-slate-100 h-full w-full -rotate-[10deg]"></div>
+              <div
+                class="h-full w-full border border-yellow-500 -rotate-[10deg]"
+              ></div>
             </div>
             <div class="flex gap-2">
               <div
@@ -81,7 +88,7 @@
             </div>
           </div>
         </section>
-        <section class="-mt-10 border-b-2 border-slate-300">
+        <section class="-mt-10 divider">
           <p class="text-2xl lg:text-3xl font-bold">
             about<span class="text-yellow-500">.</span>
           </p>
@@ -145,7 +152,7 @@
         </section>
       </main>
     </div>
-    <div class="bg-slate-200 w-full mt-5">
+    <div class="bg-footer-light dark:bg-footer-dark w-full mt-5">
       <footer class="max-w-screen-lg mx-auto px-10 py-5">
         <p class="text-2xl lg:text-3xl font-bold">
           contact<span class="text-yellow-500">.</span>

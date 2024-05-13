@@ -2,12 +2,38 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer utilities {
+  .bg-dark {
+    @apply bg-slate-600;
+  }
+
+  .text-dark {
+    @apply text-white;
+  }
+
+  .bg-footer-light {
+    @apply bg-slate-200;
+  }
+
+  .bg-footer-dark {
+    @apply bg-slate-800;
+  }
+
+  .divider {
+    @apply border-b-2 border-slate-300;
+  }
+}
+
+body * {
+  @apply transition-colors duration-[50ms];
+}
+
 #dark-mode-ball {
   transition: transform 0.3s linear;
 }
 
 #dark-mode-ball.dark {
-  transform: translateX(100%);
+  transform: translateX(110%);
 }
 
 .animate-hello {

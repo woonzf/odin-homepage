@@ -1,28 +1,26 @@
 const darkMode = (() => {
   const btn = document.querySelector("#btn-dark-mode");
   const ball = document.querySelector("#dark-mode-ball");
-
-  const body = document.querySelector("body");
-  const headerWrapper = document.querySelector("#header-wrapper");
+  const html = document.documentElement;
 
   function init() {
-    _applyWidth();
+    _detectDarkMode();
     btn.onclick = _toggle;
   }
 
-  function _applyWidth() {
-    btn.style.width = btn.offsetHeight * 2 + "px";
+  function _detectDarkMode() {
+    if (
+      window.matchMedia &&
+      window.matchMedia("(prefers-color-scheme: dark)").matches
+    ) {
+      _toggle();
+    }
   }
 
   function _toggle() {
     ball.classList.toggle("dark");
-    if (ball.classList.contains("dark")) _darkMode();
-    else _lightMode();
+    html.classList.toggle("dark");
   }
-
-  function _lightMode() {}
-
-  function _darkMode() {}
 
   return { init };
 })();
