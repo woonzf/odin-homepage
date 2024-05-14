@@ -7,18 +7,6 @@
     @apply bg-slate-600;
   }
 
-  .text-dark {
-    @apply text-white;
-  }
-
-  .bg-footer-light {
-    @apply bg-slate-200;
-  }
-
-  .bg-footer-dark {
-    @apply bg-slate-800;
-  }
-
   .divider {
     @apply border-b-2 border-slate-300;
   }
@@ -33,7 +21,7 @@ body * {
 }
 
 #dark-mode-ball.dark {
-  transform: translateX(115%);
+  transform: translateX(133%);
 }
 
 #perspective {
@@ -42,11 +30,11 @@ body * {
 }
 
 .bg-hello-design {
-  transform: rotateY(-60deg) rotateX(10deg) translateY(10%);
+  transform: rotateY(-45deg) rotateX(10deg) translateY(5%);
 }
 
 .bg-hello-design-2 {
-  transform: rotateY(-60deg) rotateX(10deg) translateY(-10%);
+  transform: rotateY(-45deg) rotateX(10deg) translateY(-5%);
 }
 
 .animate-bg-hello {

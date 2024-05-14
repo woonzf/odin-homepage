@@ -6,7 +6,7 @@
     <title>Document</title>
   </head>
   <body
-    class="bg-white dark:bg-dark text-slate-900 dark:text-dark text-lg select-none"
+    class="bg-white dark:bg-dark text-slate-800 dark:text-white text-lg select-none"
   >
     <div
       class="bg-white dark:bg-dark h-14 w-full text-xl lg:text-2xl fixed top-0 left-0 z-[99]"
@@ -18,15 +18,17 @@
           <button>home<span class="text-yellow-500">.</span></button>
         </nav>
         <button
-          class="h-[60%] aspect-[2/1] border border-slate-600 dark:border-slate-200 rounded-full"
+          class="bg-slate-400 dark:bg-white h-[60%] aspect-[2/1] rounded-full flex items-center"
           id="btn-dark-mode"
         >
-          <div class="h-full w-full flex justify-between items-center relative">
+          <span
+            class="bg-white dark:bg-dark h-[70%] aspect-square ml-[11%] rounded-full relative"
+            id="dark-mode-ball"
+          >
             <span
-              class="bg-footer-dark dark:bg-white h-[90%] w-[45%] rounded-full absolute top-[1px] left-[1px]"
-              id="dark-mode-ball"
+              class="bg-transparent dark:bg-white h-[75%] aspect-square rounded-full absolute top-[5%] right-[50%]"
             ></span>
-          </div>
+          </span>
         </button>
       </header>
     </div>
@@ -39,7 +41,7 @@
             class="w-[80%] lg:w-[70%] flex flex-col justify-center gap-2 relative"
           >
             <div
-              class="h-[150%] w-[40%] flex absolute left-[25%] z-[-1]"
+              class="h-[150%] w-[40%] flex absolute left-[50%] z-[-1]"
               id="perspective"
             >
               <div class="h-full w-full bg-hello-design-2">
@@ -163,7 +165,7 @@
         </section>
       </main>
     </div>
-    <div class="bg-footer-light dark:bg-footer-dark w-full mt-5">
+    <div class="bg-slate-200 dark:bg-slate-800 w-full mt-5">
       <footer class="max-w-screen-lg mx-auto px-10 py-5">
         <p class="text-2xl lg:text-3xl font-bold">
           contact<span class="text-yellow-500">.</span>
