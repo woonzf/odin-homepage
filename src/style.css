@@ -21,7 +21,7 @@ h1 {
 }
 
 p {
-  @apply py-2 text-justify;
+  @apply py-2 text-justify text-pretty;
 }
 
 #dark-mode-ball {
@@ -29,7 +29,7 @@ p {
 }
 
 #dark-mode-ball.dark {
-  transform: translateX(133%);
+  transform: translateX(130%);
 }
 
 #perspective {
