@@ -16,6 +16,14 @@ body * {
   @apply transition-colors duration-[50ms];
 }
 
+h1 {
+  @apply text-2xl lg:text-3xl font-bold;
+}
+
+p {
+  @apply py-2 text-justify;
+}
+
 #dark-mode-ball {
   transition: transform 0.3s linear;
 }
@@ -67,17 +75,17 @@ body * {
 
 .animate-hello {
   will-change: animation;
-  animation: reveal 3s 1;
+  animation: reveal 2s 1;
   animation-fill-mode: forwards;
 }
 
 @keyframes reveal {
   from {
-    opacity: 0;
+    transform: translateY(100%);
   }
 
   to {
-    opacity: 1;
+    transform: translateY(0%);
   }
 }
 

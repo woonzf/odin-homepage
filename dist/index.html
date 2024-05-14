@@ -12,13 +12,13 @@
       class="bg-white dark:bg-dark h-14 w-full text-xl lg:text-2xl fixed top-0 left-0 z-[99]"
     >
       <header
-        class="h-full max-w-screen-lg mx-auto px-10 py-2 font-bold flex justify-end items-center gap-4"
+        class="h-full max-w-screen-lg mx-auto px-10 md:px-20 py-2 font-bold flex justify-end items-center gap-4"
       >
         <nav>
           <button>home<span class="text-yellow-500">.</span></button>
         </nav>
         <button
-          class="bg-slate-400 dark:bg-white h-[60%] aspect-[2/1] rounded-full flex items-center"
+          class="bg-slate-600 dark:bg-white h-[60%] aspect-[2/1] rounded-full flex items-center"
           id="btn-dark-mode"
         >
           <span
@@ -26,15 +26,15 @@
             id="dark-mode-ball"
           >
             <span
-              class="bg-transparent dark:bg-white h-[75%] aspect-square rounded-full absolute top-[5%] right-[50%]"
+              class="bg-transparent dark:bg-white h-[75%] aspect-square rounded-full absolute top-[5%] right-[45%]"
             ></span>
           </span>
         </button>
       </header>
     </div>
-    <div class="max-w-screen-lg mx-auto px-10 overflow-hidden">
+    <div class="max-w-screen-lg mx-auto px-10 md:px-20 overflow-hidden">
       <main class="flex flex-col gap-10">
-        <section
+        <div
           class="h-[50vh] lg:h-[100vh] mt-14 lg:mt-0 flex justify-center items-center"
         >
           <div
@@ -63,12 +63,16 @@
               <div
                 class="text-[10vw] md:text-[7vw] xl:text-[4vw] leading-none font-bold"
               >
-                <p class="animate-hello">
-                  hello<span class="text-yellow-500">.</span>
-                </p>
-                <p class="animate-hello">
-                  world<span class="text-yellow-500">.</span>
-                </p>
+                <div class="h-[50%] overflow-hidden">
+                  <div class="animate-hello">
+                    hello<span class="text-yellow-500">.</span>
+                  </div>
+                </div>
+                <div class="h-[50%] overflow-hidden">
+                  <div class="animate-hello">
+                    world<span class="text-yellow-500">.</span>
+                  </div>
+                </div>
               </div>
               <div class="flex w-full">
                 <div class="w-full">
@@ -93,29 +97,50 @@
                 ></div>
               </div>
               <div
-                class="text-[5vw] md:text-[3.5vw] xl:text-[2vw] leading-none text-right flex-shrink-0 animate-name"
+                class="text-[5vw] md:text-[3.5vw] xl:text-[2vw] leading-none text-right flex flex-col flex-shrink-0 animate-name"
               >
-                <p>Woon Zhen Fei</p>
-                <p class="font-bold">Web Developer</p>
+                <span>Woon Zhen Fei</span>
+                <span class="font-bold">Web Developer</span>
               </div>
             </div>
           </div>
-        </section>
-        <section class="-mt-10 divider">
-          <p class="text-2xl lg:text-3xl font-bold">
-            about<span class="text-yellow-500">.</span>
-          </p>
-          <p class="py-5">
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sint
-            magnam aut laudantium voluptate asperiores adipisci deleniti!
-            Repellat obcaecati aliquam qui provident accusamus aut nisi quasi
-            voluptate, reiciendis labore amet perspiciatis?
-          </p>
+        </div>
+        <section class="-mt-10 lg:mt-0 pb-5 divider" id="about">
+          <article class="flex flex-col justify-center">
+            <h1>about<span class="text-yellow-500">.</span></h1>
+            <div class="py-5">
+              <p>Hello world. I am <b>Woon Zhen Fei</b>, a web developer.</p>
+              <p>
+                I have past working experience as an Operation Executive and
+                Service Technician in different field. During these jobs, I
+                realized I would really like to have a job that spends a lot of
+                time in front of a computer and so began my journey to learn web
+                development.
+              </p>
+              <p>
+                I have prior knowledge about programming (C programming and
+                MATLAB) during my university years. Since I started my
+                web-development journey, I have successfully completed
+                <b>CS50: Introduction to Computer Science</b>, a Harvard online
+                course. Then, I started learning through
+                <b>The Odin Project</b>. I have since completed the
+                'Foundations' course, 'Intermediate HTML and CSS' and
+                'Javascript' courses in the Full Stack path.
+              </p>
+              <p>
+                This 'homepage' is actually a project of the final lesson in
+                'Advanced HTML and CSS' course. I did not really follow the
+                design template provided as I want to make it unique and use it
+                as my first actual portfolio.
+              </p>
+              <p>
+                Now, I am <b>looking for my first job</b> in web development.
+              </p>
+            </div>
+          </article>
         </section>
         <section>
-          <p class="text-2xl lg:text-3xl font-bold">
-            projects<span class="text-yellow-500">.</span>
-          </p>
+          <h1>projects<span class="text-yellow-500">.</span></h1>
           <section
             class="w-full py-5 flex gap-5 overflow-x-auto snap-x snap-mandatory scroll-smooth"
           >
@@ -166,10 +191,8 @@
       </main>
     </div>
     <div class="bg-slate-200 dark:bg-slate-800 w-full mt-5">
-      <footer class="max-w-screen-lg mx-auto px-10 py-5">
-        <p class="text-2xl lg:text-3xl font-bold">
-          contact<span class="text-yellow-500">.</span>
-        </p>
+      <footer class="max-w-screen-lg mx-auto px-10 md:px-20 py-5">
+        <h1>contact<span class="text-yellow-500">.</span></h1>
         <p class="py-5">
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos
           dignissimos, provident voluptate neque iure atque maiores aspernatur
