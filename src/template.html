@@ -1,25 +1,25 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" class="overflow-x-hidden">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
   </head>
   <body
-    class="bg-white dark:bg-black text-black dark:text-white text-sm md:text-lg select-none"
+    class="bg-white dark:bg-black text-black dark:text-white text-sm md:text-lg select-none overflow-x-hidden"
   >
     <header
       class="bg-white dark:bg-black h-14 w-full text-xl md:text-2xl fixed top-0 left-0 z-[99]"
     >
       <div
-        class="h-full max-w-full px-10 md:px-14 py-2 font-bold flex justify-between items-center"
+        class="h-full max-w-full px-10 md:px-14 font-bold flex justify-between items-center"
       >
         <div id="brand">
           <span class="text-theme">WZF</span>
         </div>
-        <div class="flex items-center gap-2 md:gap-4">
+        <div class="h-full flex items-center gap-2 md:gap-4">
           <button
-            class="bg-black dark:bg-white h-[50%] md:h-[60%] aspect-[2/1] rounded-full flex justify-center items-center"
+            class="bg-black dark:bg-white h-[40%] aspect-[2/1] rounded-full flex justify-center items-center"
             id="btn-dark-mode"
           >
             <div class="h-[66%] w-[75%] flex justify-between relative">
@@ -45,31 +45,74 @@
           <div class="bg-slate-100 w-full"></div>
         </div>
         <div
-          class="text-black text-[12vw] leading-[0.8] flex flex-col absolute top-[50%] left-[50%] translate-y-[-50%] translate-x-[-50%]"
+          class="text-black text-[10vw] leading-[0.8] flex flex-col absolute top-[50%] left-[50%] translate-y-[-50%] translate-x-[-50%]"
           id="intro-hello"
         >
-          <div class="h-full overflow-hidden">
+          <div class="h-full overflow-hidden hello">
             <div class="h-full animate-hello">HE</div>
           </div>
-          <div class="h-full overflow-hidden">
+          <div class="h-full overflow-hidden hello">
             <div class="h-full animate-hello">
-              LLO<span class="text-theme">.</span>
+              LLO<span class="text-theme" id="hello-dot">.</span>
             </div>
           </div>
         </div>
         <nav class="h-full w-full absolute">
           <div class="h-full w-full relative animate-appear opacity-0">
-            <button class="ml-2 flex items-center gap-2 absolute top-[50%] translate-y-[-50%] portrait:hidden"><img class="rotate-90" src="../src/img/arrow-24w.png">ABOUT</button>
-            <button class="mr-2 flex flex-row-reverse items-center gap-2 absolute top-[50%] right-0 translate-y-[-50%] portrait:hidden"><img class="-rotate-90" src="../src/img/arrow-24w.png">PROJECTS</button>
-            <button class="ml-2 flex items-center gap-2 absolute bottom-0 left-[50%] translate-x-[-25%] origin-left -rotate-90 portrait:hidden"><img class="rotate-90" src="../src/img/arrow-24w.png">CONTACT</button>
-            <button class="mr-2 flex flex-row-reverse items-center gap-2 absolute top-[50%] right-0 translate-x-[20%] translate-y-[-50%] landscape:hidden"><img class="-rotate-90" src="../src/img/poll-24w.png">MENU</button>
-            <div class="h-full w-1/2 mr-2 flex flex-col justify-center items-end gap-14 absolute right-0 opacity-0">
-              <div class="flex flex-col items-end">
-                <button>ABOUT</button>
-                <button>PROJECTS</button>
-                <button>CONTACT</button>
+            <div
+              class="w-36 flex justify-center absolute portrait:hidden top-[50%] translate-y-[-50%] left-0 translate-x-[-25%] -rotate-90"
+            >
+              <button
+                class="px-2 flex flex-col justify-center items-center"
+                id="btn-about-l"
+              >
+                <img class="rotate-180" src="../src/img/arrow-24w.png" />
+                <span>ABOUT</span>
+              </button>
+            </div>
+            <div
+              class="w-36 flex justify-center absolute portrait:hidden top-[50%] translate-y-[-50%] right-0 translate-x-[25%] rotate-90"
+            >
+              <button
+                class="px-2 flex flex-col justify-center items-center"
+                id="btn-projects-l"
+              >
+                <img class="rotate-180" src="../src/img/arrow-24w.png" />
+                <span>PROJECTS</span>
+              </button>
+            </div>
+            <div
+              class="w-36 absolute portrait:hidden bottom-0 right-[50%] translate-y-[-200%] translate-x-[35%] -rotate-90"
+            >
+              <button
+                class="px-2 flex justify-center items-center gap-2"
+                id="btn-contact-l"
+              >
+                <img class="rotate-90" src="../src/img/arrow-24w.png" />
+                <span class="mt-0.5">CONTACT</span>
+              </button>
+            </div>
+            <div
+              class="absolute landscape:hidden top-[50%] translate-y-[-50%] right-0 translate-x-[35%] rotate-90"
+            >
+              <button
+                class="px-2 flex flex-col justify-center items-center"
+                id="btn-menu"
+              >
+                <img src="../src/img/poll-24w.png" />
+                <span>MENU</span>
+              </button>
+            </div>
+            <div
+              class="h-full w-1/2 flex flex-col justify-center items-end gap-14 absolute right-0 hidden"
+              id="menu"
+            >
+              <div class="mr-2 flex flex-col items-end">
+                <button id="btn-about-p">ABOUT</button>
+                <button id="btn-projects-p">PROJECTS</button>
+                <button id="btn-contact-p">CONTACT</button>
               </div>
-              <button>BACK</button>
+              <button class="mr-2" id="btn-menu-back">BACK</button>
             </div>
           </div>
         </nav>
@@ -89,28 +132,31 @@
               </p>
               <p>
                 I have prior knowledge about programming (C programming and
-                MATLAB) during my university years. Since I started my journey in
-                web development, I have successfully completed
+                MATLAB) during my university years. Since I started my journey
+                in web development, I have successfully completed
                 <b>CS50: Introduction to Computer Science</b>, a Harvard online
-                course. I am currently learning through <b>The Odin Project</b>'s
-                <i>Full Stack JavaScript</i> path.
+                course. I am currently learning through
+                <b>The Odin Project</b>'s <i>Full Stack JavaScript</i> path.
               </p>
               <p>
-                This <i>Homepage</i> is actually a project of the final lesson in
-                TOP's <i>Advanced HTML and CSS</i> course. I did not really follow
-                the design template provided as I want to make it unique and use
-                it as my first actual portfolio.
+                This <i>Homepage</i> is actually a project of the final lesson
+                in TOP's <i>Advanced HTML and CSS</i> course. I did not really
+                follow the design template provided as I want to make it unique
+                and use it as my first actual portfolio.
               </p>
               <p>
-                I am learning <i>React</i> and <b>looking for my first job</b> in
-                web development.
+                I am learning <i>React</i> and
+                <b>looking for my first job</b> in web development.
               </p>
             </div>
           </article>
         </section>
       </div>
     </main>
-    <main class="max-w-screen-lg mx-auto px-10 md:px-14 flex flex-col gap-14 hidden">
+    <!-- TO BE REMOVED -->
+    <main
+      class="max-w-screen-lg mx-auto px-10 md:px-14 flex flex-col gap-14 hidden"
+    >
       <section class="pb-5 divider" id="about">
         <article class="flex flex-col justify-center">
           <h1>about<span class="text-theme">.</span></h1>

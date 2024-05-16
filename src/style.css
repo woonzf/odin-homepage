@@ -38,18 +38,50 @@ nav,
   font-family: "Montserrat", system-ui, sans-serif;
 }
 
+.hello,
 #dark-mode-ball {
-  transition: transform 0.3s linear;
+  transition: transform 750ms ease;
+}
+
+.hello.move {
+  transform: translateX(-100%);
 }
 
 #dark-mode-ball.dark {
   transform: translateX(140%);
 }
 
-#perspective {
-  -webkit-perspective: 500px;
-  perspective: 500px;
+#hello-dot {
+  transition: color 750ms ease;
 }
+
+#hello-dot.move {
+  @apply text-slate-100;
+}
+
+#btn-menu,
+#menu {
+  transition:
+    opacity 500ms ease,
+    transform 750ms ease;
+}
+
+#btn-menu.open {
+  opacity: 0;
+  transform: translateY(-100%);
+}
+
+#menu {
+  opacity: 0;
+  transform: translateX(100%);
+}
+
+#menu.open {
+  opacity: 1;
+  transform: translateX(0%);
+}
+
+/* ANIMATION */
 
 .animate-hello {
   will-change: animation;
@@ -68,8 +100,8 @@ nav,
 }
 
 .animate-appear {
-  will-change:animation;
-  animation: appear 1.5s 1 1s;
+  will-change: animation;
+  animation: appear 1.5s 1 1.5s;
   animation-fill-mode: forwards;
 }
 
@@ -83,7 +115,14 @@ nav,
   }
 }
 
+/* END OF ANIMATION */
+
 /* TO BE REMOVED */
+
+#perspective {
+  -webkit-perspective: 500px;
+  perspective: 500px;
+}
 
 .animate-bg-hello {
   will-change: animation;
