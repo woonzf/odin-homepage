@@ -18,16 +18,13 @@
           <span class="text-theme">WZF</span>
         </div>
         <div class="flex items-center gap-2 md:gap-4">
-          <nav>
-            <button>home<span class="text-theme">.</span></button>
-          </nav>
           <button
             class="bg-black dark:bg-white h-[50%] md:h-[60%] aspect-[2/1] rounded-full flex justify-center items-center"
             id="btn-dark-mode"
           >
             <div class="h-[66%] w-[75%] flex justify-between relative">
-              <img src="../src/img/dark-mode.png" alt="Dark Mode" />
-              <img src="../src/img/light-mode.png" alt="Light Mode" />
+              <img src="../src/img/dark-mode-24w.png" alt="Dark Mode" />
+              <img src="../src/img/light-mode-24w.png" alt="Light Mode" />
               <span
                 class="bg-white dark:bg-black h-full aspect-square rounded-full absolute"
                 id="dark-mode-ball"
@@ -38,25 +35,82 @@
         </div>
       </div>
     </header>
-    <div
-      class="aspect-[2/1] landscape:h-[calc(100vh-2*56px)] w-[calc(100vw-2*40px)] md:w-[calc(100vw-2*56px)] mx-10 md:mx-14 my-14 mb-7 landscape:mb-14 relative"
-      id="intro"
-    >
-      <div class="h-full w-full flex absolute">
-        <div class="bg-theme w-full"></div>
-        <div class="bg-slate-100 w-full"></div>
-      </div>
-      <div
-        class="text-black text-[7vw] leading-[0.8] flex flex-col absolute top-[50%] left-[50%] translate-y-[-50%] translate-x-[-50%]"
-        id="intro-hello"
+    <main>
+      <section
+        class="h-[calc(100vh-2*56px)] w-[calc(100vw-2*40px)] md:w-[calc(100vw-2*56px)] mx-10 md:mx-14 my-14 relative"
+        id="intro"
       >
-        <div class="h-full animate-hello">HE</div>
-        <div class="h-full animate-hello">
-          LLO<span class="text-theme">.</span>
+        <div class="h-full w-full flex absolute">
+          <div class="bg-theme w-full"></div>
+          <div class="bg-slate-100 w-full"></div>
         </div>
+        <div
+          class="text-black text-[12vw] leading-[0.8] flex flex-col absolute top-[50%] left-[50%] translate-y-[-50%] translate-x-[-50%]"
+          id="intro-hello"
+        >
+          <div class="h-full overflow-hidden">
+            <div class="h-full animate-hello">HE</div>
+          </div>
+          <div class="h-full overflow-hidden">
+            <div class="h-full animate-hello">
+              LLO<span class="text-theme">.</span>
+            </div>
+          </div>
+        </div>
+        <nav class="h-full w-full absolute">
+          <div class="h-full w-full relative animate-appear opacity-0">
+            <button class="ml-2 flex items-center gap-2 absolute top-[50%] translate-y-[-50%] portrait:hidden"><img class="rotate-90" src="../src/img/arrow-24w.png">ABOUT</button>
+            <button class="mr-2 flex flex-row-reverse items-center gap-2 absolute top-[50%] right-0 translate-y-[-50%] portrait:hidden"><img class="-rotate-90" src="../src/img/arrow-24w.png">PROJECTS</button>
+            <button class="ml-2 flex items-center gap-2 absolute bottom-0 left-[50%] translate-x-[-25%] origin-left -rotate-90 portrait:hidden"><img class="rotate-90" src="../src/img/arrow-24w.png">CONTACT</button>
+            <button class="mr-2 flex flex-row-reverse items-center gap-2 absolute top-[50%] right-0 translate-x-[20%] translate-y-[-50%] landscape:hidden"><img class="-rotate-90" src="../src/img/poll-24w.png">MENU</button>
+            <div class="h-full w-1/2 mr-2 flex flex-col justify-center items-end gap-14 absolute right-0 opacity-0">
+              <div class="flex flex-col items-end">
+                <button>ABOUT</button>
+                <button>PROJECTS</button>
+                <button>CONTACT</button>
+              </div>
+              <button>BACK</button>
+            </div>
+          </div>
+        </nav>
+      </section>
+      <div class="max-w-screen-lg mx-auto px-10 md:px-14 flex flex-col gap-14">
+        <section class="pb-5 divider" id="about">
+          <article class="flex flex-col justify-center">
+            <h1>about<span class="text-theme">.</span></h1>
+            <div class="py-5">
+              <p>Hello, I am <b>Woon Zhen Fei</b>, a web developer.</p>
+              <p>
+                I have past working experience as an Operation Executive and
+                Service Technician in different field. During these jobs, I
+                realized I would really like to have a job that spends a lot of
+                time in front of a computer and so began my journey to learn web
+                development.
+              </p>
+              <p>
+                I have prior knowledge about programming (C programming and
+                MATLAB) during my university years. Since I started my journey in
+                web development, I have successfully completed
+                <b>CS50: Introduction to Computer Science</b>, a Harvard online
+                course. I am currently learning through <b>The Odin Project</b>'s
+                <i>Full Stack JavaScript</i> path.
+              </p>
+              <p>
+                This <i>Homepage</i> is actually a project of the final lesson in
+                TOP's <i>Advanced HTML and CSS</i> course. I did not really follow
+                the design template provided as I want to make it unique and use
+                it as my first actual portfolio.
+              </p>
+              <p>
+                I am learning <i>React</i> and <b>looking for my first job</b> in
+                web development.
+              </p>
+            </div>
+          </article>
+        </section>
       </div>
-    </div>
-    <main class="max-w-screen-lg mx-auto px-10 md:px-14 flex flex-col gap-14">
+    </main>
+    <main class="max-w-screen-lg mx-auto px-10 md:px-14 flex flex-col gap-14 hidden">
       <section class="pb-5 divider" id="about">
         <article class="flex flex-col justify-center">
           <h1>about<span class="text-theme">.</span></h1>
@@ -140,7 +194,7 @@
         </div>
       </section>
     </main>
-    <footer class="bg-theme dark:text-black w-full mt-14">
+    <footer class="bg-theme dark:text-black w-full mt-14 hidden">
       <div class="max-w-screen-lg mx-auto px-10 md:px-14 py-5">
         <h1>contact<span class="text-theme">.</span></h1>
         <p>
