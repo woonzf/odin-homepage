@@ -8,13 +8,11 @@
   <body
     class="bg-white dark:bg-black h-screen w-screen text-black dark:text-white text-sm md:text-lg flex justify-center items-center select-none overflow-hidden"
   >
-    <header
-      class="bg-white dark:bg-black h-14 w-screen text-xl md:text-2xl fixed top-0 left-0 z-[99]"
-    >
+    <header class="h-14 w-screen text-xl md:text-2xl fixed top-0 left-0 z-[99]">
       <div
         class="h-full w-full px-10 md:px-14 font-bold flex justify-between items-center"
       >
-        <div id="brand">
+        <div class="montserrat" id="brand">
           <span class="text-theme">WZF</span>
         </div>
         <button
@@ -33,28 +31,30 @@
         </button>
       </div>
     </header>
-    <main class="h-[100vh] w-screen px-10 md:px-14 py-14">
-      <section class="h-full w-full relative" id="intro">
-        <div class="h-full w-full flex absolute">
-          <div class="bg-theme w-full" id="bg-left"></div>
-          <div class="bg-slate-100 w-full" id="bg-right"></div>
-        </div>
+    <main class="h-[100vh] w-screen px-10 md:px-14 py-14 relative">
+      <div
+        class="h-[calc(100vh-2*56px)] w-[calc(100vw-2*40px)] md:w-[calc(100vw-2*56px)] flex absolute"
+      >
+        <div class="bg-theme w-full" id="bg-left"></div>
+        <div class="bg-theme-2 w-full" id="bg-right"></div>
+      </div>
+      <section class="h-full w-full relative">
         <div
-          class="text-black text-[10vw] leading-[0.8] flex flex-col absolute top-[50%] left-[50%] translate-y-[-50%] translate-x-[-50%] overflow-y-clip"
-          id="intro-hello"
+          class="text-black text-[10vw] leading-[0.8] flex flex-col absolute top-[50%] left-[50%] translate-y-[-50%] translate-x-[-50%] overflow-y-clip montserrat"
+          id="intro"
         >
           <div class="h-full" id="hello-wrapper">
             <div class="h-full overflow-hidden hello">
-              <div class="h-full animate-hello">HE</div>
+              <h1 class="h-full animate-hello">HE</h1>
             </div>
             <div class="h-full overflow-hidden hello">
-              <div class="h-full animate-hello">
+              <h1 class="h-full animate-hello">
                 LLO<span class="text-theme" id="hello-dot">.</span>
-              </div>
+              </h1>
             </div>
           </div>
         </div>
-        <nav class="h-full w-full absolute">
+        <nav class="h-full w-full absolute montserrat">
           <div class="h-full w-full relative animate-appear opacity-0">
             <div
               class="w-36 flex justify-center absolute portrait:hidden top-[50%] translate-y-[-50%] left-0 translate-x-[-25%] -rotate-90"
@@ -120,14 +120,14 @@
           </div>
         </nav>
       </section>
-    </main>
-    <!-- TO BE REMOVED -->
-    <main
-      class="max-w-screen-lg mx-auto px-10 md:px-14 flex flex-col gap-14 hidden"
-    >
-      <section class="pb-5 divider" id="about">
-        <article class="flex flex-col justify-center">
-          <h1>about<span class="text-theme">.</span></h1>
+      <section
+        class="h-full w-full flex justify-center translate-y-[-100%] relative hidden"
+        id="about"
+      >
+        <article
+          class="h-full max-w-screen-lg px-10 md:px-14 py-14 overflow-y-auto"
+        >
+          <h2 class="montserrat">ABOUT<span class="text-theme-2">.</span></h2>
           <div class="py-5">
             <p>Hello, I am <b>Woon Zhen Fei</b>, a web developer.</p>
             <p>
@@ -155,11 +155,133 @@
               I am learning <i>React</i> and <b>looking for my first job</b> in
               web development.
             </p>
+            <p>
+              Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+              Laboriosam recusandae atque odit magnam laudantium. Maxime,
+              temporibus quis eaque expedita deserunt nam enim voluptatibus
+              sequi itaque, reprehenderit error cumque, quos culpa? Lorem ipsum
+              dolor sit amet consectetur, adipisicing elit. Eius enim illo
+              doloremque sit quisquam maiores similique perferendis nulla
+              excepturi facere voluptatem id quae, amet dolorem iusto incidunt
+              cum officiis. Doloribus. Lorem, ipsum dolor sit amet consectetur
+              adipisicing elit. Atque, culpa doloremque? Ut totam deleniti
+              explicabo magni. Officiis, optio dolor tenetur incidunt inventore
+              et natus, aliquid dolorum aspernatur dolores reiciendis mollitia.
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt
+              illo aliquam voluptatum nam corrupti sunt, magnam rem dolorem
+              atque. Blanditiis veniam asperiores qui fugit rem. Necessitatibus
+              numquam fuga ratione ea?
+            </p>
           </div>
         </article>
+        <div
+          class="w-36 flex justify-center absolute top-[50%] translate-y-[-50%] right-0 translate-x-[25%] rotate-90"
+        >
+          <button
+            class="px-2 flex justify-center items-center"
+            id="btn-back-about"
+          >
+            <div class="flex flex-col justify-center items-center btn-bg-y">
+              <img class="rotate-180" src="../src/img/arrow-24w.png" />
+              <span class="montserrat">BACK</span>
+            </div>
+          </button>
+        </div>
+      </section>
+      <section
+        class="h-full w-full flex justify-center translate-y-[-100%] relative hidden"
+        id="projects"
+      >
+        <article
+          class="h-full max-w-screen-lg px-10 md:px-14 py-14 overflow-y-auto"
+        >
+          <h2 class="montserrat">PROJECTS<span class="text-theme">.</span></h2>
+          <div class="py-5">
+            <p>
+              Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+              Laboriosam recusandae atque odit magnam laudantium. Maxime,
+              temporibus quis eaque expedita deserunt nam enim voluptatibus
+              sequi itaque, reprehenderit error cumque, quos culpa? Lorem ipsum
+              dolor sit amet consectetur, adipisicing elit. Eius enim illo
+              doloremque sit quisquam maiores similique perferendis nulla
+              excepturi facere voluptatem id quae, amet dolorem iusto incidunt
+              cum officiis. Doloribus. Lorem, ipsum dolor sit amet consectetur
+              adipisicing elit. Atque, culpa doloremque? Ut totam deleniti
+              explicabo magni. Officiis, optio dolor tenetur incidunt inventore
+              et natus, aliquid dolorum aspernatur dolores reiciendis mollitia.
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt
+              illo aliquam voluptatum nam corrupti sunt, magnam rem dolorem
+              atque. Blanditiis veniam asperiores qui fugit rem. Necessitatibus
+              numquam fuga ratione ea?
+            </p>
+          </div>
+        </article>
+        <div
+          class="w-36 flex justify-center absolute top-[50%] translate-y-[-50%] left-0 translate-x-[-25%] -rotate-90"
+        >
+          <button
+            class="px-2 flex justify-center items-center"
+            id="btn-back-projects"
+          >
+            <div class="flex flex-col justify-center items-center btn-bg-y">
+              <img class="rotate-180" src="../src/img/arrow-24w.png" />
+              <span class="montserrat">BACK</span>
+            </div>
+          </button>
+        </div>
+      </section>
+      <section
+        class="h-full w-full flex justify-center translate-y-[-100%] relative hidden"
+        id="contact"
+      >
+        <article
+          class="h-full max-w-screen-lg px-10 md:px-14 py-14 overflow-y-auto"
+        >
+          <h2 class="montserrat">CONTACT<span class="text-theme">.</span></h2>
+          <div class="py-5">
+            <p>
+              Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+              Laboriosam recusandae atque odit magnam laudantium. Maxime,
+              temporibus quis eaque expedita deserunt nam enim voluptatibus
+              sequi itaque, reprehenderit error cumque, quos culpa? Lorem ipsum
+              dolor sit amet consectetur, adipisicing elit. Eius enim illo
+              doloremque sit quisquam maiores similique perferendis nulla
+              excepturi facere voluptatem id quae, amet dolorem iusto incidunt
+              cum officiis. Doloribus. Lorem, ipsum dolor sit amet consectetur
+              adipisicing elit. Atque, culpa doloremque? Ut totam deleniti
+              explicabo magni. Officiis, optio dolor tenetur incidunt inventore
+              et natus, aliquid dolorum aspernatur dolores reiciendis mollitia.
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt
+              illo aliquam voluptatum nam corrupti sunt, magnam rem dolorem
+              atque. Blanditiis veniam asperiores qui fugit rem. Necessitatibus
+              numquam fuga ratione ea?
+            </p>
+          </div>
+        </article>
+        <div
+          class="w-36 absolute top-0 right-[50%] translate-y-[200%] translate-x-[35%] rotate-90"
+        >
+          <button
+            class="px-2 flex justify-center items-center"
+            id="btn-back-contact"
+          >
+            <div class="flex justify-center items-center gap-2 btn-bg-x">
+              <img class="rotate-90" src="../src/img/arrow-24w.png" />
+              <span class="mt-0.5 montserrat">BACK</span>
+            </div>
+          </button>
+        </div>
+      </section>
+    </main>
+    <!-- TO BE REMOVED -->
+    <main
+      class="max-w-screen-lg mx-auto px-10 md:px-14 flex flex-col gap-14 hidden"
+    >
+      <section class="pb-5 divider" id="about">
+        <article class="flex flex-col justify-center"></article>
       </section>
       <section>
-        <h1>projects<span class="text-theme">.</span></h1>
+        <h2>projects<span class="text-theme">.</span></h2>
         <div
           class="w-full py-5 flex gap-5 overflow-x-auto snap-x snap-mandatory scroll-smooth"
         >
@@ -210,7 +332,7 @@
     </main>
     <footer class="bg-theme dark:text-black w-full mt-14 hidden">
       <div class="max-w-screen-lg mx-auto px-10 md:px-14 py-5">
-        <h1>contact<span class="text-theme">.</span></h1>
+        <h2>contact<span class="text-theme">.</span></h2>
         <p>
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos
           dignissimos, provident voluptate neque iure atque maiores aspernatur
