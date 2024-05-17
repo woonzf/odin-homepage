@@ -81,6 +81,31 @@ nav,
   transform: translateX(0%);
 }
 
+#hello-wrapper {
+  transition: transform 1s ease;
+}
+
+#hello-wrapper.hide {
+  transform: translateY(100%);
+}
+
+#bg-left,
+#bg-right {
+  transition: width 1s;
+}
+
+.shrink {
+  width: 0;
+}
+
+nav {
+  transition: opacity 1s;
+}
+
+nav.hide {
+  opacity: 0;
+}
+
 /* ANIMATION */
 
 .animate-hello {
@@ -115,10 +140,44 @@ nav,
   }
 }
 
+button:hover .btn-bg-y {
+  will-change: animation;
+  animation: bounce-y 1s infinite;
+}
+
+button:hover .btn-bg-x {
+  will-change: animation;
+  animation: bounce-x 1s infinite;
+}
+
+/* Tailwind Bounce Custom */
+@keyframes bounce-y {
+  0%,
+  100% {
+    transform: none;
+    animation-timing-function: cubic-bezier(0, 0, 0.2, 1);
+  }
+  50% {
+    transform: translateY(-25%);
+    animation-timing-function: cubic-bezier(0.8, 0, 1, 1);
+  }
+}
+
+@keyframes bounce-x {
+  0%,
+  100% {
+    transform: none;
+    animation-timing-function: cubic-bezier(0, 0, 0.2, 1);
+  }
+  50% {
+    transform: translateX(-10%);
+    animation-timing-function: cubic-bezier(0.8, 0, 1, 1);
+  }
+}
+
 /* END OF ANIMATION */
 
 /* TO BE REMOVED */
-
 #perspective {
   -webkit-perspective: 500px;
   perspective: 500px;

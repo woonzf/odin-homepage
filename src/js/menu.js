@@ -13,13 +13,18 @@ const menu = (() => {
   const helloDot = document.querySelector("#hello-dot");
   const menu = document.querySelector("#menu");
 
+  const helloWrapper = document.querySelector("#hello-wrapper");
+  const bgLeft = document.querySelector("#bg-left");
+  const bgRight = document.querySelector("#bg-right");
+  const nav = document.querySelector("nav");
+
   function init() {
     btnAboutL.onclick = () => {
-      console.log("ABOUT");
+      _toggleHelloMenu(bgRight);
     };
 
     btnProjectsL.onclick = () => {
-      console.log("PROJECTS");
+      _toggleHelloMenu(bgLeft);
     };
 
     btnContactL.onclick = () => {
@@ -64,6 +69,12 @@ const menu = (() => {
       el.classList.toggle("move");
     });
     helloDot.classList.toggle("move");
+  }
+
+  function _toggleHelloMenu(shrink) {
+    helloWrapper.classList.toggle("hide");
+    shrink.classList.toggle("shrink");
+    nav.classList.toggle("hide");
   }
 
   return { init };

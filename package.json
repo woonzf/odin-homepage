@@ -6,10 +6,10 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "webpack",
-    "build-watch": "webpack --watch",
-    "prettier-check-all": "prettier --check .",
-    "prettier-write-all": "prettier --write .",
-    "gh-pages": "git subtree push --prefix dist origin gh-pages"
+    "build-w": "webpack --watch",
+    "prettier-c": "prettier --check",
+    "prettier-w": "prettier --write",
+    "gh-p": "git subtree push --prefix dist origin gh-pages"
   },
   "repository": {
     "type": "git",

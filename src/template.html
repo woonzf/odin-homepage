@@ -1,59 +1,56 @@
 <!doctype html>
-<html lang="en" class="overflow-x-hidden">
+<html lang="en" class="overflow-hidden">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
   </head>
   <body
-    class="bg-white dark:bg-black text-black dark:text-white text-sm md:text-lg select-none overflow-x-hidden"
+    class="bg-white dark:bg-black h-screen w-screen text-black dark:text-white text-sm md:text-lg flex justify-center items-center select-none overflow-hidden"
   >
     <header
-      class="bg-white dark:bg-black h-14 w-full text-xl md:text-2xl fixed top-0 left-0 z-[99]"
+      class="bg-white dark:bg-black h-14 w-screen text-xl md:text-2xl fixed top-0 left-0 z-[99]"
     >
       <div
-        class="h-full max-w-full px-10 md:px-14 font-bold flex justify-between items-center"
+        class="h-full w-full px-10 md:px-14 font-bold flex justify-between items-center"
       >
         <div id="brand">
           <span class="text-theme">WZF</span>
         </div>
-        <div class="h-full flex items-center gap-2 md:gap-4">
-          <button
-            class="bg-black dark:bg-white h-[40%] aspect-[2/1] rounded-full flex justify-center items-center"
-            id="btn-dark-mode"
-          >
-            <div class="h-[66%] w-[75%] flex justify-between relative">
-              <img src="../src/img/dark-mode-24w.png" alt="Dark Mode" />
-              <img src="../src/img/light-mode-24w.png" alt="Light Mode" />
-              <span
-                class="bg-white dark:bg-black h-full aspect-square rounded-full absolute"
-                id="dark-mode-ball"
-              >
-              </span>
-            </div>
-          </button>
-        </div>
+        <button
+          class="bg-black dark:bg-white h-[40%] aspect-[2/1] rounded-full flex justify-center items-center"
+          id="btn-dark-mode"
+        >
+          <div class="h-[66%] w-[75%] flex justify-between relative">
+            <img src="../src/img/dark-mode-24w.png" alt="Dark Mode" />
+            <img src="../src/img/light-mode-24w.png" alt="Light Mode" />
+            <span
+              class="bg-white dark:bg-black h-full aspect-square rounded-full absolute"
+              id="dark-mode-ball"
+            >
+            </span>
+          </div>
+        </button>
       </div>
     </header>
-    <main>
-      <section
-        class="h-[calc(100vh-2*56px)] w-[calc(100vw-2*40px)] md:w-[calc(100vw-2*56px)] mx-10 md:mx-14 my-14 relative"
-        id="intro"
-      >
+    <main class="h-[100vh] w-screen px-10 md:px-14 py-14">
+      <section class="h-full w-full relative" id="intro">
         <div class="h-full w-full flex absolute">
-          <div class="bg-theme w-full"></div>
-          <div class="bg-slate-100 w-full"></div>
+          <div class="bg-theme w-full" id="bg-left"></div>
+          <div class="bg-slate-100 w-full" id="bg-right"></div>
         </div>
         <div
-          class="text-black text-[10vw] leading-[0.8] flex flex-col absolute top-[50%] left-[50%] translate-y-[-50%] translate-x-[-50%]"
+          class="text-black text-[10vw] leading-[0.8] flex flex-col absolute top-[50%] left-[50%] translate-y-[-50%] translate-x-[-50%] overflow-y-clip"
           id="intro-hello"
         >
-          <div class="h-full overflow-hidden hello">
-            <div class="h-full animate-hello">HE</div>
-          </div>
-          <div class="h-full overflow-hidden hello">
-            <div class="h-full animate-hello">
-              LLO<span class="text-theme" id="hello-dot">.</span>
+          <div class="h-full" id="hello-wrapper">
+            <div class="h-full overflow-hidden hello">
+              <div class="h-full animate-hello">HE</div>
+            </div>
+            <div class="h-full overflow-hidden hello">
+              <div class="h-full animate-hello">
+                LLO<span class="text-theme" id="hello-dot">.</span>
+              </div>
             </div>
           </div>
         </div>
@@ -63,33 +60,39 @@
               class="w-36 flex justify-center absolute portrait:hidden top-[50%] translate-y-[-50%] left-0 translate-x-[-25%] -rotate-90"
             >
               <button
-                class="px-2 flex flex-col justify-center items-center"
+                class="px-2 flex justify-center items-center"
                 id="btn-about-l"
               >
-                <img class="rotate-180" src="../src/img/arrow-24w.png" />
-                <span>ABOUT</span>
+                <div class="flex flex-col justify-center items-center btn-bg-y">
+                  <img class="rotate-180" src="../src/img/arrow-24w.png" />
+                  <span>ABOUT</span>
+                </div>
               </button>
             </div>
             <div
               class="w-36 flex justify-center absolute portrait:hidden top-[50%] translate-y-[-50%] right-0 translate-x-[25%] rotate-90"
             >
               <button
-                class="px-2 flex flex-col justify-center items-center"
+                class="px-2 flex justify-center items-center"
                 id="btn-projects-l"
               >
-                <img class="rotate-180" src="../src/img/arrow-24w.png" />
-                <span>PROJECTS</span>
+                <div class="flex flex-col justify-center items-center btn-bg-y">
+                  <img class="rotate-180" src="../src/img/arrow-24w.png" />
+                  <span>PROJECTS</span>
+                </div>
               </button>
             </div>
             <div
               class="w-36 absolute portrait:hidden bottom-0 right-[50%] translate-y-[-200%] translate-x-[35%] -rotate-90"
             >
               <button
-                class="px-2 flex justify-center items-center gap-2"
+                class="px-2 flex justify-center items-center"
                 id="btn-contact-l"
               >
-                <img class="rotate-90" src="../src/img/arrow-24w.png" />
-                <span class="mt-0.5">CONTACT</span>
+                <div class="flex justify-center items-center gap-2 btn-bg-x">
+                  <img class="rotate-90" src="../src/img/arrow-24w.png" />
+                  <span class="mt-0.5">CONTACT</span>
+                </div>
               </button>
             </div>
             <div
@@ -117,41 +120,6 @@
           </div>
         </nav>
       </section>
-      <div class="max-w-screen-lg mx-auto px-10 md:px-14 flex flex-col gap-14">
-        <section class="pb-5 divider" id="about">
-          <article class="flex flex-col justify-center">
-            <h1>about<span class="text-theme">.</span></h1>
-            <div class="py-5">
-              <p>Hello, I am <b>Woon Zhen Fei</b>, a web developer.</p>
-              <p>
-                I have past working experience as an Operation Executive and
-                Service Technician in different field. During these jobs, I
-                realized I would really like to have a job that spends a lot of
-                time in front of a computer and so began my journey to learn web
-                development.
-              </p>
-              <p>
-                I have prior knowledge about programming (C programming and
-                MATLAB) during my university years. Since I started my journey
-                in web development, I have successfully completed
-                <b>CS50: Introduction to Computer Science</b>, a Harvard online
-                course. I am currently learning through
-                <b>The Odin Project</b>'s <i>Full Stack JavaScript</i> path.
-              </p>
-              <p>
-                This <i>Homepage</i> is actually a project of the final lesson
-                in TOP's <i>Advanced HTML and CSS</i> course. I did not really
-                follow the design template provided as I want to make it unique
-                and use it as my first actual portfolio.
-              </p>
-              <p>
-                I am learning <i>React</i> and
-                <b>looking for my first job</b> in web development.
-              </p>
-            </div>
-          </article>
-        </section>
-      </div>
     </main>
     <!-- TO BE REMOVED -->
     <main
