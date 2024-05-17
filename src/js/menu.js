@@ -18,17 +18,61 @@ const menu = (() => {
   const bgRight = document.querySelector("#bg-right");
   const nav = document.querySelector("nav");
 
+  const about = document.querySelector("#about");
+  const projects = document.querySelector("#projects");
+  const contact = document.querySelector("#contact");
+
+  const btnBackAbout = document.querySelector("#btn-back-about");
+  const btnBackProjects = document.querySelector("#btn-back-projects");
+  const btnBackContact = document.querySelector("#btn-back-contact");
+
   function init() {
     btnAboutL.onclick = () => {
+      _toggleHelloMenu(bgRight);
+      setTimeout(() => {
+        about.classList.toggle("hidden");
+        requestAnimationFrame(() => {
+          about.classList.toggle("active");
+        });
+      }, 1000);
+    };
+
+    btnBackAbout.onclick = () => {
+      about.classList.toggle("active");
+      about.classList.toggle("hidden");
       _toggleHelloMenu(bgRight);
     };
 
     btnProjectsL.onclick = () => {
       _toggleHelloMenu(bgLeft);
+      setTimeout(() => {
+        projects.classList.toggle("hidden");
+        requestAnimationFrame(() => {
+          projects.classList.toggle("active");
+        });
+      }, 1000);
+    };
+
+    btnBackProjects.onclick = () => {
+      projects.classList.toggle("active");
+      projects.classList.toggle("hidden");
+      _toggleHelloMenu(bgLeft);
     };
 
     btnContactL.onclick = () => {
-      console.log("CONTACT");
+      _toggleHelloMenu();
+      setTimeout(() => {
+        contact.classList.toggle("hidden");
+        requestAnimationFrame(() => {
+          contact.classList.toggle("active");
+        });
+      }, 1000);
+    };
+
+    btnBackContact.onclick = () => {
+      contact.classList.toggle("active");
+      contact.classList.toggle("hidden");
+      _toggleHelloMenu();
     };
 
     btnMenu.onclick = () => {
@@ -71,9 +115,9 @@ const menu = (() => {
     helloDot.classList.toggle("move");
   }
 
-  function _toggleHelloMenu(shrink) {
+  function _toggleHelloMenu(bg) {
     helloWrapper.classList.toggle("hide");
-    shrink.classList.toggle("shrink");
+    if (bg) bg.classList.toggle("shrink");
     nav.classList.toggle("hide");
   }
 
