@@ -1,16 +1,16 @@
 <!doctype html>
-<html lang="en" class="overflow-hidden">
+<html lang="en" class="overflow-x-hidden">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
   <script defer src="bundle.js"></script></head>
   <body
-    class="bg-white dark:bg-black h-screen w-screen text-black dark:text-white text-sm md:text-lg flex justify-center items-center select-none overflow-hidden"
+    class="bg-theme-2 dark:bg-black h-screen w-screen text-black dark:text-white text-sm md:text-lg flex justify-center items-center select-none"
   >
     <header class="h-14 w-screen text-xl md:text-2xl fixed top-0 left-0 z-[99]">
       <div
-        class="h-full w-full px-10 md:px-14 font-bold flex justify-between items-center"
+        class="h-full w-full px-10 md:px-14 flex justify-between items-center"
       >
         <div class="montserrat" id="brand">
           <span class="text-theme">WZF</span>
@@ -120,165 +120,169 @@
           </div>
         </nav>
       </section>
-      <section
-        class="h-full w-full flex justify-center translate-y-[-100%] relative hidden"
-        id="about"
-      >
-        <article
-          class="h-full max-w-screen-lg px-10 md:px-14 py-14 overflow-y-auto"
+      <div class="h-full w-full translate-y-[-100%] translate-x-[-150%]">
+        <section
+          class="h-full w-full flex justify-center items-center relative"
+          id="about"
         >
-          <h2 class="montserrat">ABOUT<span class="text-theme-2">.</span></h2>
-          <div class="py-5">
-            <p>Hello, I am <b>Woon Zhen Fei</b>, a web developer.</p>
-            <p>
-              I have past working experience as an Operation Executive and
-              Service Technician in different field. During these jobs, I
-              realized I would really like to have a job that spends a lot of
-              time in front of a computer and so began my journey to learn web
-              development.
-            </p>
-            <p>
-              I have prior knowledge about programming (C programming and
-              MATLAB) during my university years. Since I started my journey in
-              web development, I have successfully completed
-              <b>CS50: Introduction to Computer Science</b>, a Harvard online
-              course. I am currently learning through <b>The Odin Project</b>'s
-              <i>Full Stack JavaScript</i> path.
-            </p>
-            <p>
-              This <i>Homepage</i> is actually a project of the final lesson in
-              TOP's <i>Advanced HTML and CSS</i> course. I did not really follow
-              the design template provided as I want to make it unique and use
-              it as my first actual portfolio.
-            </p>
-            <p>
-              I am learning <i>React</i> and <b>looking for my first job</b> in
-              web development.
-            </p>
-            <p>
-              Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-              Laboriosam recusandae atque odit magnam laudantium. Maxime,
-              temporibus quis eaque expedita deserunt nam enim voluptatibus
-              sequi itaque, reprehenderit error cumque, quos culpa? Lorem ipsum
-              dolor sit amet consectetur, adipisicing elit. Eius enim illo
-              doloremque sit quisquam maiores similique perferendis nulla
-              excepturi facere voluptatem id quae, amet dolorem iusto incidunt
-              cum officiis. Doloribus. Lorem, ipsum dolor sit amet consectetur
-              adipisicing elit. Atque, culpa doloremque? Ut totam deleniti
-              explicabo magni. Officiis, optio dolor tenetur incidunt inventore
-              et natus, aliquid dolorum aspernatur dolores reiciendis mollitia.
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt
-              illo aliquam voluptatum nam corrupti sunt, magnam rem dolorem
-              atque. Blanditiis veniam asperiores qui fugit rem. Necessitatibus
-              numquam fuga ratione ea?
-            </p>
-          </div>
-        </article>
-        <div
-          class="w-36 flex justify-center absolute top-[50%] translate-y-[-50%] right-0 translate-x-[25%] rotate-90"
-        >
-          <button
-            class="px-2 flex justify-center items-center"
-            id="btn-back-about"
+          <article
+            class="bg-theme-2 max-w-screen-lg px-10 md:px-14 py-14 overflow-y-auto"
           >
-            <div class="flex flex-col justify-center items-center btn-bg-y">
-              <img class="rotate-180 img-arrow" />
-              <span class="montserrat">BACK</span>
+            <h2 class="montserrat">ABOUT<span class="text-theme">.</span></h2>
+            <div class="py-5">
+              <p>
+                Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                Laboriosam recusandae atque odit magnam laudantium. Maxime,
+                temporibus quis eaque expedita deserunt nam enim voluptatibus
+                sequi itaque, reprehenderit error cumque, quos culpa? Lorem
+                ipsum dolor sit amet consectetur, adipisicing elit. Eius enim
+                illo doloremque sit quisquam maiores similique perferendis nulla
+                excepturi facere voluptatem id quae, amet dolorem iusto incidunt
+                cum officiis. Doloribus. Lorem, ipsum dolor sit amet consectetur
+                adipisicing elit. Atque, culpa doloremque? Ut totam deleniti
+                explicabo magni. Officiis, optio dolor tenetur incidunt
+                inventore et natus, aliquid dolorum aspernatur dolores
+                reiciendis mollitia. Lorem ipsum dolor sit amet consectetur
+                adipisicing elit. Incidunt illo aliquam voluptatum nam corrupti
+                sunt, magnam rem dolorem atque. Blanditiis veniam asperiores qui
+                fugit rem. Necessitatibus numquam fuga ratione ea?
+              </p>
             </div>
-          </button>
-        </div>
-      </section>
-      <section
-        class="h-full w-full flex justify-center translate-y-[-100%] relative hidden"
-        id="projects"
-      >
-        <article
-          class="h-full max-w-screen-lg px-10 md:px-14 py-14 overflow-y-auto"
-        >
-          <h2 class="montserrat">PROJECTS<span class="text-theme">.</span></h2>
-          <div class="py-5">
-            <p>
-              Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-              Laboriosam recusandae atque odit magnam laudantium. Maxime,
-              temporibus quis eaque expedita deserunt nam enim voluptatibus
-              sequi itaque, reprehenderit error cumque, quos culpa? Lorem ipsum
-              dolor sit amet consectetur, adipisicing elit. Eius enim illo
-              doloremque sit quisquam maiores similique perferendis nulla
-              excepturi facere voluptatem id quae, amet dolorem iusto incidunt
-              cum officiis. Doloribus. Lorem, ipsum dolor sit amet consectetur
-              adipisicing elit. Atque, culpa doloremque? Ut totam deleniti
-              explicabo magni. Officiis, optio dolor tenetur incidunt inventore
-              et natus, aliquid dolorum aspernatur dolores reiciendis mollitia.
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt
-              illo aliquam voluptatum nam corrupti sunt, magnam rem dolorem
-              atque. Blanditiis veniam asperiores qui fugit rem. Necessitatibus
-              numquam fuga ratione ea?
-            </p>
-          </div>
-        </article>
-        <div
-          class="w-36 flex justify-center absolute top-[50%] translate-y-[-50%] left-0 translate-x-[-25%] -rotate-90"
-        >
-          <button
-            class="px-2 flex justify-center items-center"
-            id="btn-back-projects"
+          </article>
+          <div
+            class="w-36 flex justify-center absolute top-[50%] translate-y-[-50%] right-0 translate-x-[25%] rotate-90"
           >
-            <div class="flex flex-col justify-center items-center btn-bg-y">
-              <img class="rotate-180 img-arrow" />
-              <span class="montserrat">BACK</span>
-            </div>
-          </button>
-        </div>
-      </section>
-      <section
-        class="h-full w-full flex justify-center translate-y-[-100%] relative hidden"
-        id="contact"
-      >
-        <article
-          class="h-full max-w-screen-lg px-10 md:px-14 py-14 overflow-y-auto"
-        >
-          <h2 class="montserrat">CONTACT<span class="text-theme">.</span></h2>
-          <div class="py-5">
-            <p>
-              Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-              Laboriosam recusandae atque odit magnam laudantium. Maxime,
-              temporibus quis eaque expedita deserunt nam enim voluptatibus
-              sequi itaque, reprehenderit error cumque, quos culpa? Lorem ipsum
-              dolor sit amet consectetur, adipisicing elit. Eius enim illo
-              doloremque sit quisquam maiores similique perferendis nulla
-              excepturi facere voluptatem id quae, amet dolorem iusto incidunt
-              cum officiis. Doloribus. Lorem, ipsum dolor sit amet consectetur
-              adipisicing elit. Atque, culpa doloremque? Ut totam deleniti
-              explicabo magni. Officiis, optio dolor tenetur incidunt inventore
-              et natus, aliquid dolorum aspernatur dolores reiciendis mollitia.
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt
-              illo aliquam voluptatum nam corrupti sunt, magnam rem dolorem
-              atque. Blanditiis veniam asperiores qui fugit rem. Necessitatibus
-              numquam fuga ratione ea?
-            </p>
+            <button
+              class="px-2 flex justify-center items-center"
+              id="btn-back-about"
+            >
+              <div class="flex flex-col justify-center items-center btn-bg-y">
+                <img class="rotate-180 img-arrow" />
+                <span class="montserrat">BACK</span>
+              </div>
+            </button>
           </div>
-        </article>
-        <div
-          class="w-36 absolute top-0 right-[50%] translate-y-[200%] translate-x-[35%] rotate-90"
+        </section>
+      </div>
+      <div class="h-full w-full translate-y-[-200%] translate-x-[150%]">
+        <section
+          class="h-full w-full flex justify-center items-center relative"
+          id="projects"
         >
-          <button
-            class="px-2 flex justify-center items-center"
-            id="btn-back-contact"
-          >
-            <div class="flex justify-center items-center gap-2 btn-bg-x">
-              <img class="rotate-90 img-arrow" />
-              <span class="mt-0.5 montserrat">BACK</span>
+          <article class="max-w-screen-lg px-10 md:px-14 py-14 overflow-y-auto">
+            <h2 class="montserrat">
+              PROJECTS<span class="text-theme">.</span>
+            </h2>
+            <div class="py-5">
+              <p>
+                Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                Laboriosam recusandae atque odit magnam laudantium. Maxime,
+                temporibus quis eaque expedita deserunt nam enim voluptatibus
+                sequi itaque, reprehenderit error cumque, quos culpa? Lorem
+                ipsum dolor sit amet consectetur, adipisicing elit. Eius enim
+                illo doloremque sit quisquam maiores similique perferendis nulla
+                excepturi facere voluptatem id quae, amet dolorem iusto incidunt
+                cum officiis. Doloribus. Lorem, ipsum dolor sit amet consectetur
+                adipisicing elit. Atque, culpa doloremque? Ut totam deleniti
+                explicabo magni. Officiis, optio dolor tenetur incidunt
+                inventore et natus, aliquid dolorum aspernatur dolores
+                reiciendis mollitia. Lorem ipsum dolor sit amet consectetur
+                adipisicing elit. Incidunt illo aliquam voluptatum nam corrupti
+                sunt, magnam rem dolorem atque. Blanditiis veniam asperiores qui
+                fugit rem. Necessitatibus numquam fuga ratione ea?
+              </p>
             </div>
-          </button>
-        </div>
-      </section>
+          </article>
+          <div
+            class="w-36 flex justify-center absolute top-[50%] translate-y-[-50%] left-0 translate-x-[-25%] -rotate-90"
+          >
+            <button
+              class="px-2 flex justify-center items-center"
+              id="btn-back-projects"
+            >
+              <div class="flex flex-col justify-center items-center btn-bg-y">
+                <img class="rotate-180 img-arrow" />
+                <span class="montserrat">BACK</span>
+              </div>
+            </button>
+          </div>
+        </section>
+      </div>
+      <div class="h-full w-full translate-y-[-150%]">
+        <section
+          class="h-full w-full flex justify-center items-center relative"
+          id="contact"
+        >
+          <article
+            class="bg-theme-2 max-w-screen-lg px-10 md:px-14 py-14 overflow-y-auto"
+          >
+            <h2 class="montserrat">CONTACT<span class="text-theme">.</span></h2>
+            <div class="py-5">
+              <p>
+                Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                Laboriosam recusandae atque odit magnam laudantium. Maxime,
+                temporibus quis eaque expedita deserunt nam enim voluptatibus
+                sequi itaque, reprehenderit error cumque, quos culpa? Lorem
+                ipsum dolor sit amet consectetur, adipisicing elit. Eius enim
+                illo doloremque sit quisquam maiores similique perferendis nulla
+                excepturi facere voluptatem id quae, amet dolorem iusto incidunt
+                cum officiis. Doloribus. Lorem, ipsum dolor sit amet consectetur
+                adipisicing elit. Atque, culpa doloremque? Ut totam deleniti
+                explicabo magni. Officiis, optio dolor tenetur incidunt
+                inventore et natus, aliquid dolorum aspernatur dolores
+                reiciendis mollitia. Lorem ipsum dolor sit amet consectetur
+                adipisicing elit. Incidunt illo aliquam voluptatum nam corrupti
+                sunt, magnam rem dolorem atque. Blanditiis veniam asperiores qui
+                fugit rem. Necessitatibus numquam fuga ratione ea?
+              </p>
+            </div>
+          </article>
+          <div
+            class="w-36 flex justify-center absolute top-2 left-[50%] translate-x-[-50%]"
+          >
+            <button
+              class="px-2 flex justify-center items-center"
+              id="btn-back-contact"
+            >
+              <div class="flex flex-col justify-center items-center btn-bg-y">
+                <img class="rotate-180 img-arrow" />
+                <span class="montserrat">BACK</span>
+              </div>
+            </button>
+          </div>
+        </section>
+      </div>
     </main>
     <!-- TO BE REMOVED -->
     <main
       class="max-w-screen-lg mx-auto px-10 md:px-14 flex flex-col gap-14 hidden"
     >
-      <section class="pb-5 divider" id="about">
-        <article class="flex flex-col justify-center"></article>
+      <section>
+        <p>Hello, I am <b>Woon Zhen Fei</b>, a web developer.</p>
+        <p>
+          I have past working experience as an Operation Executive and Service
+          Technician in different field. During these jobs, I realized I would
+          really like to have a job that spends a lot of time in front of a
+          computer and so began my journey to learn web development.
+        </p>
+        <p>
+          I have prior knowledge about programming (C programming and MATLAB)
+          during my university years. Since I started my journey in web
+          development, I have successfully completed
+          <b>CS50: Introduction to Computer Science</b>, a Harvard online
+          course. I am currently learning through <b>The Odin Project</b>'s
+          <i>Full Stack JavaScript</i> path.
+        </p>
+        <p>
+          This <i>Homepage</i> is actually a project of the final lesson in
+          TOP's <i>Advanced HTML and CSS</i> course. I did not really follow the
+          design template provided as I want to make it unique and use it as my
+          first actual portfolio.
+        </p>
+        <p>
+          I am learning <i>React</i> and <b>looking for my first job</b> in web
+          development.
+        </p>
       </section>
       <section>
         <h2>projects<span class="text-theme">.</span></h2>
@@ -330,16 +334,6 @@
         </div>
       </section>
     </main>
-    <footer class="bg-theme dark:text-black w-full mt-14 hidden">
-      <div class="max-w-screen-lg mx-auto px-10 md:px-14 py-5">
-        <h2>contact<span class="text-theme">.</span></h2>
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos
-          dignissimos, provident voluptate neque iure atque maiores aspernatur
-          perferendis quidem iste laboriosam fugiat vel aliquam ea saepe
-          expedita veniam voluptates doloribus?
-        </p>
-      </div>
-    </footer>
+    <!-- END -->
   </body>
 </html>

@@ -21,7 +21,7 @@ p {
 }
 
 .bg-theme {
-  @apply bg-red-500;
+  @apply bg-red-400;
 }
 
 .bg-theme-2 {
@@ -29,7 +29,7 @@ p {
 }
 
 .text-theme {
-  @apply text-red-500;
+  @apply text-red-400;
 }
 
 .text-theme-2 {
@@ -37,7 +37,7 @@ p {
 }
 
 .divider {
-  @apply border-b-2 border-black dark:border-red-500;
+  @apply border-b-2 border-black dark:border-red-400;
 }
 
 .montserrat {
@@ -115,14 +115,19 @@ nav.hide {
 #about,
 #projects,
 #contact {
-  opacity: 0;
-  transition: opacity 500ms ease;
+  transition: transform 1s ease;
 }
 
-#about.active,
-#projects.active,
+#about.active {
+  transform: translateX(150%);
+}
+
+#projects.active {
+  transform: translateX(-150%);
+}
+
 #contact.active {
-  opacity: 1;
+  transform: translateY(-150%);
 }
 
 /* ANIMATION */
@@ -286,3 +291,4 @@ button:hover .btn-bg-x {
     width: 100%;
   }
 }
+/* END */

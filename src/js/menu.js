@@ -29,50 +29,32 @@ const menu = (() => {
   function init() {
     btnAboutL.onclick = () => {
       _toggleHelloMenu(bgRight);
-      setTimeout(() => {
-        about.classList.toggle("hidden");
-        requestAnimationFrame(() => {
-          about.classList.toggle("active");
-        });
-      }, 1000);
+      about.classList.toggle("active");
     };
 
     btnBackAbout.onclick = () => {
       about.classList.toggle("active");
-      about.classList.toggle("hidden");
       _toggleHelloMenu(bgRight);
     };
 
     btnProjectsL.onclick = () => {
       _toggleHelloMenu(bgLeft);
-      setTimeout(() => {
-        projects.classList.toggle("hidden");
-        requestAnimationFrame(() => {
-          projects.classList.toggle("active");
-        });
-      }, 1000);
+      projects.classList.toggle("active");
     };
 
     btnBackProjects.onclick = () => {
       projects.classList.toggle("active");
-      projects.classList.toggle("hidden");
       _toggleHelloMenu(bgLeft);
     };
 
     btnContactL.onclick = () => {
-      _toggleHelloMenu();
-      setTimeout(() => {
-        contact.classList.toggle("hidden");
-        requestAnimationFrame(() => {
-          contact.classList.toggle("active");
-        });
-      }, 1000);
+      _toggleHelloMenu(bgRight);
+      contact.classList.toggle("active");
     };
 
     btnBackContact.onclick = () => {
       contact.classList.toggle("active");
-      contact.classList.toggle("hidden");
-      _toggleHelloMenu();
+      _toggleHelloMenu(bgRight);
     };
 
     btnMenu.onclick = () => {
