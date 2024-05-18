@@ -1,14 +1,16 @@
 <!doctype html>
-<html lang="en" class="overflow-x-hidden">
+<html lang="en" class="landscape:overflow-hidden portrait:overflow-x-hidden">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
   </head>
   <body
-    class="bg-theme-2 dark:bg-black h-screen w-screen text-black dark:text-white text-sm md:text-lg flex justify-center items-center select-none"
+    class="bg-theme-2 dark:bg-black h-screen w-screen text-black dark:text-white text-sm md:text-lg flex landscape:justify-center landscape:items-center select-none landscape:overflow-hidden portrait:overflow-x-hidden relative"
   >
-    <header class="h-14 w-screen text-xl md:text-2xl fixed top-0 left-0 z-[99]">
+    <header
+      class="bg-theme-2 h-14 w-screen text-xl md:text-2xl fixed top-0 left-0 z-[99]"
+    >
       <div
         class="h-full w-full px-10 md:px-14 flex justify-between items-center"
       >
@@ -31,14 +33,16 @@
         </button>
       </div>
     </header>
-    <main class="h-[100vh] w-screen px-10 md:px-14 py-14 relative">
-      <div
-        class="h-[calc(100vh-2*56px)] w-[calc(100vw-2*40px)] md:w-[calc(100vw-2*56px)] flex absolute"
-      >
-        <div class="bg-theme w-full" id="bg-left"></div>
-        <div class="bg-theme-2 w-full" id="bg-right"></div>
-      </div>
-      <section class="h-full w-full relative">
+    <div
+      class="h-[calc(100vh-2*56px)] portrait:h-[50vh] w-[calc(100vw-2*40px)] landscape:md:w-[calc(100vw-2*56px)] portrait:w-screen portrait:mt-14 flex landscape:absolute"
+    >
+      <div class="bg-theme w-full" id="bg-left"></div>
+      <div class="bg-theme-2 w-full" id="bg-right"></div>
+    </div>
+    <main
+      class="landscape:h-[100vh] w-screen px-10 md:px-14 py-14 portrait:flex portrait:flex-col portrait:gap-7 relative portrait:absolute"
+    >
+      <section class="h-full portrait:h-[50vh] w-full relative">
         <div
           class="text-black text-[10vw] leading-[0.8] flex flex-col absolute top-[50%] left-[50%] translate-y-[-50%] translate-x-[-50%] overflow-y-clip montserrat"
           id="intro"
@@ -120,13 +124,15 @@
           </div>
         </nav>
       </section>
-      <div class="h-full w-full translate-y-[-100%] translate-x-[-150%]">
+      <div
+        class="h-full w-full landscape:absolute top-0 left-0 landscape:translate-x-[-150%]"
+      >
         <section
           class="h-full w-full flex justify-center items-center relative"
           id="about"
         >
           <article
-            class="bg-theme-2 max-w-screen-lg px-10 md:px-14 py-14 overflow-y-auto"
+            class="bg-theme-2 max-w-screen-lg landscape:px-10 landscape:md:px-14 landscape:py-14 overflow-y-auto"
           >
             <h2 class="montserrat">ABOUT<span class="text-theme">.</span></h2>
             <div class="py-5">
@@ -150,7 +156,7 @@
             </div>
           </article>
           <div
-            class="w-36 flex justify-center absolute top-[50%] translate-y-[-50%] right-0 translate-x-[25%] rotate-90"
+            class="w-36 flex justify-center absolute top-[50%] translate-y-[-50%] right-5 rotate-90 portrait:hidden"
           >
             <button
               class="px-2 flex justify-center items-center"
@@ -164,12 +170,16 @@
           </div>
         </section>
       </div>
-      <div class="h-full w-full translate-y-[-200%] translate-x-[150%]">
+      <div
+        class="h-full w-full landscape:absolute top-0 left-0 landscape:translate-x-[150%]"
+      >
         <section
           class="h-full w-full flex justify-center items-center relative"
           id="projects"
         >
-          <article class="max-w-screen-lg px-10 md:px-14 py-14 overflow-y-auto">
+          <article
+            class="max-w-screen-lg landscape:px-10 landscape:md:px-14 landscape:py-14 overflow-y-auto"
+          >
             <h2 class="montserrat">
               PROJECTS<span class="text-theme">.</span>
             </h2>
@@ -194,7 +204,7 @@
             </div>
           </article>
           <div
-            class="w-36 flex justify-center absolute top-[50%] translate-y-[-50%] left-0 translate-x-[-25%] -rotate-90"
+            class="w-36 flex justify-center absolute top-[50%] translate-y-[-50%] left-5 -rotate-90 portrait:hidden"
           >
             <button
               class="px-2 flex justify-center items-center"
@@ -208,13 +218,15 @@
           </div>
         </section>
       </div>
-      <div class="h-full w-full translate-y-[-150%]">
+      <div
+        class="h-full w-full landscape:absolute top-0 left-0 landscape:translate-y-[150%]"
+      >
         <section
           class="h-full w-full flex justify-center items-center relative"
           id="contact"
         >
           <article
-            class="bg-theme-2 max-w-screen-lg px-10 md:px-14 py-14 overflow-y-auto"
+            class="bg-theme-2 max-w-screen-lg landscape:px-10 landscape:md:px-14 landscape:py-14 overflow-y-auto"
           >
             <h2 class="montserrat">CONTACT<span class="text-theme">.</span></h2>
             <div class="py-5">
@@ -238,7 +250,7 @@
             </div>
           </article>
           <div
-            class="w-36 flex justify-center absolute top-2 left-[50%] translate-x-[-50%]"
+            class="w-36 flex justify-center absolute top-[76px] left-[50%] translate-x-[-50%] portrait:hidden"
           >
             <button
               class="px-2 flex justify-center items-center"
