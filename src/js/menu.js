@@ -14,7 +14,7 @@ const menu = (() => {
   const helloWrapper = document.querySelector("#hello-wrapper");
   const bgLeft = document.querySelector("#bg-left");
   const bgRight = document.querySelector("#bg-right");
-  const nav = document.querySelector("nav");
+  const nav = document.querySelectorAll("nav");
 
   const about = document.querySelector("#about");
   const projects = document.querySelector("#projects");
@@ -101,7 +101,9 @@ const menu = (() => {
   function _toggleHelloMenu(bg) {
     helloWrapper.classList.toggle("hide");
     if (bg) bg.classList.toggle("shrink");
-    nav.classList.toggle("hide");
+    nav.forEach((el) => {
+      el.classList.toggle("hide");
+    });
   }
 
   return { init };
