@@ -9,8 +9,6 @@ const menu = (() => {
   const btnProjectsP = document.querySelector("#btn-projects-p");
   const btnContactP = document.querySelector("#btn-contact-p");
 
-  const hellos = document.querySelectorAll(".hello");
-  const helloDot = document.querySelector("#hello-dot");
   const menu = document.querySelector("#menu");
 
   const helloWrapper = document.querySelector("#hello-wrapper");
@@ -25,6 +23,8 @@ const menu = (() => {
   const btnBackAbout = document.querySelector("#btn-back-about");
   const btnBackProjects = document.querySelector("#btn-back-projects");
   const btnBackContact = document.querySelector("#btn-back-contact");
+
+  let isOpenMenu = 0;
 
   function init() {
     btnAboutL.onclick = () => {
@@ -58,11 +58,25 @@ const menu = (() => {
     };
 
     btnMenu.onclick = () => {
-      _openMenuTimeout(btnMenu, menu);
+      if (isOpenMenu === 1) {
+        btnMenuBack.click();
+        return;
+      } else isOpenMenu = 1;
+
+      helloWrapper.classList.toggle("hide");
+      bgLeft.classList.toggle("shrink");
+      menu.classList.toggle("hidden");
+      _openMenu();
     };
 
     btnMenuBack.onclick = () => {
-      _openMenuTimeout(menu, btnMenu);
+      _openMenu();
+      setTimeout(() => {
+        menu.classList.toggle("hidden");
+      }, 1000);
+      bgLeft.classList.toggle("shrink");
+      helloWrapper.classList.toggle("hide");
+      isOpenMenu = 0;
     };
 
     btnAboutP.onclick = () => {
@@ -78,23 +92,10 @@ const menu = (() => {
     };
   }
 
-  function _openMenuTimeout(hide, show) {
-    setTimeout(() => {
-      hide.classList.toggle("hidden");
-    }, 1000);
-    show.classList.toggle("hidden");
-    _openMenu();
-  }
-
   function _openMenu() {
     requestAnimationFrame(() => {
       menu.classList.toggle("open");
-      btnMenu.classList.toggle("open");
     });
-    hellos.forEach((el) => {
-      el.classList.toggle("move");
-    });
-    helloDot.classList.toggle("move");
   }
 
   function _toggleHelloMenu(bg) {

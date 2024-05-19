@@ -44,47 +44,27 @@ p {
   font-family: "Montserrat", system-ui, sans-serif;
 }
 
-.hello,
 #dark-mode-ball {
   transition: transform 750ms ease;
-}
-
-.hello.move {
-  transform: translateX(-100%);
 }
 
 #dark-mode-ball.dark {
   transform: translateX(140%);
 }
 
-#hello-dot {
-  transition: color 750ms ease;
-}
-
-#hello-dot.move {
-  @apply text-theme-2;
-}
-
-#btn-menu,
 #menu {
   transition:
     opacity 500ms ease,
     transform 750ms ease;
 }
 
-#btn-menu.open {
-  opacity: 0;
-  transform: translateY(-100%);
-}
-
 #menu {
   opacity: 0;
-  transform: translateX(100%);
+  transition: opacity 2s ease;
 }
 
 #menu.open {
   opacity: 1;
-  transform: translateX(0%);
 }
 
 #hello-wrapper {

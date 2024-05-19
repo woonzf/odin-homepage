@@ -6,5 +6,5 @@ import { menu } from "./js/menu";
 
 // float.init();
 image.init();
-darkMode.init();
+// darkMode.init();
 menu.init();

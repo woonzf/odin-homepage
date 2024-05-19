@@ -17,34 +17,53 @@
         <div class="montserrat" id="brand">
           <span class="text-theme">WZF</span>
         </div>
-        <button
-          class="bg-black dark:bg-white h-[40%] aspect-[2/1] rounded-full flex justify-center items-center"
-          id="btn-dark-mode"
-        >
-          <div class="h-[66%] w-[75%] flex justify-between relative">
-            <img alt="Dark Mode" id="img-dark-mode" />
-            <img alt="Light Mode" id="img-light-mode" />
-            <span
-              class="bg-white dark:bg-black h-full aspect-square rounded-full absolute"
-              id="dark-mode-ball"
-            >
-            </span>
-          </div>
-        </button>
+        <div class="flex items-center gap-2">
+          <button
+            class="flex landscape:hidden justify-center items-center rotate-90 -scale-y-100"
+            id="btn-menu"
+          >
+            <img id="img-menu" />
+          </button>
+          <button
+            class="bg-black dark:bg-white h-[40%] aspect-[2/1] rounded-full flex justify-center items-center"
+            id="btn-dark-mode"
+          >
+            <div class="h-[66%] w-[75%] flex justify-between relative">
+              <img alt="Dark Mode" id="img-dark-mode" />
+              <img alt="Light Mode" id="img-light-mode" />
+              <span
+                class="bg-white dark:bg-black h-full aspect-square rounded-full absolute"
+                id="dark-mode-ball"
+              >
+              </span>
+            </div>
+          </button>
+        </div>
       </div>
     </header>
     <div
-      class="h-[calc(100vh-2*56px)] portrait:h-[50vh] w-[calc(100vw-2*40px)] landscape:md:w-[calc(100vw-2*56px)] portrait:w-screen portrait:mt-14 flex landscape:absolute"
+      class="h-[calc(100vh-2*56px)] portrait:h-[100dvh] w-[calc(100vw-2*40px)] landscape:md:w-[calc(100vw-2*56px)] portrait:w-screen flex landscape:absolute"
     >
       <div class="bg-theme w-full" id="bg-left"></div>
       <div class="bg-theme-2 w-full" id="bg-right"></div>
+      <nav
+        class="bg-theme-2 h-full w-full flex flex-col justify-center items-center gap-14 fixed montserrat z-[98] hidden"
+        id="menu"
+      >
+        <div class="flex flex-col justify-center items-center">
+          <button id="btn-about-p">ABOUT</button>
+          <button id="btn-projects-p">PROJECTS</button>
+          <button id="btn-contact-p">CONTACT</button>
+        </div>
+        <button class="mr-2" id="btn-menu-back">BACK</button>
+      </nav>
     </div>
     <main
       class="landscape:h-[100vh] w-screen px-10 md:px-14 py-14 portrait:flex portrait:flex-col portrait:gap-7 relative portrait:absolute"
     >
-      <section class="h-full portrait:h-[50vh] w-full relative">
+      <section class="h-full portrait:h-[calc(100dvh-56px)] w-full relative">
         <div
-          class="text-black text-[10vw] leading-[0.8] flex flex-col absolute top-[50%] left-[50%] translate-y-[-50%] translate-x-[-50%] overflow-y-clip montserrat"
+          class="text-black text-[10vw] portrait:text-[15vw] leading-[0.8] flex flex-col absolute top-[50%] left-[50%] translate-y-[-50%] translate-x-[-50%] overflow-y-clip montserrat"
           id="intro"
         >
           <div class="h-full" id="hello-wrapper">
@@ -87,7 +106,7 @@
               </button>
             </div>
             <div
-              class="w-36 absolute portrait:hidden bottom-0 right-[50%] translate-y-[-200%] translate-x-[35%] -rotate-90"
+              class="w-36 absolute portrait:hidden bottom-0 right-[50%] translate-y-[-230%] translate-x-[30%] -rotate-90"
             >
               <button
                 class="px-2 flex justify-center items-center"
@@ -98,28 +117,6 @@
                   <span class="mt-0.5">CONTACT</span>
                 </div>
               </button>
-            </div>
-            <div
-              class="absolute landscape:hidden top-[50%] translate-y-[-50%] right-0 translate-x-[35%] rotate-90"
-            >
-              <button
-                class="px-2 flex flex-col justify-center items-center"
-                id="btn-menu"
-              >
-                <img id="img-menu" />
-                <span>MENU</span>
-              </button>
-            </div>
-            <div
-              class="h-full w-1/2 flex flex-col justify-center items-end gap-14 absolute right-0 hidden"
-              id="menu"
-            >
-              <div class="mr-2 flex flex-col items-end">
-                <button id="btn-about-p">ABOUT</button>
-                <button id="btn-projects-p">PROJECTS</button>
-                <button id="btn-contact-p">CONTACT</button>
-              </div>
-              <button class="mr-2" id="btn-menu-back">BACK</button>
             </div>
           </div>
         </nav>
@@ -178,7 +175,7 @@
           id="projects"
         >
           <article
-            class="max-w-screen-lg landscape:px-10 landscape:md:px-14 landscape:py-14 overflow-y-auto"
+            class="bg-theme-2 max-w-screen-lg landscape:px-10 landscape:md:px-14 landscape:py-14 overflow-y-auto"
           >
             <h2 class="montserrat">
               PROJECTS<span class="text-theme">.</span>
