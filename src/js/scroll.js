@@ -1,28 +1,28 @@
-const scroll = (() => {
-  const bg = document.querySelector("#bg");
-  const bgLeft = document.querySelector("#bg-left");
+import { background } from "./background";
 
+const scroll = (() => {
   const heightDoc = document.body.scrollHeight;
   const heightScreen = screen.height;
   const heightScroll = heightDoc - heightScreen;
 
+  const threshold = 56;
   let shrink = 0;
 
   function init() {
-    if (window.innerHeight > window.innerWidth) {
-      bg.style.height = heightDoc + "px";
-      _shrinkBgLeft();
-    }
+    if (window.innerHeight > window.innerWidth) _shrinkOnScroll();
   }
 
-  function _shrinkBgLeft() {
-    const threshold = 56;
+  function getScrollThreshold() {
+    return threshold;
+  }
+
+  function _shrinkOnScroll() {
     document.onscroll = () => {
       if (window.scrollY > threshold && shrink === 0) {
-        bgLeft.classList.toggle("shrink");
+        background.shrink(1);
         shrink = 1;
       } else if (window.scrollY < threshold && shrink === 1) {
-        bgLeft.classList.toggle("shrink");
+        background.shrink(1);
         shrink = 0;
       }
     };
@@ -38,7 +38,7 @@ const scroll = (() => {
     return (window.scrollY / heightScroll) * 100;
   }
 
-  return { init };
+  return { init, getScrollThreshold };
 })();
 
 export { scroll };
