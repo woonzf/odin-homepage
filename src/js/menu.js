@@ -95,6 +95,7 @@ const menu = (() => {
       _toggleScroll();
       window.scrollTo(0, scrollY);
       if (window.scrollY < threshold) background.shrink(1);
+      _toggleMenuCooldown();
     };
 
     btnAboutP.onclick = () => {
