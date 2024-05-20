@@ -1,12 +1,12 @@
 <!doctype html>
-<html lang="en" class="landscape:overflow-hidden portrait:overflow-x-hidden">
+<html lang="en" class="landscape:overflow-hidden">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
   </head>
   <body
-    class="bg-theme-2 dark:bg-black h-screen w-screen text-black dark:text-white text-sm md:text-lg flex landscape:justify-center landscape:items-center select-none landscape:overflow-hidden portrait:overflow-x-hidden relative"
+    class="bg-theme-2 dark:bg-black w-screen text-black dark:text-white text-sm md:text-lg flex landscape:justify-center landscape:items-center select-none landscape:overflow-hidden relative"
   >
     <header
       class="bg-theme-2 h-14 w-screen text-xl md:text-2xl fixed top-0 left-0 z-[99]"
@@ -42,7 +42,8 @@
       </div>
     </header>
     <div
-      class="h-[calc(100vh-2*56px)] portrait:h-[100dvh] w-[calc(100vw-2*40px)] landscape:md:w-[calc(100vw-2*56px)] portrait:w-screen flex landscape:absolute"
+      class="h-[calc(100vh-2*56px)] portrait:h-screen w-[calc(100vw-2*40px)] landscape:md:w-[calc(100vw-2*56px)] portrait:w-screen flex absolute"
+      id="bg"
     >
       <div class="bg-theme w-full" id="bg-left"></div>
       <div class="bg-theme-2 w-full" id="bg-right"></div>
@@ -120,6 +121,16 @@
             </div>
           </div>
         </nav>
+        <div
+          class="w-36 absolute landscape:hidden bottom-0 right-[50%] translate-y-[-220%] translate-x-[30%] md:translate-x-[25%] -rotate-90"
+        >
+          <div class="px-2 flex justify-center items-center" id="scroll">
+            <div class="flex justify-center items-center gap-2">
+              <img class="rotate-90 img-arrow-2 scale-75 md:scale-100" />
+              <span class="mt-0.5 montserrat text-theme-2">SCROLL</span>
+            </div>
+          </div>
+        </div>
       </section>
       <div
         class="h-full w-full landscape:absolute top-0 left-0 landscape:translate-x-[-150%]"
@@ -129,7 +140,7 @@
           id="about"
         >
           <article
-            class="bg-theme-2 max-w-screen-lg landscape:px-10 landscape:md:px-14 landscape:py-14 overflow-y-auto"
+            class="bg-theme-2 portrait:bg-transparent max-w-screen-lg landscape:px-10 landscape:md:px-14 landscape:py-14 overflow-y-auto"
           >
             <h2 class="montserrat">ABOUT<span class="text-theme">.</span></h2>
             <div class="py-5">
@@ -175,7 +186,7 @@
           id="projects"
         >
           <article
-            class="bg-theme-2 max-w-screen-lg landscape:px-10 landscape:md:px-14 landscape:py-14 overflow-y-auto"
+            class="bg-theme-2 portrait:bg-transparent max-w-screen-lg landscape:px-10 landscape:md:px-14 landscape:py-14 overflow-y-auto"
           >
             <h2 class="montserrat">
               PROJECTS<span class="text-theme">.</span>
@@ -223,7 +234,7 @@
           id="contact"
         >
           <article
-            class="bg-theme-2 max-w-screen-lg landscape:px-10 landscape:md:px-14 landscape:py-14 overflow-y-auto"
+            class="bg-theme-2 portrait:bg-transparent max-w-screen-lg landscape:px-10 landscape:md:px-14 landscape:py-14 overflow-y-auto"
           >
             <h2 class="montserrat">CONTACT<span class="text-theme">.</span></h2>
             <div class="py-5">

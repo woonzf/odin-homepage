@@ -60,7 +60,7 @@ p {
 
 #menu {
   opacity: 0;
-  transition: opacity 2s ease;
+  transition: opacity 1s ease;
 }
 
 #menu.open {
@@ -149,7 +149,8 @@ button:hover .btn-bg-y {
   animation: bounce-y 1s infinite;
 }
 
-button:hover .btn-bg-x {
+button:hover .btn-bg-x,
+#scroll {
   will-change: animation;
   animation: bounce-x 1s infinite;
 }

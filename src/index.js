@@ -1,10 +1,10 @@
 import "./style.css";
-import { float } from "./js/float";
+import { scroll } from "./js/scroll";
 import { image } from "./js/image";
 import { darkMode } from "./js/dark-mode";
 import { menu } from "./js/menu";
 
-// float.init();
+scroll.init();
 image.init();
 // darkMode.init();
 menu.init();

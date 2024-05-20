@@ -64,7 +64,8 @@ const menu = (() => {
       } else isOpenMenu = 1;
 
       helloWrapper.classList.toggle("hide");
-      bgLeft.classList.toggle("shrink");
+      if (!bgLeft.classList.contains("shrink"))
+        bgLeft.classList.toggle("shrink");
       menu.classList.toggle("hidden");
       _openMenu();
     };
@@ -74,7 +75,7 @@ const menu = (() => {
       setTimeout(() => {
         menu.classList.toggle("hidden");
       }, 1000);
-      bgLeft.classList.toggle("shrink");
+      if (window.scrollY === 0) bgLeft.classList.toggle("shrink");
       helloWrapper.classList.toggle("hide");
       isOpenMenu = 0;
     };
