@@ -8,40 +8,52 @@
 @tailwind components;
 @tailwind utilities;
 
-body * {
-  @apply transition-colors duration-[50ms];
+@layer base {
+  body * {
+    @apply transition-colors duration-[50ms];
+  }
+
+  h2 {
+    @apply text-3xl md:text-4xl font-bold;
+  }
+
+  p {
+    @apply py-2 text-justify text-pretty;
+  }
 }
 
-h2 {
-  @apply text-2xl md:text-3xl font-bold;
-}
+@layer components {
+  .bg-theme {
+    @apply bg-red-400;
+  }
 
-p {
-  @apply py-2 text-justify text-pretty;
-}
+  .bg-theme-2 {
+    @apply bg-slate-100;
+  }
 
-.bg-theme {
-  @apply bg-red-400;
-}
+  .text-theme {
+    @apply text-red-400;
+  }
 
-.bg-theme-2 {
-  @apply bg-slate-100;
-}
+  .text-theme-2 {
+    @apply text-slate-100;
+  }
 
-.text-theme {
-  @apply text-red-400;
-}
+  .border-theme {
+    @apply border-red-400;
+  }
 
-.text-theme-2 {
-  @apply text-slate-100;
-}
+  .divider-theme {
+    @apply border-b-[1px] border-red-400;
+  }
 
-.divider {
-  @apply border-b-2 border-black dark:border-red-400;
-}
+  .montserrat {
+    font-family: "Montserrat", system-ui, sans-serif;
+  }
 
-.montserrat {
-  font-family: "Montserrat", system-ui, sans-serif;
+  .tools {
+    @apply h-[60px] aspect-square snap-center;
+  }
 }
 
 #dark-mode-ball {

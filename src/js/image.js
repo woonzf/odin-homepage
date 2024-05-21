@@ -1,8 +1,9 @@
-import imgDarkMode24w from "../img/dark-mode-24w.png";
-import imgLightMode24w from "../img/light-mode-24w.png";
-import imgArrow24w from "../img/arrow-24w.png";
-import imgArrow224w from "../img/arrow-2-24w.png";
-import imgPoll24w from "../img/poll-24w.png";
+import imgDarkMode24w from "../img/icons/dark-mode-24w.png";
+import imgLightMode24w from "../img/icons/light-mode-24w.png";
+import imgArrow24w from "../img/icons/arrow-24w.png";
+import imgArrow224w from "../img/icons/arrow-2-24w.png";
+import imgPoll24w from "../img/icons/poll-24w.png";
+import imgProfile640w from "../img/profile-2-640w.jpg";
 
 const image = (() => {
   const darkMode = document.querySelector("#img-dark-mode");
@@ -10,6 +11,7 @@ const image = (() => {
   const arrows = document.querySelectorAll(".img-arrow");
   const arrows2 = document.querySelectorAll(".img-arrow-2");
   const menu = document.querySelector("#img-menu");
+  const profile = document.querySelector("#img-profile");
 
   function init() {
     darkMode.src = imgDarkMode24w;
@@ -21,6 +23,7 @@ const image = (() => {
       el.src = imgArrow224w;
     });
     menu.src = imgPoll24w;
+    profile.src = imgProfile640w;
   }
 
   return { init };
