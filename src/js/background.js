@@ -1,17 +1,24 @@
 const background = (() => {
   const bgLeft = document.querySelector("#bg-left");
   const bgRight = document.querySelector("#bg-right");
+  const bgIntro = document.querySelector("#bg-intro");
 
-  let bg = null;
-
-  function shrink(int) {
-    bg = _getBg(int);
-    bg.classList.toggle("shrink");
+  function shrink() {
+    for (const num of arguments) {
+      const bg = _getBg(num);
+      bg.classList.toggle("shrink");
+    }
   }
 
   function _getBg(int) {
-    if (int === 1) return bgLeft;
-    else if (int === 2) return bgRight;
+    switch (int) {
+      case 1:
+        return bgLeft;
+      case 2:
+        return bgRight;
+      case 3:
+        return bgIntro;
+    }
   }
 
   return { shrink };

@@ -2,9 +2,6 @@ import { background } from "./background";
 import { scroll } from "./scroll";
 
 const menu = (() => {
-  const html = document.querySelector("html");
-  const body = document.querySelector("body");
-
   const btnAboutL = document.querySelector("#btn-about-l");
   const btnProjectsL = document.querySelector("#btn-projects-l");
   const btnContactL = document.querySelector("#btn-contact-l");
@@ -29,7 +26,6 @@ const menu = (() => {
   const btnBackContact = document.querySelector("#btn-back-contact");
 
   let isOpenMenu = 0;
-  let scrollY = 0;
   let threshold = 0;
 
   function init() {
@@ -71,31 +67,31 @@ const menu = (() => {
         return;
       }
 
-      if (window.scrollY < threshold) background.shrink(1);
-      helloWrapper.classList.toggle("hide");
+      _toggleMenuCooldown();
+      scroll.disableScroll();
+      if (window.scrollY < threshold) {
+        background.shrink(1);
+        helloWrapper.classList.toggle("hide");
+      }
       menu.classList.toggle("hidden");
       requestAnimationFrame(() => {
         menu.classList.toggle("open");
       });
-      _toggleOpenMenu();
-      scrollY = window.scrollY;
-      setTimeout(() => {
-        _toggleScroll();
-      }, 1000);
-      _toggleMenuCooldown();
+      isOpenMenu = 1;
     };
 
     btnMenuBack.onclick = () => {
+      _toggleMenuCooldown();
+      scroll.enableScroll();
       menu.classList.toggle("open");
       setTimeout(() => {
         menu.classList.toggle("hidden");
       }, 1000);
-      helloWrapper.classList.toggle("hide");
-      _toggleOpenMenu();
-      _toggleScroll();
-      window.scrollTo(0, scrollY);
-      if (window.scrollY < threshold) background.shrink(1);
-      _toggleMenuCooldown();
+      if (window.scrollY < threshold) {
+        background.shrink(1);
+        helloWrapper.classList.toggle("hide");
+      }
+      isOpenMenu = 0;
     };
 
     btnAboutP.onclick = () => {
@@ -117,15 +113,6 @@ const menu = (() => {
     nav.forEach((el) => {
       el.classList.toggle("hide");
     });
-  }
-
-  function _toggleScroll() {
-    html.classList.toggle("overflow-hidden");
-    body.classList.toggle("overflow-hidden");
-  }
-
-  function _toggleOpenMenu() {
-    isOpenMenu = +!isOpenMenu;
   }
 
   function _toggleMenuCooldown() {

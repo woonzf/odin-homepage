@@ -80,15 +80,28 @@ p {
   transition: width 1s ease;
 }
 
-.shrink {
+#bg-left.shrink,
+#bg-right.shrink {
   width: 0;
 }
 
-nav {
+#bg-intro,
+#section-intro {
+  transition: height 1s ease;
+}
+
+#bg-intro.shrink,
+#section-intro.shrink {
+  height: calc((100svh / 2) - 56px);
+}
+
+nav,
+#scroll {
   transition: opacity 1s ease;
 }
 
-nav.hide {
+nav.hide,
+#scroll.hide {
   opacity: 0;
 }
 
