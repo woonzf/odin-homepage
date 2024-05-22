@@ -46,16 +46,13 @@
   .divider-theme {
     @apply border-b-[1px] border-red-400;
   }
-
-  .montserrat {
-    font-family: "Montserrat", system-ui, sans-serif;
-  }
-
-  .tools {
-    @apply h-[60px] aspect-square snap-center;
-  }
 }
 
+.montserrat {
+  font-family: "Montserrat", system-ui, sans-serif;
+}
+
+.tools,
 #dark-mode-ball {
   transition: transform 750ms ease;
 }

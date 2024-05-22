@@ -7,14 +7,12 @@ const scroll = (() => {
 
   const sectionIntro = document.querySelector("#section-intro");
   const scroll = document.querySelector("#scroll");
-  const toolsWrapper = document.querySelector("#tools-wrapper");
 
   const threshold = 1;
   let shrink = 0;
 
   function init() {
-    if (window.innerHeight > window.innerWidth) _shrinkOnScroll();
-    _autoScrollTools();
+    _shrinkOnScroll();
   }
 
   function getScrollThreshold() {
@@ -38,16 +36,6 @@ const scroll = (() => {
   function _shrinkIntro() {
     sectionIntro.classList.toggle("shrink");
     scroll.classList.toggle("hide");
-  }
-
-  function _autoScrollTools() {
-    const step = Math.floor(
-      toolsWrapper.scrollWidth / toolsWrapper.childNodes[1].width,
-    );
-    toolsWrapper.scrollTo(step, 0);
-    setInterval(() => {
-      toolsWrapper.scrollBy(step, 0);
-    }, 2000);
   }
 
   // function _floatHello() {
