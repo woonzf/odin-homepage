@@ -69,14 +69,17 @@ const menu = (() => {
 
       _toggleMenuCooldown();
       scroll.disableScroll();
+
       if (window.scrollY < threshold) {
         background.shrink(1);
         helloWrapper.classList.toggle("hide");
       }
+
       menu.classList.toggle("hidden");
       requestAnimationFrame(() => {
         menu.classList.toggle("open");
       });
+
       isOpenMenu = 1;
     };
 
@@ -84,26 +87,37 @@ const menu = (() => {
       _toggleMenuCooldown();
       scroll.enableScroll();
       menu.classList.toggle("open");
+
       setTimeout(() => {
         menu.classList.toggle("hidden");
       }, 1000);
+
       if (window.scrollY < threshold) {
         background.shrink(1);
         helloWrapper.classList.toggle("hide");
       }
+
+      if (helloWrapper.classList.contains("hide")) {
+        background.shrink(1);
+        helloWrapper.classList.toggle("hide");
+      }
+
       isOpenMenu = 0;
     };
 
     btnAboutP.onclick = () => {
-      console.log("ABOUT P");
+      if (window.scrollY < threshold) {
+        window.scrollBy(0, 2);
+        _scrollTo(about);
+        window.scrollBy(0, -(screen.height / 2));
+      } else _scrollTo(about);
     };
 
     btnProjectsP.onclick = () => {
-      console.log("PROJECTS P");
+      _scrollTo(projects);
     };
-
     btnContactP.onclick = () => {
-      console.log("CONTACT P");
+      _scrollTo(contact);
     };
   }
 
@@ -122,6 +136,12 @@ const menu = (() => {
       btnMenu.disabled = false;
       btnMenuBack.disabled = false;
     }, 1000);
+  }
+
+  function _scrollTo(content) {
+    content.scrollIntoView();
+    window.scrollBy(0, -56 - 28);
+    btnMenuBack.click();
   }
 
   return { init };
