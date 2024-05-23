@@ -14,14 +14,13 @@ const carousel = (() => {
   function init() {
     toolsWrapperOuter.style.width = x * (length - 2) + "px";
     toolsWrapper.style.transform = `translateX(-${x}px)`;
+
     for (let i = 0; i < length; i++) {
       tools[i].style.height = height + "px";
       tools[i].style.margin = `0 ${margin}px`;
-      tools[i].ontransitionend = () => {
-        tools[i].style.opacity = 1;
-      };
       tx[i] = 0;
     }
+
     _toolsAutoScroll();
   }
 
@@ -38,11 +37,16 @@ const carousel = (() => {
         if (i === toBeEnd) {
           tx[i] += x * (length - 1);
           tools[i].style.opacity = 0;
-          tools[i].style.transform = `translateX(${tx[i]}px)`;
-        } else {
-          tx[i] -= x;
-          tools[i].style.transform = `translateX(${tx[i]}px)`;
-        }
+
+          tools[i].addEventListener(
+            "transitionend",
+            () => {
+              tools[i].style.opacity = 1;
+            },
+            { once: true },
+          );
+        } else tx[i] -= x;
+        tools[i].style.transform = `translateX(${tx[i]}px)`;
       }
 
       if (toBeEnd !== length - 1) toBeEnd += 1;

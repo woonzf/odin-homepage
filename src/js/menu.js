@@ -8,25 +8,24 @@ const menu = (() => {
 
   const btnMenu = document.querySelector("#btn-menu");
   const btnMenuBack = document.querySelector("#btn-menu-back");
+
   const btnAboutP = document.querySelector("#btn-about-p");
   const btnProjectsP = document.querySelector("#btn-projects-p");
   const btnContactP = document.querySelector("#btn-contact-p");
 
   const menu = document.querySelector("#menu");
-
   const helloWrapper = document.querySelector("#hello-wrapper");
   const nav = document.querySelectorAll("nav");
 
   const about = document.querySelector("#about");
   const projects = document.querySelector("#projects");
   const contact = document.querySelector("#contact");
-
-  const btnBackAbout = document.querySelector("#btn-back-about");
-  const btnBackProjects = document.querySelector("#btn-back-projects");
-  const btnBackContact = document.querySelector("#btn-back-contact");
+  const btnBacks = document.querySelectorAll(".btn-back");
 
   let isOpenMenu = 0;
   let threshold = 0;
+
+  let backTarget = [];
 
   function init() {
     threshold = scroll.getScrollThreshold();
@@ -34,32 +33,27 @@ const menu = (() => {
     btnAboutL.onclick = () => {
       _toggleBackground(2);
       about.classList.toggle("active");
-    };
-
-    btnBackAbout.onclick = () => {
-      about.classList.toggle("active");
-      _toggleBackground(2);
+      backTarget = [about, 2];
     };
 
     btnProjectsL.onclick = () => {
       _toggleBackground(1);
       projects.classList.toggle("active");
-    };
-
-    btnBackProjects.onclick = () => {
-      projects.classList.toggle("active");
-      _toggleBackground(1);
+      backTarget = [projects, 1];
     };
 
     btnContactL.onclick = () => {
       _toggleBackground(2);
       contact.classList.toggle("active");
+      backTarget = [contact, 2];
     };
 
-    btnBackContact.onclick = () => {
-      contact.classList.toggle("active");
-      _toggleBackground(2);
-    };
+    btnBacks.forEach((btn) => {
+      btn.onclick = () => {
+        backTarget[0].classList.toggle("active");
+        _toggleBackground(backTarget[1]);
+      };
+    });
 
     btnMenu.onclick = () => {
       if (isOpenMenu === 1) {
