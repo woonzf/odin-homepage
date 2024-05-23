@@ -32,7 +32,7 @@ const carousel = (() => {
     if (window.innerHeight > window.innerWidth) mid += 1;
 
     toolName.textContent = tools[mid].alt;
-    
+
     setInterval(() => {
       for (let i = 0; i < tools.length; i++) {
         if (i === toBeEnd) {
