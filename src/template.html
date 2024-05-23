@@ -60,7 +60,7 @@
       </nav>
     </div>
     <main
-      class="landscape:h-[100vh] w-screen px-10 md:px-14 py-14 portrait:flex portrait:flex-col portrait:gap-7 relative portrait:absolute"
+      class="landscape:h-[100vh] w-screen px-10 md:px-14 py-14 portrait:flex portrait:flex-col portrait:gap-14 relative portrait:absolute"
     >
       <section
         class="h-full portrait:h-[calc(100svh-56px)] w-full relative"
@@ -147,7 +147,7 @@
           >
             <h2 class="montserrat">ABOUT<span class="text-theme">.</span></h2>
             <div
-              class="py-10 flex portrait:flex-col-reverse justify-center portrait:items-center gap-10"
+              class="py-10 portrait:py-3 portrait:pt-10 flex portrait:flex-col-reverse justify-center portrait:items-center gap-10"
             >
               <div
                 class="flex flex-col justify-end portrait:justify-center items-end portrait:items-center montserrat"
@@ -189,7 +189,7 @@
               <p class="montserrat">
                 FRAMEWORK AND TOOLS<span class="text-theme">.</span>
               </p>
-              <div class="flex justify-center items-center">
+              <div class="flex flex-col justify-center items-center gap-3 overflow-x-hidden">
                 <div class="overflow-x-hidden" id="tools-wrapper-outer">
                   <div
                     class="flex portrait:justify-center items-center"
@@ -262,6 +262,7 @@
                     />
                   </div>
                 </div>
+                <div class="w-full flex justify-center items-center montserrat" id="tool-name"></div>
               </div>
             </div>
           </article>
