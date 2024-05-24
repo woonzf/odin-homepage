@@ -58,13 +58,29 @@
   .content-wrapper {
     @apply h-full w-full landscape:absolute top-0 left-0;
   }
+
+  .content-wrapper-project {
+    @apply w-[90%] py-7 flex portrait:flex-col-reverse gap-14 portrait:gap-10;
+  }
+
+  .info-project {
+    @apply w-full flex flex-col justify-evenly gap-3;
+  }
+
+  .tool-project {
+    @apply h-[40px];
+  }
+
+  .border-img {
+    @apply w-full border border-theme absolute translate-x-3 -translate-y-[calc(100%+12px)] z-auto;
+  }
 }
 
 .montserrat {
   font-family: "Montserrat", system-ui, sans-serif;
 }
 
-.tools,
+.tool-about,
 #dark-mode-ball {
   transition: transform 750ms ease;
 }

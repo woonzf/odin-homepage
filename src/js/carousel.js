@@ -1,35 +1,46 @@
+import { tools } from "./tools";
+
 const carousel = (() => {
   const toolsWrapper = document.querySelector("#tools-wrapper");
   const toolsWrapperOuter = document.querySelector("#tools-wrapper-outer");
-  const tools = document.querySelectorAll(".tools");
   const toolName = document.querySelector("#tool-name");
 
   const height = 60;
   const margin = 2;
   const x = height + 2 * margin;
-  const length = tools.length;
+
+  const toolList = tools.getList();
+  const length = toolList.length;
 
   let tx = [];
 
   function init() {
+    _toolAboutInit();
+    _toolAboutAutoScroll();
+  }
+
+  function _toolAboutInit() {
     toolsWrapperOuter.style.width = x * (length - 2) + "px";
     toolsWrapper.style.transform = `translateX(-${x}px)`;
 
     for (let i = 0; i < length; i++) {
-      tools[i].style.height = height + "px";
-      tools[i].style.margin = `0 ${margin}px`;
+      const img = document.createElement("img");
+      img.classList.add("tool-about");
+      img.src = toolList[i].src;
+      img.alt = toolList[i].alt;
+      img.style.height = height + "px";
+      img.style.margin = `0 ${margin}px`;
+      toolsWrapper.append(img);
       tx[i] = 0;
     }
-
-    _toolsAutoScroll();
   }
 
-  function _toolsAutoScroll() {
+  function _toolAboutAutoScroll() {
+    const tools = document.querySelectorAll(".tool-about");
     let toBeEnd = 0;
     let mid = Math.floor(length / 2);
 
     if (window.innerHeight > window.innerWidth) mid += 1;
-
     toolName.textContent = tools[mid].alt;
 
     setInterval(() => {

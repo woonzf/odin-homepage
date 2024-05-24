@@ -5,8 +5,6 @@ import imgArrow224w from "../img/icons/arrow-2-24w.png";
 import imgPoll24w from "../img/icons/poll-24w.png";
 import imgProfile640w from "../img/profile-2-640w.jpg";
 
-import imgYpetD from "../img/projects/ypet-d-900w.png";
-
 const image = (() => {
   const darkMode = document.querySelector("#img-dark-mode");
   const lightMode = document.querySelector("#img-light-mode");
@@ -14,8 +12,6 @@ const image = (() => {
   const arrows2 = document.querySelectorAll(".img-arrow-2");
   const menu = document.querySelector("#img-menu");
   const profile = document.querySelector("#img-profile");
-
-  const project1 = document.querySelector("#img-project-1");
 
   function init() {
     darkMode.src = imgDarkMode24w;
@@ -28,7 +24,6 @@ const image = (() => {
     });
     menu.src = imgPoll24w;
     profile.src = imgProfile640w;
-    project1.src = imgYpetD;
   }
 
   return { init };
