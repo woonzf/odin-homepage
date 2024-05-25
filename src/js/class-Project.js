@@ -1,5 +1,5 @@
 export default class Project {
-  constructor(name, desc, img, repo, demo, ...tools) {
+  constructor(name, desc, img, repo, demo, tools) {
     this.name = name;
     this.desc = desc;
     this.img = img;

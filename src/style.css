@@ -60,15 +60,24 @@
   }
 
   .content-wrapper-project {
-    @apply w-[90%] py-7 flex portrait:flex-col-reverse gap-14 portrait:gap-10;
+    @apply w-[90%] py-7 flex portrait:flex-col-reverse portrait:gap-10;
   }
 
   .info-project {
-    @apply w-full flex flex-col justify-evenly gap-3;
+    @apply w-full flex flex-col justify-evenly gap-5;
   }
 
-  .tool-project {
-    @apply h-[40px];
+  .img-project-wrapper {
+    @apply w-full flex flex-col justify-center items-center;
+    perspective: 500px;
+  }
+
+  .img-project-mirror {
+    @apply portrait:hidden;
+    position: absolute;
+    transform: translateY(calc(100% + 2px)) rotateY(-30deg) rotateX(180deg);
+    -webkit-mask-image: linear-gradient(transparent 80%, white);
+    mask-image: linear-gradient(transparent 80%, white);
   }
 
   .border-img {
@@ -81,6 +90,7 @@
 }
 
 .tool-about,
+[class^="tool-project"],
 #dark-mode-ball {
   transition: transform 750ms ease;
 }
@@ -230,7 +240,14 @@ button:hover .btn-bg-x,
   }
 }
 
-/* END OF ANIMATION */
+/* MEDIA QUERY */
+
+@media (orientation: landscape) {
+  .img-project {
+    position: relative;
+    transform: rotateY(-30deg);
+  }
+}
 
 /* TO BE REMOVED */
 #perspective {

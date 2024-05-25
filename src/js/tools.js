@@ -1,34 +1,6 @@
 const tools = (() => {
   const list = [
     {
-      src: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/c/c-original.svg",
-      alt: "C",
-    },
-    {
-      src: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg",
-      alt: "Python",
-    },
-    {
-      src: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/sqlite/sqlite-original.svg",
-      alt: "SQLite",
-    },
-    {
-      src: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/flask/flask-original.svg",
-      alt: "Flask",
-    },
-    {
-      src: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/vscode/vscode-original.svg",
-      alt: "Visual Studio Code",
-    },
-    {
-      src: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/git/git-original.svg",
-      alt: "Git",
-    },
-    {
-      src: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/github/github-original.svg",
-      alt: "GitHub",
-    },
-    {
       src: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-original.svg",
       alt: "HTML",
     },
@@ -52,16 +24,64 @@ const tools = (() => {
       src: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/tailwindcss/tailwindcss-original.svg",
       alt: "Tailwind CSS",
     },
+    {
+      src: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/c/c-original.svg",
+      alt: "C",
+    },
+    {
+      src: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg",
+      alt: "Python",
+    },
+    {
+      src: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/sqlite/sqlite-original.svg",
+      alt: "SQLite",
+    },
+    {
+      src: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/flask/flask-original.svg",
+      alt: "Flask",
+    },
+    {
+      src: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/bootstrap/bootstrap-original.svg",
+      alt: "Bootstrap",
+    },
+    {
+      src: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/vscode/vscode-original.svg",
+      alt: "Visual Studio Code",
+    },
+    {
+      src: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/git/git-original.svg",
+      alt: "Git",
+    },
+    {
+      src: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/github/github-original.svg",
+      alt: "GitHub",
+    },
   ];
 
   function getList() {
-    return list;
+    return get(
+      "Tailwind CSS",
+      "Visual Studio Code",
+      "Git",
+      "GitHub",
+      "HTML",
+      "CSS",
+      "JavaScript",
+      "Webpack",
+      "Jest",
+    );
   }
 
-  function get(string) {
-    for (const tool of list) {
-      if (string === tool.alt) return tool;
+  function get() {
+    let getList = [];
+
+    for (const argument of arguments) {
+      for (const tool of list) {
+        if (argument === tool.alt) getList.push(tool);
+      }
     }
+
+    return getList;
   }
 
   return { getList, get };
