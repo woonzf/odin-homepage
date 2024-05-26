@@ -1,35 +1,17 @@
 import { tools } from "./tools";
 
 const carousel = (() => {
-  const toolsWrapperOuterAbout = document.querySelector(
-    "#tools-wrapper-outer-about",
-  );
-  const toolsWrapperAbout = document.querySelector("#tools-wrapper-about");
-  const toolName = document.querySelector("#tool-name");
-
-  const height = 50;
   const margin = 2;
-  const x = height + 2 * margin;
 
   function init() {
-    const listAbout = tools.getList();
-    create(toolsWrapperAbout, toolsWrapperOuterAbout, listAbout, ".tool-about");
-    _toolDisplayName(toolName, listAbout);
+    _initAbout();
   }
 
-  function create(wrapper, wrapperOuter, list, className) {
+  function generateImage(list, className, height, wrapper) {
     const length = list.length;
-    _toolInit(wrapper, wrapperOuter, list, length, className);
-    _toolAutoScroll(length, className);
-  }
-
-  function _toolInit(wrapper, wrapperOuter, list, length, className) {
-    wrapperOuter.style.width = x * (length - 2) + "px";
-    wrapper.style.transform = `translateX(-${x}px)`;
-
     for (let i = 0; i < length; i++) {
       const img = document.createElement("img");
-      img.classList.add(className.substring(1));
+      img.classList.add(className);
       img.src = list[i].src;
       img.alt = list[i].alt;
       img.style.height = height + "px";
@@ -38,11 +20,33 @@ const carousel = (() => {
     }
   }
 
-  function _toolAutoScroll(length, className) {
-    console.log(className);
-    const tools = document.querySelectorAll(className);
+  function create(height, wrapper, wrapperOuter, className, length, auto) {
+    const x = height + 2 * margin;
+    if (auto === 1 || wrapper.scrollWidth > wrapper.clientWidth)
+      _toolAutoScroll(className, length, wrapperOuter, wrapper, x);
+  }
+
+  function _initAbout() {
+    const list = tools.getList();
+    const length = list.length;
+    const className = "tool-about";
+    const height = 50;
+    const wrapper = document.querySelector("#tools-wrapper-about");
+    const wrapperOuter = document.querySelector("#tools-wrapper-outer-about");
+    const toolName = document.querySelector("#tool-name");
+
+    generateImage(list, className, height, wrapper);
+    create(50, wrapper, wrapperOuter, className, length, 1);
+    _toolDisplayName(toolName, list);
+  }
+
+  function _toolAutoScroll(className, length, wrapperOuter, wrapper, x) {
+    const tools = document.querySelectorAll(`.${className}`);
     let toBeEnd = 0;
     let tx = new Array(length).fill(0);
+
+    wrapperOuter.style.width = x * (length - 2) + "px";
+    wrapper.style.transform = `translateX(-${x}px)`;
 
     setInterval(() => {
       for (let i = 0; i < length; i++) {
@@ -79,7 +83,7 @@ const carousel = (() => {
     }, 2000);
   }
 
-  return { init, create };
+  return { init, generateImage, create };
 })();
 
 export { carousel };

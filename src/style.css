@@ -26,7 +26,7 @@
   }
 
   article {
-    @apply bg-theme-2 portrait:bg-transparent h-full max-w-screen-lg landscape:px-10 landscape:md:px-14 landscape:py-14 flex flex-col gap-7 justify-evenly overflow-y-auto;
+    @apply bg-theme-2 portrait:bg-transparent h-full max-w-screen-lg landscape:px-10 landscape:md:px-14 landscape:py-14 flex flex-col gap-7 overflow-y-auto;
   }
 }
 
@@ -59,6 +59,10 @@
     @apply h-full w-full landscape:absolute top-0 left-0;
   }
 
+  .content-section {
+    @apply h-full w-full landscape:py-14 flex justify-center items-center;
+  }
+
   .content-wrapper-project {
     @apply w-[90%] py-7 flex portrait:flex-col-reverse portrait:gap-10;
   }
@@ -68,7 +72,7 @@
   }
 
   .img-project-wrapper {
-    @apply w-full flex flex-col justify-center items-center;
+    @apply w-full flex flex-col justify-center items-center landscape:translate-y-[-10%];
     perspective: 500px;
   }
 
@@ -82,6 +86,14 @@
 
   .border-img {
     @apply w-full border border-theme absolute translate-x-3 -translate-y-[calc(100%+12px)] z-auto;
+  }
+
+  .tools-wrapper-outer-project {
+    @apply overflow-x-hidden;
+  }
+
+  .tools-wrapper-project {
+    @apply flex items-center;
   }
 }
 
@@ -216,6 +228,7 @@ button:hover .btn-bg-x,
 }
 
 /* Tailwind Bounce Custom */
+
 @keyframes bounce-y {
   0%,
   100% {
