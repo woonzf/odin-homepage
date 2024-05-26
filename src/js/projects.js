@@ -4,7 +4,8 @@ import { carousel } from "./carousel";
 
 import imgOpen from "../img/icons/open-24w.png";
 import imgYpetD from "../img/projects/ypet-d-450w.png";
-import imgWaD from "../img/projects/wa-d-450w.png";
+import imgWeatherD from "../img/projects/weather-d-450w.png";
+import imgHomeD from "../img/projects/homepage-d-450w.png";
 
 const projects = (() => {
   const contentProjects = document.querySelector("#content-projects");
@@ -17,21 +18,37 @@ const projects = (() => {
   }
 
   function _generateProjects() {
-    let count = 0;
+    let count = 1;
 
     for (const project of projectList) {
       const divWrapper = _createElementWithClass(
         "div",
         "content-wrapper-project",
       );
-      const divInfo = _createElementWithClass("div", "info-project");
-      const title = _createElementWithClass("h3", "montserrat");
+      const index = _createElementWithClass(
+        "span",
+        "text-theme",
+        "text-7xl",
+        "absolute",
+        "top-0",
+        "left-0",
+        "translate-x-[-25%]",
+        "translate-y-[-25%]",
+        "z-auto",
+        "montserrat",
+      );
+      const divInfo = _createElementWithClass(
+        "div",
+        "info-project",
+        "relative",
+      );
+      const title = _createElementWithClass("h3", "z-[1]", "montserrat");
       const span = _createElementWithClass("span", "text-theme");
       const divDesc = _createElementWithClass("p");
       const divTools = _createElementWithClass(
         "div",
         "flex",
-        "portrait:justify-center",
+        "justify-center",
         "items-center",
         "overflow-x-hidden",
       );
@@ -59,9 +76,20 @@ const projects = (() => {
       const spanRepo = _createElementWithClass("span");
       const spanDemo = spanRepo.cloneNode(false);
       const divImg = _createElementWithClass("div", "img-project-wrapper");
-      const img = _createElementWithClass("img", "img-project");
-      const imgMirror = _createElementWithClass("img", "img-project-mirror");
 
+      const img = _createElementWithClass("img");
+      const imgMirror = img.cloneNode(false);
+
+      if (count % 2 === 0) {
+        img.classList.add("img-project-even");
+        imgMirror.classList.add("img-project-mirror-even");
+        divWrapper.classList.add("landscape:flex-row-reverse");
+      } else {
+        img.classList.add("img-project");
+        imgMirror.classList.add("img-project-mirror");
+      }
+
+      index.textContent = count;
       title.textContent = project.name;
       span.textContent = ".";
       title.append(span);
@@ -92,15 +120,17 @@ const projects = (() => {
       aRepo.append(spanRepo, imgLink);
       aDemo.append(spanDemo, imgLink2);
       divLinks.append(aRepo, aDemo);
-      divInfo.append(title, divDesc, divTools, divLinks);
+      divInfo.append(index, title, divDesc, divTools, divLinks);
 
       img.src = project.img;
       imgMirror.src = project.img;
       divImg.append(img, imgMirror);
 
       divWrapper.append(divInfo, divImg);
-      if (count !== length - 1) divWrapper.classList.add("divider-theme");
       contentProjects.append(divWrapper);
+
+      if (count === length)
+        divWrapper.classList.add("landscape:overflow-y-clip");
 
       count++;
     }
@@ -147,7 +177,7 @@ const projects = (() => {
       new Project(
         "Weather App",
         "A weather application using Weather API.",
-        imgWaD,
+        imgWeatherD,
         "https://github.com/woonzf/odin-weather-app",
         "https://woonzf.github.io/odin-weather-app/",
         tools.get("HTML", "CSS", "JavaScript", "Webpack"),
@@ -155,7 +185,7 @@ const projects = (() => {
       new Project(
         "Homepage",
         "My first portfolio website, I am featuring it for the amount of effort I've put into it.",
-        "",
+        imgHomeD,
         "https://github.com/woonzf/odin-homepage",
         "https://woonzf.github.io/odin-homepage/",
         tools.get("HTML", "CSS", "JavaScript", "Webpack", "Tailwind CSS"),

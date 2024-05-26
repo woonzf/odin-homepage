@@ -18,7 +18,7 @@
   }
 
   h3 {
-    @apply text-2xl md:text-3xl;
+    @apply text-xl md:text-2xl;
   }
 
   p {
@@ -63,16 +63,20 @@
     @apply h-full w-full landscape:py-14 flex justify-center items-center;
   }
 
+  .border-img {
+    @apply w-full border border-theme absolute translate-x-3 -translate-y-[calc(100%+12px)] z-auto;
+  }
+
   .content-wrapper-project {
-    @apply w-[90%] py-7 flex portrait:flex-col-reverse portrait:gap-10;
+    @apply w-[90%] py-7 flex portrait:flex-col-reverse portrait:gap-5;
   }
 
   .info-project {
-    @apply w-full flex flex-col justify-evenly gap-5;
+    @apply w-full p-3 flex flex-col justify-evenly gap-5;
   }
 
   .img-project-wrapper {
-    @apply w-full flex flex-col justify-center items-center landscape:translate-y-[-10%];
+    @apply w-full flex flex-col justify-center items-center landscape:translate-y-[-5%];
     perspective: 500px;
   }
 
@@ -84,8 +88,12 @@
     mask-image: linear-gradient(transparent 80%, white);
   }
 
-  .border-img {
-    @apply w-full border border-theme absolute translate-x-3 -translate-y-[calc(100%+12px)] z-auto;
+  .img-project-mirror-even {
+    @apply portrait:hidden;
+    position: absolute;
+    transform: translateY(calc(100% + 2px)) rotateY(30deg) rotateX(180deg);
+    -webkit-mask-image: linear-gradient(transparent 80%, white);
+    mask-image: linear-gradient(transparent 80%, white);
   }
 
   .tools-wrapper-outer-project {
@@ -259,6 +267,11 @@ button:hover .btn-bg-x,
   .img-project {
     position: relative;
     transform: rotateY(-30deg);
+  }
+
+  .img-project-even {
+    position: relative;
+    transform: rotateY(30deg);
   }
 }
 
