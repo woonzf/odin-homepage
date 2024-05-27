@@ -17,10 +17,28 @@ const scroll = (() => {
 
   function float(element, section) {
     const scrollBarHeight = section.scrollHeight - section.clientHeight - 56;
+    const x = -100;
+    const deviation = 60;
     let percent = 0;
+
+    if (typeof element === "object" && window.innerWidth > window.innerHeight) {
+      const length = element.length;
+      for (let i = 0; i < length; i++) {
+        element[i].style.transform =
+          `translateX(${x}%) translateY(${deviation * Math.sqrt(i)}%)`;
+      }
+    }
+
     section.onscroll = () => {
       percent = (section.scrollTop / scrollBarHeight) * 100;
-      element.style.transform = `translateY(-${percent}%)`;
+      if (typeof element === "object") {
+        const length = element.length;
+        for (let i = 0; i < length; i++) {
+          element[i].style.transform =
+            `translateX(${x}%) translateY(${deviation * Math.sqrt(i) - percent}%)`;
+        }
+      } else
+        element.style.transform = `translateX(${x}%) translateY(${percent}%)`;
     };
   }
 

@@ -17,7 +17,7 @@ const projects = (() => {
   function init() {
     _generateProjects();
     _carouselInit();
-    scroll.float(document.querySelector(".index-project"), projects);
+    scroll.float(document.querySelectorAll(".index-project"), projects);
   }
 
   function _generateProjects() {
@@ -28,12 +28,18 @@ const projects = (() => {
         "div",
         "content-wrapper-project",
       );
-      const divIndex = _createElementWithClass("div", "index-project-wrapper");
+      const divIndex = _createElementWithClass(
+        "div",
+        "index-project-wrapper",
+        "text-transparent",
+        "montserrat",
+      );
       const index = _createElementWithClass(
         "span",
         "index-project",
+        "text-theme",
         "absolute",
-        "montserrat",
+        "translate-x-[-100%]",
       );
       const divInfo = _createElementWithClass(
         "div",
@@ -42,7 +48,7 @@ const projects = (() => {
       );
       const title = _createElementWithClass("h3", "z-[1]", "montserrat");
       const span = _createElementWithClass("span", "text-theme");
-      const divDesc = _createElementWithClass("p");
+      const divDesc = _createElementWithClass("p", "z-[2]");
       const divTools = _createElementWithClass(
         "div",
         "flex",
@@ -88,6 +94,7 @@ const projects = (() => {
       }
 
       index.textContent = count;
+      divIndex.textContent = count;
       divIndex.append(index);
       title.textContent = project.name;
       span.textContent = ".";
