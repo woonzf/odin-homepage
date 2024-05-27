@@ -83,7 +83,7 @@
   .img-project-mirror {
     @apply portrait:hidden;
     position: absolute;
-    transform: translateY(calc(100% + 2px)) rotateY(-30deg) rotateX(180deg);
+    transform: translateY(calc(100% + 2px)) rotateY(-20deg) rotateX(180deg);
     -webkit-mask-image: linear-gradient(transparent 80%, white);
     mask-image: linear-gradient(transparent 80%, white);
   }
@@ -91,7 +91,7 @@
   .img-project-mirror-even {
     @apply portrait:hidden;
     position: absolute;
-    transform: translateY(calc(100% + 2px)) rotateY(30deg) rotateX(180deg);
+    transform: translateY(calc(100% + 2px)) rotateY(20deg) rotateX(180deg);
     -webkit-mask-image: linear-gradient(transparent 80%, white);
     mask-image: linear-gradient(transparent 80%, white);
   }
@@ -266,12 +266,12 @@ button:hover .btn-bg-x,
 @media (orientation: landscape) {
   .img-project {
     position: relative;
-    transform: rotateY(-30deg);
+    transform: rotateY(-20deg);
   }
 
   .img-project-even {
     position: relative;
-    transform: rotateY(30deg);
+    transform: rotateY(20deg);
   }
 }
 

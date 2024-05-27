@@ -142,7 +142,7 @@ const projects = (() => {
       const wrappersOuter = document.querySelectorAll(
         ".tools-wrapper-outer-project",
       );
-      const className = `tool-project-${i}`;
+      const className = `tool-project-${i + 1}`;
       const length = document.querySelectorAll(`.${className}`).length;
       carousel.create(40, wrappers[i], wrappersOuter[i], className, length, 0);
     }
