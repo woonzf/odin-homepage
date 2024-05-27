@@ -6,6 +6,7 @@ import { scroll } from "./scroll";
 import imgOpen from "../img/icons/open-24w.png";
 import imgYpetD from "../img/projects/ypet-d-450w.png";
 import imgWeatherD from "../img/projects/weather-d-450w.png";
+import imgWeatherM from "../img/projects/weather-m-200w.jpg";
 import imgHomeD from "../img/projects/homepage-d-450w.png";
 
 const projects = (() => {
@@ -80,18 +81,9 @@ const projects = (() => {
       const spanRepo = _createElementWithClass("span");
       const spanDemo = spanRepo.cloneNode(false);
       const divImg = _createElementWithClass("div", "img-project-wrapper");
-
+      const divImgInner = _createElementWithClass("div");
       const img = _createElementWithClass("img");
-      const imgMirror = img.cloneNode(false);
-
-      if (count % 2 === 0) {
-        img.classList.add("img-project-even");
-        imgMirror.classList.add("img-project-mirror-even");
-        divWrapper.classList.add("landscape:flex-row-reverse");
-      } else {
-        img.classList.add("img-project");
-        imgMirror.classList.add("img-project-mirror");
-      }
+      const img2 = _createElementWithClass("img", "img-project-m", "absolute");
 
       index.textContent = count;
       divIndex.textContent = count;
@@ -128,15 +120,28 @@ const projects = (() => {
       divLinks.append(aRepo, aDemo);
       divInfo.append(divIndex, title, divDesc, divTools, divLinks);
 
-      img.src = project.img;
-      imgMirror.src = project.img;
-      divImg.append(img, imgMirror);
+      img.src = project.img[0];
+      divImgInner.append(img);
 
+      if (project.img.length > 1) {
+        img2.src = project.img[1];
+        divImgInner.append(img2);
+      }
+
+      const divImgInnerMirror = divImgInner.cloneNode(true);
+
+      if (count % 2 === 0) {
+        divImgInner.classList.add("img-project-even");
+        divImgInnerMirror.classList.add("img-project-mirror-even");
+        divWrapper.classList.add("landscape:flex-row-reverse");
+      } else {
+        divImgInner.classList.add("img-project");
+        divImgInnerMirror.classList.add("img-project-mirror");
+      }
+
+      divImg.append(divImgInner, divImgInnerMirror);
       divWrapper.append(divInfo, divImg);
       contentProjects.append(divWrapper);
-
-      if (count === length)
-        divWrapper.classList.add("landscape:overflow-y-clip");
 
       count++;
     }
@@ -176,7 +181,7 @@ const projects = (() => {
       new Project(
         "Your Personal Expense Tracker",
         "A web application that allows you to track your expenses.",
-        imgYpetD,
+        [imgYpetD],
         "https://github.com/woonzf/cs50x-2023-project",
         "https://www.youtube.com/watch?v=l83kys9yJJs",
         tools.get(
@@ -192,7 +197,7 @@ const projects = (() => {
       new Project(
         "Weather App",
         "A weather application using Weather API.",
-        imgWeatherD,
+        [imgWeatherD, imgWeatherM],
         "https://github.com/woonzf/odin-weather-app",
         "https://woonzf.github.io/odin-weather-app/",
         tools.get("HTML", "CSS", "JavaScript", "Webpack"),
@@ -200,7 +205,7 @@ const projects = (() => {
       new Project(
         "Homepage",
         "My first portfolio website, I am featuring it for the amount of effort I've put into it.",
-        imgHomeD,
+        [imgHomeD],
         "https://github.com/woonzf/odin-homepage",
         "https://woonzf.github.io/odin-homepage/",
         tools.get("HTML", "CSS", "JavaScript", "Webpack", "Tailwind CSS"),

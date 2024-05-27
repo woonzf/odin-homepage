@@ -80,24 +80,39 @@
   }
 
   .img-project-wrapper {
-    @apply w-full flex flex-col justify-center items-center landscape:translate-y-[-5%];
+    @apply w-full landscape:translate-y-[-5%];
+    -webkit-perspective: 500px;
     perspective: 500px;
   }
 
-  .img-project-mirror {
-    @apply portrait:hidden;
-    position: absolute;
-    transform: translateY(calc(100% + 2px)) rotateY(-20deg) rotateX(180deg);
+  .img-project,
+  .img-project-even {
+    @apply relative;
+    /* More .img-project at MEDIA QUERY section below*/
+  }
+
+  .img-project-mirror,
+  .img-project-mirror-even {
+    @apply absolute top-0 portrait:hidden;
     -webkit-mask-image: linear-gradient(transparent 80%, white);
     mask-image: linear-gradient(transparent 80%, white);
   }
 
+  .img-project-mirror {
+    transform: translateY(calc(100% + 2px)) rotateY(-20deg) rotateX(180deg);
+  }
+
   .img-project-mirror-even {
-    @apply portrait:hidden;
-    position: absolute;
     transform: translateY(calc(100% + 2px)) rotateY(20deg) rotateX(180deg);
-    -webkit-mask-image: linear-gradient(transparent 80%, white);
-    mask-image: linear-gradient(transparent 80%, white);
+  }
+
+  .img-project-m {
+    @apply border border-theme rounded-xl top-[5%] right-[-5%] portrait:top-[-20%] portrait:right-[-10%] portrait:scale-[70%];
+  }
+
+  .img-project-mirror > .img-project-m,
+  .img-project-mirror-even > .img-project-m {
+    @apply hidden;
   }
 
   .tools-wrapper-outer-project {
@@ -269,12 +284,10 @@ button:hover .btn-bg-x,
 
 @media (orientation: landscape) {
   .img-project {
-    position: relative;
     transform: rotateY(-20deg);
   }
 
   .img-project-even {
-    position: relative;
     transform: rotateY(20deg);
   }
 }
