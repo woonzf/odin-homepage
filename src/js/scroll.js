@@ -1,10 +1,6 @@
 import { background } from "./background";
 
 const scroll = (() => {
-  const heightDoc = document.body.scrollHeight;
-  const heightScreen = screen.height;
-  const heightScroll = heightDoc - heightScreen;
-
   const sectionIntro = document.querySelector("#section-intro");
   const scroll = document.querySelector("#scroll");
 
@@ -17,6 +13,15 @@ const scroll = (() => {
 
   function getScrollThreshold() {
     return threshold;
+  }
+
+  function float(element, section) {
+    const scrollBarHeight = section.scrollHeight - section.clientHeight - 56;
+    let percent = 0;
+    section.onscroll = () => {
+      percent = (section.scrollTop / scrollBarHeight) * 100;
+      element.style.transform = `translateY(-${percent}%)`;
+    };
   }
 
   function _shrinkOnScroll() {
@@ -37,16 +42,6 @@ const scroll = (() => {
     sectionIntro.classList.toggle("shrink");
     scroll.classList.toggle("hide");
   }
-
-  // function _floatHello() {
-  //   const percent = _getScrollPercent() * 0.5;
-  //   x.style.transform = `translateY(-${percent}%)`;
-  //   y.style.transform = `translateY(-${percent * 1.5}%)`;
-  // }
-
-  // function _getScrollPercent() {
-  //   return (window.scrollY / heightScroll) * 100;
-  // }
 
   // https://stackoverflow.com/questions/4770025/how-to-disable-scrolling-temporarily
   // left: 37, up: 38, right: 39, down: 40,
@@ -98,7 +93,7 @@ const scroll = (() => {
     window.removeEventListener("keydown", preventDefaultForScrollKeys, false);
   }
 
-  return { init, getScrollThreshold, disableScroll, enableScroll };
+  return { init, getScrollThreshold, float, disableScroll, enableScroll };
 })();
 
 export { scroll };

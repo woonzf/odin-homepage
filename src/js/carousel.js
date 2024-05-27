@@ -20,10 +20,9 @@ const carousel = (() => {
     }
   }
 
-  function create(height, wrapper, wrapperOuter, className, length, auto) {
-    const x = height + 2 * margin;
-    if (auto === 1 || wrapper.scrollWidth > wrapper.clientWidth)
-      _toolAutoScroll(className, length, wrapperOuter, wrapper, x);
+  function create(height, wrapper, wrapperOuter, className, length, div) {
+    if (div === undefined || wrapper.scrollWidth > wrapper.clientWidth)
+      _toolAutoScroll(className, length, wrapperOuter, wrapper, height, div);
   }
 
   function _initAbout() {
@@ -36,16 +35,30 @@ const carousel = (() => {
     const toolName = document.querySelector("#tool-name");
 
     generateImage(list, className, height, wrapper);
-    create(50, wrapper, wrapperOuter, className, length, 1);
-    _toolDisplayName(toolName, list);
+    create(50, wrapper, wrapperOuter, className, length);
+    _toolDisplayName(toolName, list, wrapperOuter, height + margin);
   }
 
-  function _toolAutoScroll(className, length, wrapperOuter, wrapper, x) {
+  function _toolAutoScroll(
+    className,
+    length,
+    wrapperOuter,
+    wrapper,
+    height,
+    div,
+  ) {
     const tools = document.querySelectorAll(`.${className}`);
+    const x = height + 2 * margin;
+    let amount = 0;
+    if (div !== undefined) amount = Math.floor(div.clientWidth / x);
+    else amount = Math.floor(wrapperOuter.clientWidth / x);
+
     let toBeEnd = 0;
     let tx = new Array(length).fill(0);
 
-    wrapperOuter.style.width = x * (length - 2) + "px";
+    if (amount >= length - 1) amount = length - 2;
+    if (amount % 2 === 0) wrapperOuter.style.width = x * (amount - 1) + "px";
+    else wrapperOuter.style.width = x * amount + "px";
     wrapper.style.transform = `translateX(-${x}px)`;
 
     setInterval(() => {
@@ -70,10 +83,13 @@ const carousel = (() => {
     }, 2000);
   }
 
-  function _toolDisplayName(toolName, list) {
+  function _toolDisplayName(toolName, list, wrapperOuter, x) {
     const length = list.length;
+    const amount = Math.floor(wrapperOuter.clientWidth / x);
+
     let mid = Math.floor(length / 2);
-    toolName.textContent = list[mid].alt;
+    if (amount < 6) mid -= 1;
+    toolName.textContent = list[mid].alt.toUpperCase();
 
     setInterval(() => {
       if (mid !== length - 1) mid += 1;

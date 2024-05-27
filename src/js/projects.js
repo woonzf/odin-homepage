@@ -1,6 +1,7 @@
 import Project from "./class-Project";
 import { tools } from "./tools";
 import { carousel } from "./carousel";
+import { scroll } from "./scroll";
 
 import imgOpen from "../img/icons/open-24w.png";
 import imgYpetD from "../img/projects/ypet-d-450w.png";
@@ -9,12 +10,14 @@ import imgHomeD from "../img/projects/homepage-d-450w.png";
 
 const projects = (() => {
   const contentProjects = document.querySelector("#content-projects");
+  const projects = document.querySelector("#article-projects");
   const projectList = _getProjects();
   const length = projectList.length;
 
   function init() {
     _generateProjects();
     _carouselInit();
+    scroll.float(document.querySelector(".index-project"), projects);
   }
 
   function _generateProjects() {
@@ -25,16 +28,11 @@ const projects = (() => {
         "div",
         "content-wrapper-project",
       );
+      const divIndex = _createElementWithClass("div", "index-project-wrapper");
       const index = _createElementWithClass(
         "span",
-        "text-theme",
-        "text-7xl",
+        "index-project",
         "absolute",
-        "top-0",
-        "left-0",
-        "translate-x-[-25%]",
-        "translate-y-[-25%]",
-        "z-auto",
         "montserrat",
       );
       const divInfo = _createElementWithClass(
@@ -90,6 +88,7 @@ const projects = (() => {
       }
 
       index.textContent = count;
+      divIndex.append(index);
       title.textContent = project.name;
       span.textContent = ".";
       title.append(span);
@@ -120,7 +119,7 @@ const projects = (() => {
       aRepo.append(spanRepo, imgLink);
       aDemo.append(spanDemo, imgLink2);
       divLinks.append(aRepo, aDemo);
-      divInfo.append(index, title, divDesc, divTools, divLinks);
+      divInfo.append(divIndex, title, divDesc, divTools, divLinks);
 
       img.src = project.img;
       imgMirror.src = project.img;
@@ -137,14 +136,23 @@ const projects = (() => {
   }
 
   function _carouselInit() {
+    const wrappers = document.querySelectorAll(".tools-wrapper-project");
+    const wrappersOuter = document.querySelectorAll(
+      ".tools-wrapper-outer-project",
+    );
+    const infos = document.querySelectorAll(".info-project");
+
     for (let i = 0; i < length; i++) {
-      const wrappers = document.querySelectorAll(".tools-wrapper-project");
-      const wrappersOuter = document.querySelectorAll(
-        ".tools-wrapper-outer-project",
-      );
       const className = `tool-project-${i + 1}`;
       const length = document.querySelectorAll(`.${className}`).length;
-      carousel.create(40, wrappers[i], wrappersOuter[i], className, length, 0);
+      carousel.create(
+        40,
+        wrappers[i],
+        wrappersOuter[i],
+        className,
+        length,
+        infos[i],
+      );
     }
   }
 

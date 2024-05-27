@@ -71,6 +71,10 @@
     @apply w-[90%] py-7 flex portrait:flex-col-reverse portrait:gap-5;
   }
 
+  .index-project-wrapper {
+    @apply text-theme text-7xl absolute top-0 left-0 translate-x-[-25%] translate-y-[-25%] z-auto;
+  }
+
   .info-project {
     @apply w-full p-3 flex flex-col justify-evenly gap-5;
   }
