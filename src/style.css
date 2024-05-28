@@ -116,7 +116,7 @@
   }
 
   .tools-wrapper-outer-project {
-    @apply overflow-x-hidden;
+    @apply w-full flex justify-center overflow-x-hidden;
   }
 
   .tools-wrapper-project {

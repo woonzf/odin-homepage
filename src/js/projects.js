@@ -160,14 +160,7 @@ const projects = (() => {
     for (let i = 0; i < length; i++) {
       const className = `tool-project-${i + 1}`;
       const length = document.querySelectorAll(`.${className}`).length;
-      carousel.create(
-        40,
-        wrappers[i],
-        wrappersOuter[i],
-        className,
-        length,
-        infos[i],
-      );
+      carousel.create(40, wrappers[i], wrappersOuter[i], className, length, 0);
     }
   }
 

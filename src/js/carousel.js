@@ -20,14 +20,15 @@ const carousel = (() => {
     }
   }
 
-  function create(height, wrapper, wrapperOuter, className, length, div) {
-    if (div === undefined || wrapper.scrollWidth > wrapper.clientWidth)
-      _toolAutoScroll(className, length, wrapperOuter, wrapper, height, div);
+  function create(height, wrapper, wrapperOuter, className, length, auto) {
+    const x = height + 2 * margin;
+    let amount = Math.floor(wrapperOuter.clientWidth / x);
+    if (length > amount || auto === 1)
+      _toolAutoScroll(className, length, wrapperOuter, wrapper, x, amount);
   }
 
   function _initAbout() {
     const list = tools.getList();
-    const length = list.length;
     const className = "tool-about";
     const height = 50;
     const wrapper = document.querySelector("#tools-wrapper-about");
@@ -35,7 +36,7 @@ const carousel = (() => {
     const toolName = document.querySelector("#tool-name");
 
     generateImage(list, className, height, wrapper);
-    create(50, wrapper, wrapperOuter, className, length);
+    create(50, wrapper, wrapperOuter, className, list.length, 1);
     _toolDisplayName(toolName, list, wrapperOuter, height + margin);
   }
 
@@ -44,15 +45,10 @@ const carousel = (() => {
     length,
     wrapperOuter,
     wrapper,
-    height,
-    div,
+    x,
+    amount,
   ) {
     const tools = document.querySelectorAll(`.${className}`);
-    const x = height + 2 * margin;
-    let amount = 0;
-    if (div !== undefined) amount = Math.floor(div.clientWidth / x);
-    else amount = Math.floor(wrapperOuter.clientWidth / x);
-
     let toBeEnd = 0;
     let tx = new Array(length).fill(0);
 
