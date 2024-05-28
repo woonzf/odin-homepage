@@ -24,28 +24,20 @@ const menu = (() => {
 
   let isOpenMenu = 0;
   let threshold = 0;
-
+  let isTabOpen = 0;
   let backTarget = [];
 
   function init() {
     threshold = scroll.getScrollThreshold();
 
     btnAboutL.onclick = () => {
-      _toggleBackground(2);
-      about.classList.toggle("active");
-      backTarget = [about, 2];
+      _openTab(about, 2);
     };
-
     btnProjectsL.onclick = () => {
-      _toggleBackground(1);
-      projects.classList.toggle("active");
-      backTarget = [projects, 1];
+      _openTab(projects, 1);
     };
-
     btnContactL.onclick = () => {
-      _toggleBackground(2);
-      contact.classList.toggle("active");
-      backTarget = [contact, 2];
+      _openTab(contact, 2);
     };
 
     btnBacks.forEach((btn) => {
@@ -115,6 +107,20 @@ const menu = (() => {
     };
   }
 
+  function resetOnScreenChange() {
+    if (isTabOpen === 1) {
+      btnBacks[0].click();
+      isTabOpen = 0;
+    }
+  }
+
+  function _openTab(tab, bg) {
+    _toggleBackground(bg);
+    tab.classList.toggle("active");
+    isTabOpen = 1;
+    backTarget = [tab, bg];
+  }
+
   function _toggleBackground(bg) {
     helloWrapper.classList.toggle("hide");
     background.shrink(bg);
@@ -138,7 +144,7 @@ const menu = (() => {
     btnMenuBack.click();
   }
 
-  return { init };
+  return { init, resetOnScreenChange };
 })();
 
 export { menu };

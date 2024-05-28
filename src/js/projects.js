@@ -18,7 +18,10 @@ const projects = (() => {
   function init() {
     _generateProjects();
     _carouselInit();
-    scroll.float(document.querySelectorAll(".index-project"), projects);
+    scroll.floatIndexProjects(
+      document.querySelectorAll(".index-project"),
+      projects,
+    );
   }
 
   function _generateProjects() {
