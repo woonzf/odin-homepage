@@ -155,7 +155,6 @@ const projects = (() => {
     const wrappersOuter = document.querySelectorAll(
       ".tools-wrapper-outer-project",
     );
-    const infos = document.querySelectorAll(".info-project");
 
     for (let i = 0; i < length; i++) {
       const className = `tool-project-${i + 1}`;

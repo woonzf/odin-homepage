@@ -16,18 +16,24 @@ const scroll = (() => {
   }
 
   function float(element, section) {
-    const scrollBarHeight = section.scrollHeight - section.clientHeight - 56;
+    let scrollBarHeight = 0;
     const x = -100;
     const deviation = 60;
     let percent = 0;
 
-    if (typeof element === "object" && window.innerWidth > window.innerHeight) {
-      const length = element.length;
-      for (let i = 0; i < length; i++) {
-        element[i].style.transform =
-          `translateX(${x}%) translateY(${deviation * Math.sqrt(i)}%)`;
+    screen.orientation.onchange = () => {
+      scrollBarHeight = section.scrollHeight - section.clientHeight - 56;
+      console.log(scrollBarHeight);
+      if (typeof element === "object") {
+        const length = element.length;
+        for (let i = 0; i < length; i++) {
+          if (window.innerHeight < window.innerWidth)
+            element[i].style.transform =
+              `translateX(${x}%) translateY(${deviation * Math.sqrt(i)}%)`;
+          else element[i].style.transform = `translateX(${x}%) translateY(0%)`;
+        }
       }
-    }
+    };
 
     section.onscroll = () => {
       percent = (section.scrollTop / scrollBarHeight) * 100;
@@ -41,8 +47,7 @@ const scroll = (() => {
             element[i].style.transform =
               `translateX(${x}%) translateY(${deviation * Math.sqrt(i) - percent}%)`;
         }
-      } else
-        element.style.transform = `translateX(${x}%) translateY(${percent}%)`;
+      }
     };
   }
 
