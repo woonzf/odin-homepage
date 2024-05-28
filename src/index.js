@@ -6,9 +6,11 @@ import { projects } from "./js/projects";
 import { darkMode } from "./js/dark-mode";
 import { menu } from "./js/menu";
 
-scroll.init();
-image.init();
-carousel.init();
-projects.init();
-// darkMode.init();
-menu.init();
+document.addEventListener("DOMContentLoaded", () => {
+  scroll.init();
+  image.init();
+  carousel.init();
+  projects.init();
+  // darkMode.init();
+  menu.init();
+});

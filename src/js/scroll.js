@@ -34,8 +34,12 @@ const scroll = (() => {
       if (typeof element === "object") {
         const length = element.length;
         for (let i = 0; i < length; i++) {
-          element[i].style.transform =
-            `translateX(${x}%) translateY(${deviation * Math.sqrt(i) - percent}%)`;
+          if (i === length - 1)
+            element[i].style.transform =
+              `translateX(${x}%) translateY(${deviation * Math.sqrt(i) - percent * 0.7}%)`;
+          else
+            element[i].style.transform =
+              `translateX(${x}%) translateY(${deviation * Math.sqrt(i) - percent}%)`;
         }
       } else
         element.style.transform = `translateX(${x}%) translateY(${percent}%)`;

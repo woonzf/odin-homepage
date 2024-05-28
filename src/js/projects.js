@@ -143,6 +143,9 @@ const projects = (() => {
       divWrapper.append(divInfo, divImg);
       contentProjects.append(divWrapper);
 
+      const divider = _createElementWithClass("div", "divider-theme");
+      divInfo.append(divider);
+
       count++;
     }
   }

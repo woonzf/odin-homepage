@@ -52,7 +52,7 @@
   }
 
   .divider-theme {
-    @apply border-b-[1px] border-red-400;
+    @apply bg-theme h-1 w-[90%] portrait:w-[95%] rounded-full self-center opacity-75;
   }
 
   .content-wrapper {
@@ -64,7 +64,7 @@
   }
 
   .border-img {
-    @apply w-full border border-theme absolute translate-x-3 -translate-y-[calc(100%+12px)] z-auto;
+    @apply h-full w-full border-2 border-theme absolute translate-x-3 -translate-y-[calc(100%+12px)] opacity-75 z-auto;
   }
 
   .content-wrapper-project {
@@ -80,7 +80,7 @@
   }
 
   .img-project-wrapper {
-    @apply w-full landscape:translate-y-[-5%];
+    @apply w-full;
     -webkit-perspective: 500px;
     perspective: 500px;
   }
