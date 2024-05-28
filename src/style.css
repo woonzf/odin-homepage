@@ -80,7 +80,7 @@
   }
 
   .img-project-wrapper {
-    @apply w-full;
+    @apply w-full flex justify-center;
     -webkit-perspective: 500px;
     perspective: 500px;
   }
@@ -88,7 +88,7 @@
   .img-project,
   .img-project-even {
     @apply relative;
-    /* More .img-project at MEDIA QUERY section below*/
+    /* More at MEDIA QUERY section below*/
   }
 
   .img-project-mirror,
@@ -107,7 +107,7 @@
   }
 
   .img-project-m {
-    @apply border border-theme rounded-xl top-[5%] right-[-5%] portrait:top-[-20%] portrait:right-[-10%] portrait:scale-[70%];
+    @apply h-[calc(80%+2px)] portrait:h-full border-2 border-black rounded-md top-[5%] right-[-5%];
   }
 
   .img-project-mirror > .img-project-m,
@@ -291,95 +291,3 @@ button:hover .btn-bg-x,
     transform: rotateY(20deg);
   }
 }
-
-/* TO BE REMOVED */
-#perspective {
-  -webkit-perspective: 500px;
-  perspective: 500px;
-}
-
-.animate-bg-hello {
-  will-change: animation;
-  animation: slide-down 1.5s 1 0.5s;
-  animation-fill-mode: forwards;
-}
-
-.animate-bg-hello-2 {
-  will-change: animation;
-  animation: slide-down 1.5s 1 0.75s;
-  animation-fill-mode: forwards;
-}
-
-@keyframes slide-down {
-  from {
-    transform: translateY(-100%);
-    opacity: 0;
-  }
-
-  50% {
-    opacity: 0.9;
-  }
-
-  to {
-    transform: translateY(0%);
-    opacity: 0.9;
-  }
-}
-
-.animate-name {
-  will-change: animation;
-  animation: slide-in 1s 1 0.5s;
-  animation-fill-mode: forwards;
-  opacity: 0;
-}
-
-@keyframes slide-in {
-  from {
-    transform: translateX(100%);
-    opacity: 0;
-  }
-
-  50% {
-    opacity: 1;
-  }
-
-  to {
-    transform: translateX(0%);
-    opacity: 1;
-  }
-}
-
-.animate-line-h {
-  will-change: animation;
-  animation: draw-h 2s 1;
-  animation-fill-mode: forwards;
-  height: 0;
-}
-
-@keyframes draw-h {
-  from {
-    height: 0;
-  }
-
-  to {
-    height: 100%;
-  }
-}
-
-.animate-line-w {
-  will-change: animation;
-  animation: draw-w 2s 1;
-  animation-fill-mode: forwards;
-  width: 0;
-}
-
-@keyframes draw-w {
-  from {
-    width: 0;
-  }
-
-  to {
-    width: 100%;
-  }
-}
-/* END */
