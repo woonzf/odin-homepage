@@ -137,7 +137,7 @@
       </section>
       <div class="content-wrapper landscape:translate-x-[-150%]">
         <section class="content-section relative" id="about">
-          <article>
+          <article class="relative">
             <h2 class="montserrat">ABOUT<span class="text-theme">.</span></h2>
             <div
               class="py-10 portrait:py-3 portrait:pt-10 flex portrait:flex-col-reverse justify-center portrait:items-center gap-10"
@@ -196,9 +196,17 @@
                 ></div>
               </div>
             </div>
+            <div class="w-36 absolute top-[calc(50%-14px)] right-[-45px]">
+              <button
+                class="bg-theme w-36 flex justify-center items-center fixed rotate-90 portrait:hidden btn-back"
+              >
+                <span class="text-theme-2 montserrat btn-bg-y">BACK</span>
+              </button>
+            </div>
           </article>
+          <!-- TO BE REMOVED -->
           <div
-            class="w-36 flex justify-center absolute top-[50%] translate-y-[-50%] right-5 rotate-90 portrait:hidden"
+            class="w-36 flex justify-center absolute top-[50%] translate-y-[-50%] right-5 rotate-90 portrait:hidden hidden"
           >
             <button class="px-2 flex justify-center items-center btn-back">
               <div class="flex flex-col justify-center items-center btn-bg-y">
@@ -207,6 +215,7 @@
               </div>
             </button>
           </div>
+          <!-- END -->
         </section>
       </div>
       <div class="content-wrapper landscape:translate-x-[150%]">
