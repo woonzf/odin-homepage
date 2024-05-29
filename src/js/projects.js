@@ -14,6 +14,8 @@ const projects = (() => {
   const projects = document.querySelector("#article-projects");
   const projectList = _getProjects();
   const length = projectList.length;
+  const height = 40;
+  const scale = 1.1;
 
   function init() {
     _generateProjects();
@@ -100,7 +102,8 @@ const projects = (() => {
       carousel.generateImage(
         project.tools,
         `tool-project-${count}`,
-        40,
+        height,
+        scale,
         wrapperTool,
       );
 
@@ -163,7 +166,15 @@ const projects = (() => {
     for (let i = 0; i < length; i++) {
       const className = `tool-project-${i + 1}`;
       const length = document.querySelectorAll(`.${className}`).length;
-      carousel.create(40, wrappers[i], wrappersOuter[i], className, length, 0);
+      carousel.create(
+        height,
+        scale,
+        wrappers[i],
+        wrappersOuter[i],
+        className,
+        length,
+        0,
+      );
     }
   }
 
