@@ -80,6 +80,7 @@ const projects = (() => {
         "items-center",
         "gap-3",
         "montserrat",
+        "hover:scale-[110%]",
       );
       const spanRepo = _createElementWithClass("span");
       const spanDemo = spanRepo.cloneNode(false);
