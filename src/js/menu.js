@@ -44,6 +44,9 @@ const menu = (() => {
       btn.onclick = () => {
         backTarget[0].classList.toggle("active");
         _toggleBackground(backTarget[1]);
+        setTimeout(() => {
+          backTarget[0].querySelector("article").scrollTo(0, 0);
+        }, 1000);
       };
     });
 
