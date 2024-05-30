@@ -4,6 +4,12 @@
   src: url(./font/Montserrat-ExtraBold.ttf) format("TrueType");
 }
 
+:root {
+  --timing-bounce-100: cubic-bezier(0, 0, 0.2, 1);
+  --timing-bounce-50: cubic-bezier(0.8, 0, 1, 1);
+  --bounce-translateY: 20%;
+}
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -76,6 +82,14 @@
 
   .content-section {
     @apply h-full w-full landscape:py-14 flex justify-center items-center;
+  }
+
+  .btn-nav-wrapper {
+    @apply w-36 absolute;
+  }
+
+  .btn-nav {
+    @apply w-36 flex justify-center items-center fixed;
   }
 
   .border-img {
@@ -282,17 +296,58 @@ button:hover .btn-bg-x,
   animation: bounce-x 1s infinite;
 }
 
+.animate-bounce-y-90 {
+  transform: rotate(90deg);
+  will-change: animation;
+  animation: bounce-y-90 1s infinite;
+}
+
+.animate-bounce-y-n90 {
+  transform: rotate(-90deg);
+  will-change: animation;
+  animation: bounce-y-n90 1s infinite;
+}
+
+.animate-bounce-y {
+  will-change: animation;
+  animation: bounce-y 1s infinite;
+}
+
 /* Tailwind Bounce Custom */
+
+@keyframes bounce-y-90 {
+  0%,
+  100% {
+    transform: rotate(90deg);
+    animation-timing-function: var(--timing-bounce-100);
+  }
+  50% {
+    transform: rotate(90deg) translateY(var(--bounce-translateY));
+    animation-timing-function: var(--timing-bounce-50);
+  }
+}
+
+@keyframes bounce-y-n90 {
+  0%,
+  100% {
+    transform: rotate(-90deg);
+    animation-timing-function: var(--timing-bounce-100);
+  }
+  50% {
+    transform: rotate(-90deg) translateY(var(--bounce-translateY));
+    animation-timing-function: var(--timing-bounce-50);
+  }
+}
 
 @keyframes bounce-y {
   0%,
   100% {
     transform: none;
-    animation-timing-function: cubic-bezier(0, 0, 0.2, 1);
+    animation-timing-function: var(--timing-bounce-100);
   }
   50% {
-    transform: translateY(25%);
-    animation-timing-function: cubic-bezier(0.8, 0, 1, 1);
+    transform: translateY(var(--bounce-translateY));
+    animation-timing-function: var(--timing-bounce-50);
   }
 }
 
@@ -300,11 +355,11 @@ button:hover .btn-bg-x,
   0%,
   100% {
     transform: none;
-    animation-timing-function: cubic-bezier(0, 0, 0.2, 1);
+    animation-timing-function: var(--timing-bounce-100);
   }
   50% {
     transform: translateX(10%);
-    animation-timing-function: cubic-bezier(0.8, 0, 1, 1);
+    animation-timing-function: var(--timing-bounce-50);
   }
 }
 
