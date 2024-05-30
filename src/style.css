@@ -32,7 +32,7 @@
   }
 
   article {
-    @apply bg-theme-2 portrait:bg-transparent h-full max-w-screen-lg landscape:px-10 landscape:md:px-14 landscape:py-14 flex flex-col gap-7 overflow-y-auto;
+    @apply bg-theme-2 portrait:bg-transparent h-full max-w-screen-lg landscape:px-10 landscape:md:px-14 landscape:py-14 flex flex-col justify-around overflow-auto;
   }
 
   /* Scrollbar */
