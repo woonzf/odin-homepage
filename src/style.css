@@ -7,7 +7,7 @@
 :root {
   --timing-bounce-100: cubic-bezier(0, 0, 0.2, 1);
   --timing-bounce-50: cubic-bezier(0.8, 0, 1, 1);
-  --bounce-translateY: 20%;
+  --bounce-translateY: 25%;
 }
 
 @tailwind base;
@@ -285,71 +285,34 @@ nav.hide,
   }
 }
 
-button:hover .btn-bg-y {
-  will-change: animation;
-  animation: bounce-y 1s infinite;
-}
-
-button:hover .btn-bg-x,
 #scroll {
   will-change: animation;
   animation: bounce-x 1s infinite;
 }
 
+.animate-bounce-y {
+  will-change: animation;
+  animation: bounce-y 3s infinite;
+}
+
+.animate-bounce-y-r {
+  will-change: animation;
+  animation: bounce-y-r 3s infinite;
+}
+
 .animate-bounce-y-90 {
   transform: rotate(90deg);
   will-change: animation;
-  animation: bounce-y-90 1s infinite;
+  animation: bounce-y-90 3s infinite;
 }
 
 .animate-bounce-y-n90 {
   transform: rotate(-90deg);
   will-change: animation;
-  animation: bounce-y-n90 1s infinite;
-}
-
-.animate-bounce-y {
-  will-change: animation;
-  animation: bounce-y 1s infinite;
+  animation: bounce-y-n90 3s infinite;
 }
 
 /* Tailwind Bounce Custom */
-
-@keyframes bounce-y-90 {
-  0%,
-  100% {
-    transform: rotate(90deg);
-    animation-timing-function: var(--timing-bounce-100);
-  }
-  50% {
-    transform: rotate(90deg) translateY(var(--bounce-translateY));
-    animation-timing-function: var(--timing-bounce-50);
-  }
-}
-
-@keyframes bounce-y-n90 {
-  0%,
-  100% {
-    transform: rotate(-90deg);
-    animation-timing-function: var(--timing-bounce-100);
-  }
-  50% {
-    transform: rotate(-90deg) translateY(var(--bounce-translateY));
-    animation-timing-function: var(--timing-bounce-50);
-  }
-}
-
-@keyframes bounce-y {
-  0%,
-  100% {
-    transform: none;
-    animation-timing-function: var(--timing-bounce-100);
-  }
-  50% {
-    transform: translateY(var(--bounce-translateY));
-    animation-timing-function: var(--timing-bounce-50);
-  }
-}
 
 @keyframes bounce-x {
   0%,
@@ -359,6 +322,54 @@ button:hover .btn-bg-x,
   }
   50% {
     transform: translateX(10%);
+    animation-timing-function: var(--timing-bounce-50);
+  }
+}
+
+@keyframes bounce-y {
+  0%,
+  33% {
+    transform: none;
+    animation-timing-function: var(--timing-bounce-100);
+  }
+  16% {
+    transform: translateY(var(--bounce-translateY));
+    animation-timing-function: var(--timing-bounce-50);
+  }
+}
+
+@keyframes bounce-y-r {
+  0%,
+  33% {
+    transform: none;
+    animation-timing-function: var(--timing-bounce-100);
+  }
+  16% {
+    transform: translateY(calc(var(--bounce-translateY) * -1));
+    animation-timing-function: var(--timing-bounce-50);
+  }
+}
+
+@keyframes bounce-y-90 {
+  0%,
+  33% {
+    transform: rotate(90deg);
+    animation-timing-function: var(--timing-bounce-100);
+  }
+  16% {
+    transform: rotate(90deg) translateY(var(--bounce-translateY));
+    animation-timing-function: var(--timing-bounce-50);
+  }
+}
+
+@keyframes bounce-y-n90 {
+  0%,
+  33% {
+    transform: rotate(-90deg);
+    animation-timing-function: var(--timing-bounce-100);
+  }
+  16% {
+    transform: rotate(-90deg) translateY(var(--bounce-translateY));
     animation-timing-function: var(--timing-bounce-50);
   }
 }
