@@ -1,5 +1,4 @@
 import { background } from "./background";
-import { screenOrientation } from "./screen-orientation";
 
 const scroll = (() => {
   const sectionIntro = document.querySelector("#section-intro");
@@ -8,50 +7,12 @@ const scroll = (() => {
   const threshold = 1;
   let shrink = 0;
 
-  let scrollBarHeightProjects = 0;
-  let percentProjects = 0;
-  const deviationProjects = 60;
-  const xProjects = -100;
-
   function init() {
     _shrinkOnScroll();
   }
 
   function getScrollThreshold() {
     return threshold;
-  }
-
-  function floatIndexProjects(element, section) {
-    screenOrientation.setIndexProjects(element, section);
-    refloatIndexProjects(element, section);
-    section.onscroll = () => {
-      percentProjects = (section.scrollTop / scrollBarHeightProjects) * 100;
-      const length = element.length;
-      for (let i = 0; i < length; i++) {
-        if (i === length - 1)
-          element[i].style.transform =
-            `translateX(${xProjects}%) translateY(${deviationProjects * Math.sqrt(i) - percentProjects * 0.7}%)`;
-        else
-          element[i].style.transform =
-            `translateX(${xProjects}%) translateY(${deviationProjects * Math.sqrt(i) - percentProjects}%)`;
-      }
-    };
-  }
-
-  function refloatIndexProjects(element, section) {
-    setTimeout(() => {
-      scrollBarHeightProjects =
-        section.scrollHeight - section.clientHeight - 56;
-      const length = element.length;
-      for (let i = 0; i < length; i++) {
-        if (window.innerHeight < window.innerWidth)
-          element[i].style.transform =
-            `translateX(${xProjects}%) translateY(${deviationProjects * Math.sqrt(i)}%)`;
-        else
-          element[i].style.transform =
-            `translateX(${xProjects}%) translateY(0%)`;
-      }
-    }, 500);
   }
 
   function _shrinkOnScroll() {
@@ -123,14 +84,7 @@ const scroll = (() => {
     window.removeEventListener("keydown", preventDefaultForScrollKeys, false);
   }
 
-  return {
-    init,
-    getScrollThreshold,
-    floatIndexProjects,
-    refloatIndexProjects,
-    disableScroll,
-    enableScroll,
-  };
+  return { init, getScrollThreshold, disableScroll, enableScroll };
 })();
 
 export { scroll };

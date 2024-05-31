@@ -1,7 +1,6 @@
 import Project from "./class-Project";
 import { tools } from "./tools";
 import { carousel } from "./carousel";
-import { scroll } from "./scroll";
 
 import imgOpen from "../img/icons/open-24w.png";
 import imgYpetD from "../img/projects/ypet-d-450w.png";
@@ -11,7 +10,6 @@ import imgHomeD from "../img/projects/homepage-d-450w.png";
 
 const projects = (() => {
   const contentProjects = document.querySelector("#content-projects");
-  const projects = document.querySelector("#article-projects");
   const projectList = _getProjects();
   const length = projectList.length;
   const height = 40;
@@ -20,10 +18,6 @@ const projects = (() => {
   function init() {
     _generateProjects();
     _carouselInit();
-    scroll.floatIndexProjects(
-      document.querySelectorAll(".index-project"),
-      projects,
-    );
   }
 
   function _generateProjects() {
