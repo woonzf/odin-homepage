@@ -172,6 +172,14 @@
   .icon-contact-link:hover {
     @apply scale-110;
   }
+
+  .stroke-contact {
+    @apply bg-theme-2;
+  }
+
+  .initial-contact {
+    @apply text-theme-2;
+  }
 }
 
 .montserrat {

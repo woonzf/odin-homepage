@@ -60,7 +60,7 @@
       </nav>
     </div>
     <main
-      class="landscape:h-[100vh] w-full px-10 md:px-14 py-14 portrait:flex portrait:flex-col portrait:gap-14 relative portrait:absolute"
+      class="landscape:h-[100vh] w-full px-10 md:px-14 py-14 portrait:pb-0 portrait:flex portrait:flex-col portrait:gap-14 relative portrait:absolute"
     >
       <section
         class="h-full portrait:h-[calc(100svh-56px)] w-full relative"
@@ -246,11 +246,11 @@
                 CONTACT<span class="text-theme">.</span>
               </h2>
               <div
-                class="w-full max-w-2xl landscape:aspect-[1.8] landscape:px-7 rounded-xl flex flex-col sm:flex-row self-center portrait:items-center portrait:gap-7"
+                class="w-full max-w-2xl landscape:aspect-[1.8] landscape:px-7 landscape:rounded-xl flex flex-col sm:flex-row self-center portrait:items-center portrait:gap-7 landscape:overflow-hidden"
                 id="contact-card"
               >
                 <div
-                  class="portrait:h-full w-full flex justify-center items-center"
+                  class="portrait:h-full w-full flex justify-center items-center z-[1]"
                 >
                   <div
                     class="h-full flex flex-col landscape:justify-evenly gap-2"
@@ -261,7 +261,9 @@
                         alt="Address"
                         id="img-address"
                       />
-                      <div class="mt-[5px] self-center montserrat">
+                      <div
+                        class="mt-[10px] sm:mt-[12px] self-center montserrat"
+                      >
                         <p class="p-contact">114, Jalan Sendayan Satu,</p>
                         <p class="p-contact">Kampung Baru Pandan,</p>
                         <p class="p-contact">81100, Johor Bahru,</p>
@@ -304,16 +306,72 @@
                   </div>
                 </div>
                 <div
-                  class="portrait:h-full w-full flex flex-col justify-center items-center"
+                  class="portrait:h-full w-full flex justify-center items-center z-auto"
                 >
-                  <div>LOGO</div>
-                  <div class="flex !leading-[0.5] montserrat">
-                    <span class="text-theme">W</span>
-                    OON&nbsp;
-                    <span class="text-theme">Z</span>
-                    HEN&nbsp;
-                    <span class="text-theme">F</span>
-                    EI
+                  <div
+                    class="h-full landscape:w-[90%] portrait:w-[60%] flex flex-col justify-center items-center relative"
+                  >
+                    <div class="w-full aspect-[3] flex z-[1]">
+                      <div class="w-full flex justify-center items-center">
+                        <div class="w-[calc(100%-8px)] aspect-square flex">
+                          <div class="h-full w-1/4 stroke-contact"></div>
+                          <div class="h-full w-1/4 overflow-hidden">
+                            <div
+                              class="h-full w-full rotate-[27deg] stroke-contact"
+                            ></div>
+                          </div>
+                          <div class="h-full w-1/4 overflow-hidden">
+                            <div
+                              class="h-full w-full rotate-[-27deg] stroke-contact"
+                            ></div>
+                          </div>
+                          <div class="h-full w-1/4 stroke-contact"></div>
+                        </div>
+                      </div>
+                      <div class="w-full flex justify-center items-center">
+                        <div
+                          class="w-[calc(100%-8px)] aspect-square flex flex-col"
+                        >
+                          <div class="h-1/4 w-full stroke-contact"></div>
+                          <div
+                            class="h-1/2 w-full flex justify-center items-center overflow-hidden"
+                          >
+                            <div
+                              class="h-[250%] w-1/4 rotate-[50deg] stroke-contact"
+                            ></div>
+                          </div>
+                          <div class="h-1/4 w-full stroke-contact"></div>
+                        </div>
+                      </div>
+                      <div class="w-full flex justify-center items-center">
+                        <div class="w-[calc(100%-8px)] aspect-square flex">
+                          <div class="h-full w-1/4 stroke-contact"></div>
+                          <div class="h-full w-3/4">
+                            <div class="h-1/2 w-full">
+                              <div class="h-1/2 w-full stroke-contact"></div>
+                            </div>
+                            <div class="h-1/2 w-full">
+                              <div
+                                class="h-1/2 w-full translate-y-[-25%] stroke-contact"
+                              ></div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div
+                      class="w-full px-1 flex justify-between items-center montserrat z-[1]"
+                    >
+                      <span class="initial-contact">W</span>
+                      <span>O</span><span>O</span><span>N</span>
+                      <span class="initial-contact">Z</span><span>H</span
+                      ><span>E</span><span>N</span>
+                      <span class="initial-contact">F</span><span>E</span
+                      ><span>I</span>
+                    </div>
+                    <div
+                      class="bg-theme h-[250%] portrait:h-full w-full portrait:w-screen absolute rotate-45 portrait:rotate-0 z-auto"
+                    ></div>
                   </div>
                 </div>
               </div>
