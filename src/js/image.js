@@ -27,13 +27,8 @@ const image = (() => {
     profile.src = imgProfile640w;
 
     address.src = imgAddress50w;
-    address.alt = "Address";
-
     phone.src = imgPhone50w;
-    phone.alt = "Phone";
-
     link.src = imgLink50w;
-    link.alt = "Link";
   }
 
   return { init };

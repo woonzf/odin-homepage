@@ -162,7 +162,15 @@
   }
 
   .icon-contact {
-    @apply h-[40px];
+    @apply h-[40px] sm:h-[50px];
+  }
+
+  .icon-contact-link {
+    @apply h-[30px] sm:h-[40px];
+  }
+
+  .icon-contact-link:hover {
+    @apply scale-110;
   }
 }
 
