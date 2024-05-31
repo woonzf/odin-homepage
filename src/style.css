@@ -32,7 +32,7 @@
   }
 
   article {
-    @apply bg-theme-2 portrait:bg-transparent h-full max-w-screen-lg landscape:px-10 landscape:md:px-14 landscape:py-14 flex flex-col justify-around overflow-auto;
+    @apply bg-theme-2 portrait:bg-transparent h-full w-full max-w-screen-lg landscape:px-10 landscape:md:px-14 landscape:py-14 flex flex-col justify-around overflow-auto;
   }
 
   /* Scrollbar */
@@ -155,6 +155,14 @@
   .tool-about,
   [class^="tool-project"] {
     @apply aspect-square flex justify-center items-center;
+  }
+
+  .p-contact {
+    @apply py-0 text-left text-nowrap;
+  }
+
+  .icon-contact {
+    @apply h-[40px];
   }
 }
 
@@ -383,5 +391,9 @@ nav.hide,
 
   .img-project-even {
     transform: rotateY(20deg);
+  }
+
+  #contact-card {
+    box-shadow: 2px 2px 10px black;
   }
 }

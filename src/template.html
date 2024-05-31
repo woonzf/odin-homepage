@@ -120,7 +120,7 @@
         >
           <div class="px-2 flex justify-center items-center" id="scroll">
             <div class="flex justify-center items-center gap-2">
-              <img class="rotate-90 img-arrow-2 scale-75 md:scale-100" />
+              <img class="rotate-90 img-arrow scale-75 md:scale-100" />
               <span class="mt-0.5 montserrat text-theme-2">SCROLL</span>
             </div>
           </div>
@@ -240,30 +240,55 @@
       </div>
       <div class="content-wrapper landscape:translate-y-[150%]">
         <section class="content-section relative" id="contact">
-          <article>
+          <article class="portrait:overflow-visible">
             <div class="flex flex-col gap-7">
-              <h2 class="montserrat">
+              <h2 class="landscape:mb-7 montserrat">
                 CONTACT<span class="text-theme">.</span>
               </h2>
-              <div class="py-5">
-                <p>
-                  Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-                  Laboriosam recusandae atque odit magnam laudantium. Maxime,
-                  temporibus quis eaque expedita deserunt nam enim voluptatibus
-                  sequi itaque, reprehenderit error cumque, quos culpa? Lorem
-                  ipsum dolor sit amet consectetur, adipisicing elit. Eius enim
-                  illo doloremque sit quisquam maiores similique perferendis
-                  nulla excepturi facere voluptatem id quae, amet dolorem iusto
-                  incidunt cum officiis. Doloribus. Lorem, ipsum dolor sit amet
-                  consectetur adipisicing elit. Atque, culpa doloremque? Ut
-                  totam deleniti explicabo magni. Officiis, optio dolor tenetur
-                  incidunt inventore et natus, aliquid dolorum aspernatur
-                  dolores reiciendis mollitia. Lorem ipsum dolor sit amet
-                  consectetur adipisicing elit. Incidunt illo aliquam voluptatum
-                  nam corrupti sunt, magnam rem dolorem atque. Blanditiis veniam
-                  asperiores qui fugit rem. Necessitatibus numquam fuga ratione
-                  ea?
-                </p>
+              <div
+                class="w-full max-w-2xl landscape:aspect-[1.8] landscape:px-7 rounded-xl flex flex-col sm:flex-row self-center portrait:items-center portrait:gap-7"
+                id="contact-card"
+              >
+                <div
+                  class="portrait:h-full w-full flex justify-center items-center"
+                >
+                  <div
+                    class="h-full flex flex-col landscape:justify-evenly gap-2"
+                  >
+                    <div class="flex gap-5">
+                      <img class="icon-contact" id="img-address" />
+                      <div class="mt-[5px] self-center montserrat">
+                        <p class="p-contact">114, Jalan Sendayan Satu,</p>
+                        <p class="p-contact">Kampung Baru Pandan,</p>
+                        <p class="p-contact">81100, Johor Bahru,</p>
+                        <p class="p-contact">Johor, Malaysia</p>
+                      </div>
+                    </div>
+                    <div class="flex gap-5">
+                      <img class="icon-contact" id="img-phone" />
+                      <p class="self-center p-contact montserrat">
+                        +60 16 - 746 5228
+                      </p>
+                    </div>
+                    <div class="flex gap-5">
+                      <img class="icon-contact" id="img-link" />
+                      <div class="self-center">Link</div>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="portrait:h-full w-full flex flex-col justify-center items-center"
+                >
+                  <div>LOGO</div>
+                  <div class="flex !leading-[0.5] montserrat">
+                    <p class="text-theme p-contact">W</p>
+                    OON&nbsp;
+                    <p class="text-theme p-contact">Z</p>
+                    HEN&nbsp;
+                    <p class="text-theme p-contact">F</p>
+                    EI
+                  </div>
+                </div>
               </div>
               <div
                 class="btn-nav-wrapper top-[84px] left-[calc(50%-72px)] portrait:hidden"
