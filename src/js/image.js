@@ -6,6 +6,9 @@ import imgProfile640w from "../img/profile-2-640w.jpg";
 import imgMenu50w from "../img/icons/poll-50w.png";
 import imgMenuW50w from "../img/icons/poll-w-50w.png";
 
+import imgOpen50w from "../img/icons/open-50w.png";
+import imgOpenW50w from "../img/icons/open-w-50w.png";
+
 import imgName50w from "../img/icons/name-50w.png";
 import imgNameW50w from "../img/icons/name-w-50w.png";
 import imgEmail50w from "../img/icons/email-50w.png";
@@ -40,13 +43,20 @@ const image = (() => {
     _setImgSrc(link, imgLinkW50w, imgLink50w);
   }
 
+  function setIconOpen(className) {
+    const element = document.querySelectorAll(className);
+    element.forEach((el) => {
+      _setImgSrc(el, imgOpenW50w, imgOpen50w);
+    });
+  }
+
   function _setImgSrc(id, srcDark, srcLight) {
     const target = id.querySelectorAll("img");
     target[0].src = srcDark;
     target[1].src = srcLight;
   }
 
-  return { init };
+  return { init, setIconOpen };
 })();
 
 export { image };

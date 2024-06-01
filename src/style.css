@@ -196,12 +196,21 @@
     @apply py-0 text-left text-nowrap;
   }
 
-  .icon-wrapper {
+  .icon-contact-wrapper {
     @apply h-[40px] sm:h-[50px] aspect-square;
   }
 
+  .icon-mode-dark,
   .icon-mode {
     transition: opacity 1s ease;
+  }
+
+  .icon-mode-dark {
+    @apply opacity-0 dark:opacity-100;
+  }
+
+  .icon-mode {
+    @apply opacity-100 dark:opacity-0;
   }
 
   .icon-contact-link {
@@ -218,6 +227,12 @@
 
   .initial-contact {
     @apply text-theme-2 dark:text-light;
+  }
+}
+
+@layer utilities {
+  #contact-card {
+    @apply landscape:shadow-[2px_2px_10px_rgb(39_39_42)] landscape:dark:shadow-[0px_0px_10px_rgb(241_245_249)];
   }
 }
 
@@ -446,9 +461,5 @@ nav.hide,
 
   .img-project-even {
     transform: rotateY(20deg);
-  }
-
-  #contact-card {
-    box-shadow: 2px 2px 10px black;
   }
 }

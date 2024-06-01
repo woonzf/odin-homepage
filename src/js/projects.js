@@ -1,8 +1,8 @@
 import Project from "./class-Project";
 import { tools } from "./tools";
 import { carousel } from "./carousel";
+import { image } from "./image";
 
-import imgOpen from "../img/icons/open-24w.png";
 import imgYpetD from "../img/projects/ypet-d-450w.png";
 import imgWeatherD from "../img/projects/weather-d-450w.png";
 import imgWeatherM from "../img/projects/weather-m-200w.jpg";
@@ -18,12 +18,14 @@ const projects = (() => {
   function init() {
     _generateProjects();
     _carouselInit();
+    image.setIconOpen(".icon-link-wrapper");
   }
 
   function _generateProjects() {
     let count = 1;
 
     for (const project of projectList) {
+      // Create elements
       const divWrapper = _createElementWithClass(
         "div",
         "content-wrapper-project",
@@ -85,6 +87,7 @@ const projects = (() => {
       const img = _createElementWithClass("img");
       const img2 = _createElementWithClass("img", "img-project-m", "absolute");
 
+      // Info
       index.textContent = count;
       divIndex.textContent = count;
       divIndex.append(index);
@@ -93,6 +96,7 @@ const projects = (() => {
       title.append(span);
       divDesc.textContent = project.desc;
 
+      // Tools
       carousel.generateImage(
         project.tools,
         `tool-project-${count}`,
@@ -104,6 +108,7 @@ const projects = (() => {
       wrapperToolOuter.append(wrapperTool);
       divTools.append(wrapperToolOuter);
 
+      // Link and Demo
       aRepo.target = "_blank";
       aRepo.rel = "noreferrer";
       const aDemo = aRepo.cloneNode(false);
@@ -112,15 +117,29 @@ const projects = (() => {
       aDemo.href = project.demo;
       spanDemo.textContent = "DEMO";
 
-      const imgLink = _createElementWithClass("img", "aspect-square");
-      imgLink.src = imgOpen;
-      const imgLink2 = imgLink.cloneNode(false);
+      const linkWrapper = _createElementWithClass(
+        "div",
+        "h-[24px]",
+        "aspect-square",
+        "relative",
+        "icon-link-wrapper",
+      );
+      const imgLink = _createElementWithClass(
+        "img",
+        "icon-mode-dark",
+        "absolute",
+      );
+      const imgLink2 = _createElementWithClass("img", "icon-mode", "absolute");
 
-      aRepo.append(spanRepo, imgLink);
-      aDemo.append(spanDemo, imgLink2);
+      linkWrapper.append(imgLink, imgLink2);
+      const linkWrapper2 = linkWrapper.cloneNode(true);
+
+      aRepo.append(spanRepo, linkWrapper);
+      aDemo.append(spanDemo, linkWrapper2);
       divLinks.append(aRepo, aDemo);
       divInfo.append(divIndex, title, divDesc, divTools, divLinks);
 
+      // Project Image
       img.src = project.img[0];
       divImgInner.append(img);
 
@@ -144,6 +163,7 @@ const projects = (() => {
       divWrapper.append(divInfo, divImg);
       contentProjects.append(divWrapper);
 
+      // Divider
       const divider = _createElementWithClass("div", "divider-theme");
       divInfo.append(divider);
 
