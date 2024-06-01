@@ -14,5 +14,5 @@ document.addEventListener("DOMContentLoaded", () => {
   projects.init();
   menu.init();
   screenOrientation.init();
-  // darkMode.init();
+  darkMode.init();
 });

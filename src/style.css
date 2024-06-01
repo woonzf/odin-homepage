@@ -41,8 +41,7 @@
   }
 
   ::-webkit-scrollbar-thumb {
-    @apply bg-theme-fade rounded-full;
-    border: solid 4px rgb(241 245 249);
+    @apply bg-theme-fade border-solid border-4 border-theme-2 dark:border-dark rounded-full;
   }
 
   ::-webkit-scrollbar-thumb:hover,
@@ -60,12 +59,24 @@
     @apply bg-red-300;
   }
 
+  .bg-dark {
+    @apply bg-zinc-800;
+  }
+
+  .bg-dark-fade {
+    @apply bg-zinc-700;
+  }
+
   .bg-theme-2 {
-    @apply bg-slate-100;
+    @apply bg-slate-100 dark:bg-dark;
   }
 
   .bg-theme-2-fade {
-    @apply bg-slate-200;
+    @apply bg-slate-200 dark:bg-dark-fade;
+  }
+
+  .text-light {
+    @apply text-zinc-800;
   }
 
   .text-theme {
@@ -78,6 +89,14 @@
 
   .border-theme {
     @apply border-red-400;
+  }
+
+  .border-dark {
+    @apply border-zinc-800;
+  }
+
+  .border-theme-2 {
+    @apply border-slate-100;
   }
 
   .divider-theme {
@@ -101,11 +120,11 @@
   }
 
   .btn-theme {
-    @apply bg-theme-fade text-theme-2 hover:bg-theme;
+    @apply bg-theme-fade hover:bg-theme text-theme-2 dark:text-light;
   }
 
   .btn-theme-2 {
-    @apply bg-theme-2-fade text-theme hover:bg-theme-2;
+    @apply bg-theme-2-fade hover:bg-theme-2 text-theme;
   }
 
   .border-img {
@@ -177,8 +196,12 @@
     @apply py-0 text-left text-nowrap;
   }
 
-  .icon-contact {
-    @apply h-[40px] sm:h-[50px];
+  .icon-wrapper {
+    @apply h-[40px] sm:h-[50px] aspect-square;
+  }
+
+  .icon-mode {
+    transition: opacity 1s ease;
   }
 
   .icon-contact-link {
@@ -194,7 +217,7 @@
   }
 
   .initial-contact {
-    @apply text-theme-2;
+    @apply text-theme-2 dark:text-light;
   }
 }
 
