@@ -6,7 +6,7 @@
     <title>Document</title>
   <script defer src="bundle.js"></script></head>
   <body
-    class="bg-theme-2 dark:bg-black w-full text-black dark:text-white text-sm md:text-lg flex landscape:justify-center landscape:items-center select-none landscape:overflow-hidden relative"
+    class="bg-theme-2 w-full text-light dark:text-theme-2 text-sm md:text-lg flex landscape:justify-center landscape:items-center select-none landscape:overflow-hidden relative"
   >
     <header
       class="bg-theme-2 h-14 w-full text-xl md:text-2xl fixed top-0 left-0 z-[99]"
@@ -22,7 +22,13 @@
             class="flex landscape:hidden justify-center items-center rotate-90 -scale-y-100"
             id="btn-menu"
           >
-            <img id="img-menu" />
+            <div class="h-[24px] aspect-square relative" id="img-menu-wrapper">
+              <img
+                class="icon-mode opacity-0 dark:opacity-100 absolute"
+                alt="Menu"
+              />
+              <img class="icon-mode opacity-100 dark:opacity-0 absolute" />
+            </div>
           </button>
           <button
             class="bg-black dark:bg-white h-[40%] aspect-[2/1] rounded-full flex justify-center items-center"
@@ -56,7 +62,7 @@
           <button id="btn-projects-p">PROJECTS</button>
           <button id="btn-contact-p">CONTACT</button>
         </div>
-        <button class="mr-2" id="btn-menu-back">BACK</button>
+        <button class="mr-2 text-theme" id="btn-menu-back">BACK</button>
       </nav>
     </div>
     <main
@@ -67,7 +73,7 @@
         id="section-intro"
       >
         <div
-          class="text-black text-[10vw] portrait:text-[15vw] leading-[0.8] flex flex-col absolute top-[50%] left-[50%] translate-y-[-50%] translate-x-[-50%] overflow-y-clip montserrat"
+          class="text-[10vw] portrait:text-[15vw] leading-[0.8] flex flex-col absolute top-[50%] left-[50%] translate-y-[-50%] translate-x-[-50%] overflow-y-clip montserrat"
           id="intro"
         >
           <div class="h-full" id="hello-wrapper">
@@ -123,7 +129,10 @@
             id="scroll"
           >
             <div class="flex justify-center items-center gap-2">
-              <img class="rotate-90 img-arrow scale-75 md:scale-100" />
+              <img
+                class="h-[24px] rotate-90 img-arrow scale-75 md:scale-100"
+                id="img-scroll"
+              />
               <span class="mt-0.5 montserrat text-theme-2">SCROLL</span>
             </div>
           </div>
@@ -261,25 +270,57 @@
                     class="h-full flex flex-col landscape:justify-center gap-2 landscape:gap-5"
                   >
                     <div class="flex gap-5">
-                      <img class="icon-contact" alt="Name" id="img-name" />
+                      <div class="relative icon-wrapper" id="img-name-wrapper">
+                        <img
+                          class="icon-mode opacity-0 dark:opacity-100 absolute"
+                          alt="Name"
+                        />
+                        <img
+                          class="icon-mode opacity-100 dark:opacity-0 absolute"
+                        />
+                      </div>
                       <div class="self-center montserrat">
                         <p class="p-contact">Woon Zhen Fei</p>
                       </div>
                     </div>
                     <div class="flex gap-5">
-                      <img class="icon-contact" alt="E-mail" id="img-email" />
+                      <div class="relative icon-wrapper" id="img-email-wrapper">
+                        <img
+                          class="icon-mode opacity-0 dark:opacity-100 absolute"
+                          alt="Email"
+                        />
+                        <img
+                          class="icon-mode opacity-100 dark:opacity-0 absolute"
+                        />
+                      </div>
                       <div class="self-center montserrat">
                         <p class="p-contact">woonzf@gmail.com</p>
                       </div>
                     </div>
                     <div class="flex gap-5">
-                      <img class="icon-contact" alt="Phone" id="img-phone" />
+                      <div class="relative icon-wrapper" id="img-phone-wrapper">
+                        <img
+                          class="icon-mode opacity-0 dark:opacity-100 absolute"
+                          alt="Phone"
+                        />
+                        <img
+                          class="icon-mode opacity-100 dark:opacity-0 absolute"
+                        />
+                      </div>
                       <p class="self-center p-contact montserrat">
                         +60 16 - 746 5228
                       </p>
                     </div>
                     <div class="flex gap-5">
-                      <img class="icon-contact" alt="Link" id="img-link" />
+                      <div class="relative icon-wrapper" id="img-link-wrapper">
+                        <img
+                          class="icon-mode opacity-0 dark:opacity-100 absolute"
+                          alt="Link"
+                        />
+                        <img
+                          class="icon-mode opacity-100 dark:opacity-0 absolute"
+                        />
+                      </div>
                       <div class="flex self-center gap-3">
                         <a
                           href="https://github.com/woonzf"
