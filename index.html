@@ -48,10 +48,10 @@
       <div class="bg-theme w-full" id="bg-left"></div>
       <div class="bg-theme-2 w-full" id="bg-right"></div>
       <nav
-        class="bg-theme-2 h-full w-full flex flex-col justify-center items-center gap-14 fixed montserrat z-[98] hidden"
+        class="bg-theme-2 h-full w-full text-base md:text-lg flex flex-col justify-center items-center gap-14 fixed montserrat z-[98] hidden"
         id="menu"
       >
-        <div class="flex flex-col justify-center items-center">
+        <div class="flex flex-col justify-center items-center gap-1">
           <button id="btn-about-p">ABOUT</button>
           <button id="btn-projects-p">PROJECTS</button>
           <button id="btn-contact-p">CONTACT</button>
@@ -118,7 +118,10 @@
         <div
           class="w-36 absolute landscape:hidden bottom-0 right-[50%] translate-y-[-220%] translate-x-[30%] md:translate-x-[25%] -rotate-90"
         >
-          <div class="px-2 flex justify-center items-center" id="scroll">
+          <div
+            class="px-2 flex justify-center items-center animate-bounce-x"
+            id="scroll"
+          >
             <div class="flex justify-center items-center gap-2">
               <img class="rotate-90 img-arrow scale-75 md:scale-100" />
               <span class="mt-0.5 montserrat text-theme-2">SCROLL</span>
@@ -146,7 +149,9 @@
                     >WEB DEVELOPER</span
                   >
                 </div>
-                <div class="w-[30%] portrait:w-[70%] relative">
+                <div
+                  class="w-[30%] portrait:w-[70%] portrait:sm:w-[50%] relative"
+                >
                   <img
                     class="relative -translate-x-3 translate-y-3 z-[1]"
                     alt="Woon Zhen Fei"
