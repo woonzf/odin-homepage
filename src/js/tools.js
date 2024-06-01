@@ -37,7 +37,7 @@ const tools = (() => {
       alt: "SQLite",
     },
     {
-      src: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/flask/flask-original.svg",
+      class: ["devicon-flask-original", "colored"],
       alt: "Flask",
     },
     {
@@ -53,7 +53,7 @@ const tools = (() => {
       alt: "Git",
     },
     {
-      src: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/github/github-original.svg",
+      class: ["devicon-github-original", "colored"],
       alt: "GitHub",
     },
   ];

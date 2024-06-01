@@ -218,6 +218,10 @@
     @apply h-[30px] sm:h-[40px] aspect-square hover:scale-110;
   }
 
+  .icon-contact-link-i {
+    @apply text-[30px] sm:text-[40px];
+  }
+
   .stroke-contact {
     @apply bg-theme-2;
   }
