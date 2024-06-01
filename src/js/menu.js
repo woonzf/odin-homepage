@@ -97,16 +97,16 @@ const menu = (() => {
     btnAboutP.onclick = () => {
       if (window.scrollY < threshold) {
         window.scrollBy(0, 2);
-        _scrollTo(about);
+        _scrollTo(about, 1);
         window.scrollBy(0, -(screen.height / 2));
-      } else _scrollTo(about);
+      } else _scrollTo(about, 1);
     };
 
     btnProjectsP.onclick = () => {
-      _scrollTo(projects);
+      _scrollTo(projects, 1);
     };
     btnContactP.onclick = () => {
-      _scrollTo(contact);
+      _scrollTo(contact, 0);
     };
   }
 
@@ -141,9 +141,9 @@ const menu = (() => {
     }, 1000);
   }
 
-  function _scrollTo(content) {
+  function _scrollTo(content, offset) {
     content.scrollIntoView();
-    window.scrollBy(0, -56 - 28);
+    if (offset === 1) window.scrollBy(0, -56 - 28);
     btnMenuBack.click();
   }
 

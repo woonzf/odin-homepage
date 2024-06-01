@@ -81,7 +81,7 @@
   }
 
   .divider-theme {
-    @apply bg-theme h-1 w-[90%] md:w-[70%] lg:w-[90%] self-center;
+    @apply bg-theme h-1 w-full;
   }
 
   .content-wrapper {
@@ -325,7 +325,7 @@ nav.hide,
   }
 }
 
-#scroll {
+.animate-bounce-x {
   will-change: animation;
   animation: bounce-x 1s infinite;
 }
