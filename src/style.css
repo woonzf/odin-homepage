@@ -213,12 +213,9 @@
     @apply opacity-100 dark:opacity-0;
   }
 
+  .icon-contact-link-wrapper,
   .icon-contact-link {
-    @apply h-[30px] sm:h-[40px];
-  }
-
-  .icon-contact-link:hover {
-    @apply scale-110;
+    @apply h-[30px] sm:h-[40px] aspect-square hover:scale-110;
   }
 
   .stroke-contact {
