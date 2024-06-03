@@ -10,6 +10,7 @@ const menu = (() => {
   const btnMenu = document.querySelector("#btn-menu");
   const btnMenuBack = document.querySelector("#btn-menu-back");
 
+  const btnHomeP = document.querySelector("#btn-home-p");
   const btnAboutP = document.querySelector("#btn-about-p");
   const btnProjectsP = document.querySelector("#btn-projects-p");
   const btnContactP = document.querySelector("#btn-contact-p");
@@ -97,6 +98,10 @@ const menu = (() => {
       isOpenMenu = 0;
     };
 
+    btnHomeP.onclick = () => {
+      _scrollTo(0, 0);
+    };
+
     btnAboutP.onclick = () => {
       if (window.scrollY < threshold) {
         window.scrollBy(0, 2);
@@ -146,8 +151,11 @@ const menu = (() => {
   }
 
   function _scrollTo(content, offset) {
-    content.scrollIntoView();
-    if (offset === 1) window.scrollBy(0, -56 - 28);
+    if (content === 0 && offset === 0) window.scrollTo(0, 0);
+    else {
+      content.scrollIntoView();
+      if (offset === 1) window.scrollBy(0, -56 - 28);
+    }
     btnMenuBack.click();
   }
 

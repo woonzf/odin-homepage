@@ -1,6 +1,6 @@
 const darkMode = (() => {
   const btns = document.querySelectorAll(".btn-dark-mode");
-  const innerWrappers = document.querySelectorAll(".dark-mode-inner-wrapper");
+  const balls = document.querySelectorAll(".dark-mode-ball");
   const html = document.documentElement;
 
   function init() {
@@ -27,8 +27,8 @@ const darkMode = (() => {
 
   function _toggle() {
     html.classList.toggle("dark");
-    innerWrappers.forEach((innerWrapper) => {
-      innerWrapper.classList.toggle("dark");
+    balls.forEach((ball) => {
+      ball.classList.toggle("dark");
     });
 
     if (!html.classList.contains("dark"))

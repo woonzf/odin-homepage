@@ -148,7 +148,7 @@
   }
 
   .img-project-inner-wrapper {
-    @apply w-full flex justify-center items-center landscape:translate-y-[-10%] relative;
+    @apply w-full flex justify-center items-center landscape:translate-y-[-10%];
     -webkit-perspective: 500px;
     perspective: 500px;
   }
@@ -247,12 +247,20 @@
 
 .tool-about,
 [class^="tool-project"],
-.dark-mode-inner-wrapper {
+.dark-mode-ball {
   transition: transform 750ms ease;
 }
 
-.dark-mode-inner-wrapper.dark {
-  transform: translateX(-100%);
+.dark-mode-ball.dark {
+  transform: translateX(calc(100% + 4px));
+}
+
+.btn-dark-mode {
+  transition: background-color 750ms ease;
+}
+
+.btn-dark-mode:hover {
+  @apply landscape:bg-dark landscape:dark:bg-slate-100;
 }
 
 .img-tool {
@@ -368,6 +376,8 @@ nav.hide,
   }
 }
 
+/* Tailwind Bounce Custom */
+
 .animate-bounce-x {
   will-change: animation;
   animation: bounce-x 1s infinite;
@@ -394,8 +404,6 @@ nav.hide,
   will-change: animation;
   animation: bounce-y-n90 3s infinite;
 }
-
-/* Tailwind Bounce Custom */
 
 @keyframes bounce-x {
   0%,
