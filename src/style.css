@@ -132,7 +132,7 @@
   }
 
   .content-wrapper-project {
-    @apply w-[90%] py-7 flex portrait:flex-col-reverse portrait:gap-5;
+    @apply w-[90%] py-7 flex portrait:flex-col-reverse gap-5 overflow-y-clip;
   }
 
   .index-project-wrapper {
@@ -144,14 +144,18 @@
   }
 
   .img-project-wrapper {
-    @apply w-full flex justify-center;
+    @apply w-full flex justify-center items-center;
+  }
+
+  .img-project-inner-wrapper {
+    @apply w-full flex justify-center items-center translate-y-[-10%] relative;
     -webkit-perspective: 500px;
     perspective: 500px;
   }
 
   .img-project,
   .img-project-even {
-    @apply relative z-[1];
+    @apply z-[1];
     /* More at MEDIA QUERY section below*/
   }
 

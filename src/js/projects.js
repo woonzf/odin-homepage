@@ -159,7 +159,12 @@ const projects = (() => {
         divImgInnerMirror.classList.add("img-project-mirror");
       }
 
-      divImg.append(divImgInner, divImgInnerMirror);
+      const divImgInnerWrapper = _createElementWithClass(
+        "div",
+        "img-project-inner-wrapper",
+      );
+      divImgInnerWrapper.append(divImgInner, divImgInnerMirror);
+      divImg.append(divImgInnerWrapper);
       divWrapper.append(divInfo, divImg);
       contentProjects.append(divWrapper);
 
