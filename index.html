@@ -33,17 +33,11 @@
             </div>
           </button>
           <button
-            class="bg-black dark:bg-white h-[40%] aspect-[2/1] rounded-full flex justify-center items-center"
-            id="btn-dark-mode"
+            class="h-[24px] aspect-square overflow-hidden btn-dark-mode portrait:hidden"
           >
-            <div class="h-[66%] w-[75%] flex justify-between relative">
-              <img alt="Dark Mode" id="img-dark-mode" />
-              <img alt="Light Mode" id="img-light-mode" />
-              <span
-                class="bg-white dark:bg-black h-full aspect-square rounded-full absolute"
-                id="dark-mode-ball"
-              >
-              </span>
+            <div class="h-full flex dark-mode-inner-wrapper">
+              <img class="img-light-mode" alt="Light Mode" />
+              <img class="img-dark-mode" alt="Dark Mode" />
             </div>
           </button>
         </div>
@@ -59,12 +53,18 @@
         class="bg-theme-2 h-full w-full text-base md:text-lg flex flex-col justify-center items-center gap-14 fixed montserrat z-[98] hidden"
         id="menu"
       >
+        <button class="h-[24px] aspect-square overflow-hidden btn-dark-mode">
+          <div class="h-full flex dark-mode-inner-wrapper">
+            <img class="img-light-mode" alt="Light Mode" />
+            <img class="img-dark-mode" alt="Dark Mode" />
+          </div>
+        </button>
         <div class="flex flex-col justify-center items-center gap-1">
           <button id="btn-about-p">ABOUT</button>
           <button id="btn-projects-p">PROJECTS</button>
           <button id="btn-contact-p">CONTACT</button>
         </div>
-        <button class="mr-2 text-theme" id="btn-menu-back">BACK</button>
+        <button class="text-theme" id="btn-menu-back">BACK</button>
       </nav>
     </div>
     <main
