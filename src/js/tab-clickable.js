@@ -12,9 +12,11 @@ const tabClickable = (() => {
   function toggle(tab) {
     const buttons = tab.querySelectorAll("button");
     const links = tab.querySelectorAll("a");
+    const article = tab.querySelector("article");
 
     const clickables = [buttons, links];
 
+    article.classList.toggle("overflow-hidden");
     clickables.forEach((clickable) => {
       clickable.forEach((el) => {
         el.classList.toggle("landscape:hidden");
