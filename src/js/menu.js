@@ -1,5 +1,6 @@
 import { background } from "./background";
 import { scroll } from "./scroll";
+import { tabClickable } from "./tab-clickable";
 
 const menu = (() => {
   const btnAboutL = document.querySelector("#btn-about-l");
@@ -42,10 +43,12 @@ const menu = (() => {
 
     btnBacks.forEach((btn) => {
       btn.onclick = () => {
+        const target = backTarget[0];
         backTarget[0].classList.toggle("active");
         _toggleBackground(backTarget[1]);
         setTimeout(() => {
           backTarget[0].querySelector("article").scrollTo(0, 0);
+          tabClickable.toggle(target);
         }, 1000);
       };
     });
@@ -119,6 +122,7 @@ const menu = (() => {
 
   function _openTab(tab, bg) {
     _toggleBackground(bg);
+    tabClickable.toggle(tab);
     tab.classList.toggle("active");
     isTabOpen = 1;
     backTarget = [tab, bg];
