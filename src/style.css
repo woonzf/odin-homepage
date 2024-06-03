@@ -247,8 +247,12 @@
 
 .tool-about,
 [class^="tool-project"],
-#dark-mode-ball {
+.dark-mode-inner-wrapper {
   transition: transform 750ms ease;
+}
+
+.dark-mode-inner-wrapper.dark {
+  transform: translateX(-100%);
 }
 
 .img-tool {
@@ -257,10 +261,6 @@
 
 .img-tool.scaleAbout {
   transform: scale(1.5);
-}
-
-#dark-mode-ball.dark {
-  transform: translateX(140%);
 }
 
 #menu {

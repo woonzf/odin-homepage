@@ -1,11 +1,13 @@
 const darkMode = (() => {
-  const btn = document.querySelector("#btn-dark-mode");
-  const ball = document.querySelector("#dark-mode-ball");
+  const btns = document.querySelectorAll(".btn-dark-mode");
+  const innerWrappers = document.querySelectorAll(".dark-mode-inner-wrapper");
   const html = document.documentElement;
 
   function init() {
     _detectDarkMode();
-    btn.onclick = _toggle;
+    btns.forEach((btn) => {
+      btn.onclick = _toggle;
+    });
   }
 
   function _detectDarkMode() {
@@ -24,8 +26,10 @@ const darkMode = (() => {
   }
 
   function _toggle() {
-    ball.classList.toggle("dark");
     html.classList.toggle("dark");
+    innerWrappers.forEach((innerWrapper) => {
+      innerWrapper.classList.toggle("dark");
+    });
 
     if (!html.classList.contains("dark"))
       localStorage.setItem("theme", "light");
