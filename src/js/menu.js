@@ -83,7 +83,7 @@ const menu = (() => {
 
       setTimeout(() => {
         menu.classList.toggle("hidden");
-      }, 1000);
+      }, 500);
 
       if (window.scrollY < threshold) {
         background.shrink(1);
@@ -147,7 +147,7 @@ const menu = (() => {
     setTimeout(() => {
       btnMenu.disabled = false;
       btnMenuBack.disabled = false;
-    }, 1000);
+    }, 500);
   }
 
   function _scrollTo(content, offset) {
