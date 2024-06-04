@@ -11,8 +11,10 @@ const darkMode = (() => {
   }
 
   function _detectDarkMode() {
-    if (localStorage.theme === "dark") {
-      _toggle();
+    if (Boolean(localStorage.theme)) {
+      if (localStorage.theme === "dark") {
+        _toggle();
+      }
       return;
     }
 
