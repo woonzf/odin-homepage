@@ -16,7 +16,7 @@ const tabClickable = (() => {
 
     const clickables = [buttons, links];
 
-    article.classList.toggle("overflow-hidden");
+    article.classList.toggle("landscape:overflow-hidden");
     clickables.forEach((clickable) => {
       clickable.forEach((el) => {
         el.classList.toggle("landscape:hidden");

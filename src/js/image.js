@@ -16,6 +16,8 @@ import imgPhoneW50w from "../img/icons/phone-w-50w.png";
 import imgLink50w from "../img/icons/link-50w.png";
 import imgLinkW50w from "../img/icons/link-w-50w.png";
 
+import imgFavicon32w from "../img/icons/favicon-32w.png";
+
 const image = (() => {
   const scroll = document.querySelector("#img-scroll");
   const profile = document.querySelector("#img-profile");
@@ -26,6 +28,8 @@ const image = (() => {
   const phone = document.querySelector("#img-phone-wrapper");
   const link = document.querySelector("#img-link-wrapper");
 
+  const favicon = document.querySelector('link[rel="icon"]');
+
   function init() {
     scroll.src = imgArrowW50w;
     profile.src = imgProfile640w;
@@ -35,6 +39,9 @@ const image = (() => {
     _setImgSrc(email, imgEmailW50w, imgEmail50w);
     _setImgSrc(phone, imgPhoneW50w, imgPhone50w);
     _setImgSrc(link, imgLinkW50w, imgLink50w);
+
+    favicon.type = "image/png";
+    favicon.href = imgFavicon32w;
   }
 
   function setIconOpen(className) {
