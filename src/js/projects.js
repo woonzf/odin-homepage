@@ -50,7 +50,7 @@ const projects = (() => {
       );
       const title = _createElementWithClass("h3", "z-[1]", "montserrat");
       const span = _createElementWithClass("span", "text-theme");
-      const divDesc = _createElementWithClass("p", "z-[2]");
+      const divDesc = _createElementWithClass("p", "text-justify", "z-[2]");
       const divTools = _createElementWithClass(
         "div",
         "flex",

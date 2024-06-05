@@ -7,6 +7,7 @@ import { menu } from "./js/menu";
 import { screenOrientation } from "./js/screen-orientation";
 import { darkMode } from "./js/dark-mode";
 import { tabClickable } from "./js/tab-clickable";
+import { timeline } from "./js/timeline";
 
 document.addEventListener("DOMContentLoaded", () => {
   scroll.init();
@@ -17,4 +18,5 @@ document.addEventListener("DOMContentLoaded", () => {
   screenOrientation.init();
   darkMode.init();
   tabClickable.init();
+  timeline.init();
 });
