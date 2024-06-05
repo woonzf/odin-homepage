@@ -1,6 +1,8 @@
 import { tools } from "./tools";
 
 const carousel = (() => {
+  const html = document.querySelector("html");
+
   function init() {
     _initAbout();
   }
@@ -31,12 +33,12 @@ const carousel = (() => {
           "absolute",
         );
         imgDark.style.fontSize = height + "px";
+        imgDark.title = list[i].alt;
 
         const img = imgDark.cloneNode(false);
         img.classList.remove("icon-mode-dark");
         img.classList.add(list[i].class[1], "icon-mode");
 
-        imgDark.title = list[i].alt;
         div.append(imgDark, img);
       }
 
@@ -126,7 +128,11 @@ const carousel = (() => {
 
       if (auto === 1) {
         toolMid = tools[mid].querySelector("img");
-        if (toolMid === null) toolMid = tools[mid].querySelector("i");
+        if (toolMid === null) {
+          if (html.classList.contains("dark"))
+            toolMid = tools[mid].querySelector(".icon-mode-dark");
+          else toolMid = tools[mid].querySelector(".icon-mode");
+        }
         toolMid.classList.toggle("scaleAbout");
         toolName.textContent = Boolean(toolMid.alt)
           ? toolMid.alt.toUpperCase()
