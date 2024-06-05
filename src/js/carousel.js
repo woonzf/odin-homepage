@@ -97,8 +97,15 @@ const carousel = (() => {
     if (auto === 1) {
       wrapper.style.transform = `translateX(-${x}px)`;
       toolMid = tools[mid].querySelector("img");
+      if (toolMid === null) {
+        if (html.classList.contains("dark"))
+          toolMid = tools[mid].querySelector(".icon-mode-dark");
+        else toolMid = tools[mid].querySelector(".icon-mode");
+      }
       toolMid.classList.toggle("scaleAbout");
-      toolName.textContent = toolMid.alt.toUpperCase();
+      toolName.textContent = Boolean(toolMid.alt)
+        ? toolMid.alt.toUpperCase()
+        : toolMid.title.toUpperCase();
     }
 
     setInterval(() => {
