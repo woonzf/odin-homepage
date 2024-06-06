@@ -17,12 +17,14 @@ const menu = (() => {
 
   const menu = document.querySelector("#menu");
   const helloWrapper = document.querySelector("#hello-wrapper");
-  const nav = document.querySelectorAll("nav");
+  const navL = document.querySelector("#nav-l");
 
   const about = document.querySelector("#about");
   const projects = document.querySelector("#projects");
   const contact = document.querySelector("#contact");
   const btnBacks = document.querySelectorAll(".btn-back");
+
+  const btnsL = [btnAboutL, btnProjectsL, btnContactL];
 
   let isOpenMenu = 0;
   let threshold = 0;
@@ -136,9 +138,16 @@ const menu = (() => {
   function _toggleBackground(bg) {
     helloWrapper.classList.toggle("hide");
     background.shrink(bg);
-    nav.forEach((el) => {
-      el.classList.toggle("hide");
-    });
+
+    if (navL.classList.contains("hidden")) {
+      navL.classList.toggle("hidden");
+      navL.classList.toggle("hide");
+    } else {
+      navL.classList.toggle("hide");
+      setTimeout(() => {
+        navL.classList.toggle("hidden");
+      }, 1000);
+    }
   }
 
   function _toggleMenuCooldown() {
