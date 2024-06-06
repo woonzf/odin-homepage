@@ -94,7 +94,7 @@ const projects = (() => {
       title.textContent = project.name;
       span.textContent = ".";
       title.append(span);
-      divDesc.textContent = project.desc;
+      divDesc.innerHTML = project.desc;
 
       // Tools
       carousel.generateImage(
@@ -135,7 +135,13 @@ const projects = (() => {
       const linkWrapper2 = linkWrapper.cloneNode(true);
 
       aRepo.append(spanRepo, linkWrapper);
-      aDemo.append(spanDemo, linkWrapper2);
+
+      // Disable for project Homepage
+      if (project.name === "Homepage") {
+        aDemo.classList.add("disabled");
+        aDemo.textContent = "VIEWING";
+      } else aDemo.append(spanDemo, linkWrapper2);
+
       divLinks.append(aRepo, aDemo);
       divInfo.append(divIndex, title, divDesc, divTools, divLinks);
 
@@ -209,7 +215,7 @@ const projects = (() => {
     return [
       new Project(
         "Your Personal Expense Tracker",
-        "A web application that allows you to track your expenses.",
+        "A <i>full stack</i> project that features user create/login/logout, store/display expense data and settings that allow name, password and currency change.",
         [imgYpetD],
         "https://github.com/woonzf/cs50x-2023-project",
         "https://www.youtube.com/watch?v=l83kys9yJJs",
@@ -225,7 +231,7 @@ const projects = (() => {
       ),
       new Project(
         "Weather App",
-        "A weather application using Weather API.",
+        "A <i>front end</i> project that retrieves and displays user-provided location's weather info from WeatherAPI.com",
         [imgWeatherD, imgWeatherM],
         "https://github.com/woonzf/odin-weather-app",
         "https://woonzf.github.io/odin-weather-app/",
@@ -233,7 +239,7 @@ const projects = (() => {
       ),
       new Project(
         "Homepage",
-        "My first portfolio website, I am featuring it for the amount of effort I've put into it.",
+        "Yes, you are viewing it! My first and current portfolio, a <i>front end</i> project that features interactive layout, responsive design and dark mode option.",
         [imgHomeD],
         "https://github.com/woonzf/odin-homepage",
         "https://woonzf.github.io/odin-homepage/",
