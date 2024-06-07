@@ -24,8 +24,6 @@ const menu = (() => {
   const contact = document.querySelector("#contact");
   const btnBacks = document.querySelectorAll(".btn-back");
 
-  const btnsL = [btnAboutL, btnProjectsL, btnContactL];
-
   let isOpenMenu = 0;
   let threshold = 0;
   let isTabOpen = 0;

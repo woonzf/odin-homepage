@@ -81,7 +81,10 @@ const projects = (() => {
         "montserrat",
         "hover:scale-[110%]",
       );
-      const spanRepo = _createElementWithClass("span");
+      const spanRepo = _createElementWithClass(
+        "span",
+        "first-letter:text-theme",
+      );
       const spanDemo = spanRepo.cloneNode(false);
       const divImg = _createElementWithClass("div", "img-project-wrapper");
       const divImgInner = _createElementWithClass("div");

@@ -160,7 +160,7 @@
                     <span class="text-theme">Z</span>HEN
                     <span class="text-theme">F</span>EI
                   </div>
-                  <span class="pt-2 text-xl md:text-2xl leading-none"
+                  <span class="pt-2 text-lg md:text-xl leading-none"
                     >WEB DEVELOPER</span
                   >
                 </div>
@@ -180,9 +180,10 @@
               <div class="px-1 landscape:py-5 text-justify flex flex-col gap-2">
                 <p>
                   Hello world, I am Woon Zhen Fei, a self-taught web developer
-                  in Malaysia. I am actively learning web development since
-                  September 2023. I can speak and write in
+                  in Malaysia. I can speak and write in
                   <i>English, Mandarin and Malay.</i>
+                  I have been actively learning web development since September
+                  2023.
                 </p>
                 <p>
                   Capable of making <i>interactive</i> webpage with
@@ -218,62 +219,71 @@
                 <h3 class="montserrat">
                   JOURNEY<span class="text-theme">.</span>
                 </h3>
-                <div class="timeline text-pretty relative">
-                  <div class="timeline-content relative">
-                    <div class="timeline-inner-content">
-                      <p class="montserrat">
-                        PRESENT<span class="text-theme">.</span>
-                      </p>
-                      <p>
-                        <i>Ongoing</i> - The Odin Project's Full Stack
-                        JavaScript
-                      </p>
+                <div class="w-full flex justify-center">
+                  <div class="timeline relative" id="timeline">
+                    <div class="timeline-content">
+                      <div class="timeline-inner-content">
+                        <p class="montserrat">
+                          PRESENT<span class="text-theme">.</span>
+                        </p>
+                        <p>
+                          <i>Ongoing</i> - The Odin Project's Full Stack
+                          JavaScript
+                        </p>
+                      </div>
                     </div>
-                  </div>
-                  <div class="timeline-content relative">
-                    <div class="timeline-inner-content">
-                      <p class="montserrat">
-                        OCT 2023<span class="text-theme">.</span>
-                      </p>
-                      <p><i>Completed</i> - The Odin Project's Foundations</p>
-                      <p>
-                        <i>Started</i> - The Odin Project's Full Stack
-                        JavaScript
-                      </p>
+                    <div class="timeline-content">
+                      <div class="timeline-inner-content">
+                        <p class="montserrat">
+                          OCT 2023<span class="text-theme">.</span>
+                        </p>
+                        <p><i>Completed</i> - The Odin Project's Foundations</p>
+                        <p>
+                          <i>Started</i> - The Odin Project's Full Stack
+                          JavaScript
+                        </p>
+                      </div>
                     </div>
-                  </div>
-                  <div class="timeline-content relative">
-                    <div class="timeline-inner-content">
-                      <p class="montserrat">
-                        SEP 2023<span class="text-theme">.</span>
-                      </p>
-                      <p>
-                        <i>Completed</i> - CS50: Introduction to Computer
-                        Science
-                      </p>
-                      <p><i>Started</i> - The Odin Project's Foundations</p>
+                    <div class="timeline-content">
+                      <div class="timeline-inner-content">
+                        <p class="montserrat">
+                          SEP 2023<span class="text-theme">.</span>
+                        </p>
+                        <p>
+                          <i>Completed</i> - CS50: Introduction to Computer
+                          Science
+                        </p>
+                        <p><i>Started</i> - The Odin Project's Foundations</p>
+                      </div>
                     </div>
-                  </div>
-                  <div class="timeline-content relative">
-                    <div class="timeline-inner-content">
-                      <p class="montserrat">
-                        JUN 2023<span class="text-theme">.</span>
-                      </p>
-                      <p>
-                        <i>Started</i> - CS50: Introduction to Computer Science
-                      </p>
+                    <div class="timeline-content">
+                      <div class="timeline-inner-content">
+                        <p class="montserrat">
+                          JUN 2023<span class="text-theme">.</span>
+                        </p>
+                        <p>
+                          <i>Started</i> - CS50: Introduction to Computer
+                          Science
+                        </p>
+                      </div>
                     </div>
-                  </div>
-                  <div class="timeline-content relative">
-                    <div class="timeline-inner-content">
-                      <p class="montserrat">
-                        2012<span class="text-theme">.</span>
-                      </p>
-                      <p><i>First programming experience!</i></p>
-                      <p>Learnt C in first year of university</p>
+                    <div class="timeline-content">
+                      <div class="timeline-inner-content">
+                        <p class="montserrat">
+                          2012<span class="text-theme">.</span>
+                        </p>
+                        <p><i>First programming experience!</i></p>
+                        <p>Learnt C in first year of university</p>
+                      </div>
                     </div>
                   </div>
                 </div>
+                <button
+                  class="first-letter:text-theme hover:scale-110 montserrat hidden"
+                  id="btn-timeline-toggle"
+                >
+                  SHOW ALL
+                </button>
               </div>
               <div
                 class="btn-nav-wrapper top-[calc(50%-14px)] right-[-44px] xl:hidden portrait:hidden"
@@ -305,13 +315,15 @@
                 id="content-projects"
               >
                 <a
-                  class="text-lg md:text-xl flex items-center gap-3 montserrat hover:scale-[110%]"
+                  class="text-base md:text-xl flex items-center gap-3 montserrat hover:scale-[110%]"
                   href="https://github.com/woonzf?tab=repositories"
                   target="_blank"
                   rel="noreferrer"
                 >
                   <span class="uppercase first-letter:text-theme">More on</span>
-                  <div class="h-[28px] aspect-square text-[28px] relative">
+                  <div
+                    class="h-[24px] md:h-[28px] aspect-square text-[24px] md:text-[28px] relative"
+                  >
                     <i
                       class="devicon-github-original icon-mode-dark absolute"
                       title="GitHub"
