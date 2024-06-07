@@ -10,6 +10,7 @@ import imgHomeD from "../img/projects/homepage-d-450w.png";
 
 const projects = (() => {
   const contentProjects = document.querySelector("#content-projects");
+  const lastChild = contentProjects.lastElementChild;
   const projectList = _getProjects();
   const length = projectList.length;
   const height = 40;
@@ -119,7 +120,8 @@ const projects = (() => {
 
       const linkWrapper = _createElementWithClass(
         "div",
-        "h-[24px]",
+        "h-[14px]",
+        "md:h-[18px]",
         "aspect-square",
         "relative",
         "icon-link-wrapper",
@@ -136,14 +138,16 @@ const projects = (() => {
 
       aRepo.append(spanRepo, linkWrapper);
 
-      // Disable for project Homepage
+      // Disable demo link for project Homepage
       if (project.name === "Homepage") {
         aDemo.classList.add("disabled");
         aDemo.textContent = "VIEWING";
       } else aDemo.append(spanDemo, linkWrapper2);
 
       divLinks.append(aRepo, aDemo);
-      divInfo.append(divIndex, title, divDesc, divTools, divLinks);
+
+      const divider = _createElementWithClass("div", "divider-theme");
+      divInfo.append(divIndex, title, divDesc, divTools, divLinks, divider);
 
       // Project Image
       img.src = project.img[0];
@@ -160,9 +164,11 @@ const projects = (() => {
         divImgInner.classList.add("img-project-even");
         divImgInnerMirror.classList.add("img-project-mirror-even");
         divWrapper.classList.add("landscape:flex-row-reverse");
+        divider.classList.add("right");
       } else {
         divImgInner.classList.add("img-project");
         divImgInnerMirror.classList.add("img-project-mirror");
+        divider.classList.add("left");
       }
 
       const divImgInnerWrapper = _createElementWithClass(
@@ -172,11 +178,7 @@ const projects = (() => {
       divImgInnerWrapper.append(divImgInner, divImgInnerMirror);
       divImg.append(divImgInnerWrapper);
       divWrapper.append(divInfo, divImg);
-      contentProjects.append(divWrapper);
-
-      // Divider
-      const divider = _createElementWithClass("div", "divider-theme");
-      divInfo.append(divider);
+      contentProjects.insertBefore(divWrapper, lastChild);
 
       count++;
     }

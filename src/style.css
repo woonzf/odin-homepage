@@ -42,7 +42,7 @@
   }
 
   ::-webkit-scrollbar-thumb {
-    @apply bg-theme-fade border-solid border-x-4 border-y-0 border-theme-2 dark:border-dark;
+    @apply bg-gradient-to-b from-red-400 border-solid border-x-4 border-y-0 border-theme-2 dark:border-dark;
   }
 
   ::-webkit-scrollbar-thumb:hover,
@@ -105,7 +105,15 @@
   }
 
   .divider-theme {
-    @apply bg-theme h-1 w-full;
+    @apply h-1 w-full;
+  }
+
+  .divider-theme.left {
+    @apply bg-gradient-to-r from-red-400;
+  }
+
+  .divider-theme.right {
+    @apply bg-gradient-to-l from-red-400;
   }
 
   .content-wrapper {
