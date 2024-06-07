@@ -87,7 +87,7 @@ const carousel = (() => {
     let mid = Math.floor(length / 2);
     let toolMid = null;
 
-    if (amount >= length - 1) amount = length - 2;
+    amount = length - 2;
     if (amount % 2 === 0) wrapperOuter.style.width = x * (amount - 1) + "px";
     else wrapperOuter.style.width = x * amount + "px";
 
@@ -95,6 +95,7 @@ const carousel = (() => {
     else if (amount < 7) mid -= 1;
 
     if (auto === 1) {
+      wrapperOuter.classList.add("fade-side");
       wrapper.style.transform = `translateX(-${x}px)`;
       toolMid = tools[mid].querySelector("img");
       if (toolMid === null) {

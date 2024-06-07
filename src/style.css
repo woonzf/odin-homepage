@@ -8,6 +8,7 @@
   --timing-bounce-100: cubic-bezier(0, 0, 0.2, 1);
   --timing-bounce-50: cubic-bezier(0.8, 0, 1, 1);
   --bounce-translateY: 25%;
+  --theme-2: rgb(241, 245, 249);
 }
 
 @tailwind base;
@@ -154,8 +155,8 @@
   }
 
   .timeline.less {
-    -webkit-mask-image: linear-gradient(white 30%, transparent);
-    mask-image: linear-gradient(white 30%, transparent);
+    -webkit-mask-image: linear-gradient(var(--theme-2) 50%, transparent);
+    mask-image: linear-gradient(var(--theme-2) 50%, transparent);
   }
 
   .timeline:after {
@@ -218,14 +219,14 @@
   .img-project,
   .img-project-even {
     @apply relative z-[1];
-    /* More at MEDIA QUERY section below*/
+    /* More at MEDIA QUERY below*/
   }
 
   .img-project-mirror,
   .img-project-mirror-even {
     @apply absolute top-0 z-auto portrait:hidden;
-    -webkit-mask-image: linear-gradient(transparent 80%, white);
-    mask-image: linear-gradient(transparent 80%, white);
+    -webkit-mask-image: linear-gradient(transparent 80%, var(--theme-2));
+    mask-image: linear-gradient(transparent 80%, var(--theme-2));
   }
 
   .img-project-mirror {
@@ -323,6 +324,22 @@
 
 .btn-dark-mode:hover {
   @apply landscape:bg-dark landscape:dark:bg-slate-100;
+}
+
+.fade-side {
+  -webkit-mask-image: linear-gradient(
+    to right,
+    transparent,
+    var(--theme-2) 30% 70%,
+    transparent
+  );
+  mask-image: linear-gradient(
+    to right,
+    transparent,
+    var(--theme-2) 30% 70%,
+    transparent
+  );
+  /* More at MEDIA QUERY BELOW */
 }
 
 .img-tool {
@@ -536,5 +553,22 @@ nav.hide,
 
   .img-project-even {
     transform: rotateY(20deg);
+  }
+}
+
+@media (min-width: 768px) {
+  .fade-side {
+    -webkit-mask-image: linear-gradient(
+      to right,
+      transparent,
+      var(--theme-2) 10% 90%,
+      transparent
+    );
+    mask-image: linear-gradient(
+      to right,
+      transparent,
+      var(--theme-2) 10% 90%,
+      transparent
+    );
   }
 }
