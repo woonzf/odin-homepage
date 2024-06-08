@@ -22,6 +22,7 @@ const carousel = (() => {
         img.src = list[i].src;
         img.alt = list[i].alt;
         img.style.height = height + "px";
+        img.title = list[i].alt;
 
         div.append(img);
       } else {

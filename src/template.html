@@ -43,13 +43,13 @@
       </div>
     </header>
     <div
-      class="h-[calc(100vh-2*56px)] portrait:h-[100svh] w-[calc(100vw-2*40px)] landscape:md:w-[calc(100vw-2*56px)] portrait:w-full flex absolute"
+      class="h-[calc(100vh-2*56px)] portrait:h-[calc(100svh-56px)] w-[calc(100vw-2*40px)] landscape:md:w-[calc(100vw-2*56px)] portrait:w-full portrait:mt-[56px] flex absolute"
       id="bg-intro"
     >
-      <div class="bg-theme-2 w-full order-2" id="bg-right"></div>
-      <div class="bg-theme w-full order-1" id="bg-left"></div>
+      <div class="bg-theme-2 w-full rounded-r-lg order-2" id="bg-right"></div>
+      <div class="bg-theme w-full rounded-l-lg order-1" id="bg-left"></div>
       <nav
-        class="bg-theme-2 h-full w-full text-base md:text-lg flex flex-col justify-center items-center gap-14 fixed montserrat z-[98] hidden"
+        class="bg-theme-2 h-full w-full mt-[-56px] text-base md:text-lg flex flex-col justify-center items-center gap-14 fixed montserrat z-[98] hidden"
         id="menu"
       >
         <button id="btn-home-p">HOME</button>
@@ -168,13 +168,15 @@
                   class="w-[30%] portrait:w-[70%] portrait:sm:w-[50%] relative"
                 >
                   <img
-                    class="relative -translate-x-3 translate-y-3 z-[1]"
+                    class="rounded-md relative landscape:-translate-x-2 landscape:translate-y-2 z-[1]"
                     alt="Woon Zhen Fei"
                     id="img-profile"
                   />
                   <div
-                    class="h-full w-full border-2 border-theme absolute translate-x-3 -translate-y-[calc(100%+12px)] z-auto"
-                  ></div>
+                    class="border-wrapper absolute top-0 portrait:-top-2 landscape:-translate-y-2 portrait:-left-2 landscape:translate-x-2 z-auto"
+                  >
+                    <div class="border-inner-wrapper"></div>
+                  </div>
                 </div>
               </div>
               <div class="px-1 landscape:py-5 text-justify flex flex-col gap-2">
@@ -421,6 +423,7 @@
                       </div>
                       <div class="flex self-center gap-3">
                         <a
+                          class="hover:scale-110"
                           href="https://github.com/woonzf"
                           target="_blank"
                           rel="noreferrer"
@@ -432,10 +435,12 @@
                             ></i>
                             <i
                               class="devicon-github-original colored icon-mode icon-contact-link-i absolute"
+                              title="GitHub"
                             ></i>
                           </div>
                         </a>
                         <a
+                          class="hover:scale-110"
                           href="https://www.linkedin.com/in/zhen-fei-woon-a72965147/"
                           target="_blank"
                           rel="noreferrer"
@@ -445,6 +450,7 @@
                               class="absolute"
                               src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/linkedin/linkedin-original.svg"
                               alt="LinkedIn"
+                              title="LinkedIn"
                             />
                           </div>
                         </a>
@@ -517,7 +523,7 @@
                       <span class="initial-contact">V</span>
                     </div>
                     <div
-                      class="bg-theme h-[300%] portrait:h-full w-full absolute rotate-45 portrait:rotate-0 z-auto"
+                      class="bg-theme h-[300%] portrait:h-[105%] w-full portrait:w-[105%] portrait:rounded-md absolute rotate-45 portrait:rotate-0 z-auto"
                     ></div>
                   </div>
                 </div>

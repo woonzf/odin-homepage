@@ -4,10 +4,16 @@
   src: url(./font/Montserrat-ExtraBold.ttf) format("TrueType");
 }
 
+/* Find a base font */
+/* Move contact title to top, card to center */
+/* Remove mobile number */
+/* Add resume */
+
 :root {
   --timing-bounce-100: cubic-bezier(0, 0, 0.2, 1);
   --timing-bounce-50: cubic-bezier(0.8, 0, 1, 1);
   --bounce-translateY: 25%;
+  --theme: rgb(248, 113, 113);
   --theme-2: rgb(241, 245, 249);
 }
 
@@ -35,6 +41,10 @@
   a.disabled {
     @apply text-disabled;
     pointer-events: none;
+  }
+
+  button {
+    @apply rounded-md;
   }
 
   /* Scrollbar */
@@ -105,8 +115,17 @@
     @apply border-slate-100;
   }
 
+  .border-wrapper {
+    @apply h-full portrait:h-[calc(100%+16px)] w-full portrait:w-[calc(100%+16px)] p-1 rounded-md;
+    background: linear-gradient(to bottom, var(--theme), transparent);
+  }
+
+  .border-inner-wrapper {
+    @apply bg-theme-2 h-full w-full rounded-md;
+  }
+
   .divider-theme {
-    @apply h-1 w-full;
+    @apply h-1 w-full rounded-sm;
   }
 
   .divider-theme.left {
@@ -282,7 +301,7 @@
 
   .icon-contact-link-wrapper,
   .icon-contact-link {
-    @apply h-[30px] sm:h-[40px] aspect-square hover:scale-110;
+    @apply h-[30px] sm:h-[40px] aspect-square;
   }
 
   .icon-contact-link-i {
@@ -308,24 +327,6 @@
   font-family: "Montserrat", system-ui, sans-serif;
 }
 
-.tool-about,
-[class^="tool-project"],
-.dark-mode-ball {
-  transition: transform 750ms ease;
-}
-
-.dark-mode-ball.dark {
-  transform: translateX(calc(100% + 4px));
-}
-
-.btn-dark-mode {
-  transition: background-color 750ms ease;
-}
-
-.btn-dark-mode:hover {
-  @apply landscape:bg-dark landscape:dark:bg-slate-100;
-}
-
 .fade-side {
   -webkit-mask-image: linear-gradient(
     to right,
@@ -340,6 +341,31 @@
     transparent
   );
   /* More at MEDIA QUERY BELOW */
+}
+
+/* Transition */
+
+a,
+#btn-timeline-toggle {
+  transition: transform 500ms ease;
+}
+
+.tool-about,
+[class^="tool-project"],
+.dark-mode-ball {
+  transition: transform 750ms ease;
+}
+
+.dark-mode-ball.dark {
+  transform: translateX(calc(100% + 4px));
+}
+
+.btn-dark-mode {
+  transition: background-color 500ms ease;
+}
+
+.btn-dark-mode:hover {
+  @apply landscape:bg-dark landscape:dark:bg-slate-100;
 }
 
 .img-tool {
@@ -380,6 +406,7 @@
 }
 
 #bg-right.shrink ~ #bg-left {
+  @apply rounded-lg;
   opacity: 0.5;
 }
 
@@ -553,6 +580,10 @@ nav.hide,
 
   .img-project-even {
     transform: rotateY(20deg);
+  }
+
+  .border-wrapper {
+    background: linear-gradient(to bottom left, var(--theme), transparent 40%);
   }
 }
 

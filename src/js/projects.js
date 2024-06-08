@@ -220,7 +220,7 @@ const projects = (() => {
     return [
       new Project(
         "Your Personal Expense Tracker",
-        "A <i>full stack</i> project that features user create/login/logout, store/display expense data and settings that allow name, password and currency change.",
+        "A <i>full stack</i> project that features user create, login and logout, store and display expense data and settings that allow name, password and currency change.",
         [imgYpetD],
         "https://github.com/woonzf/cs50x-2023-project",
         "https://www.youtube.com/watch?v=l83kys9yJJs",
