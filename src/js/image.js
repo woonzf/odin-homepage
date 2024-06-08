@@ -11,8 +11,6 @@ import imgName50w from "../img/icons/name-50w.png";
 import imgNameW50w from "../img/icons/name-w-50w.png";
 import imgEmail50w from "../img/icons/email-50w.png";
 import imgEmailW50w from "../img/icons/email-w-50w.png";
-import imgPhone50w from "../img/icons/phone-50w.png";
-import imgPhoneW50w from "../img/icons/phone-w-50w.png";
 import imgLink50w from "../img/icons/link-50w.png";
 import imgLinkW50w from "../img/icons/link-w-50w.png";
 
@@ -25,7 +23,6 @@ const image = (() => {
   const menu = document.querySelector("#img-menu-wrapper");
   const name = document.querySelector("#img-name-wrapper");
   const email = document.querySelector("#img-email-wrapper");
-  const phone = document.querySelector("#img-phone-wrapper");
   const link = document.querySelector("#img-link-wrapper");
 
   const favicon = document.querySelector('link[rel="icon"]');
@@ -37,7 +34,6 @@ const image = (() => {
     _setImgSrc(menu, imgMenuW50w, imgMenu50w);
     _setImgSrc(name, imgNameW50w, imgName50w);
     _setImgSrc(email, imgEmailW50w, imgEmail50w);
-    _setImgSrc(phone, imgPhoneW50w, imgPhone50w);
     _setImgSrc(link, imgLinkW50w, imgLink50w);
 
     favicon.type = "image/png";

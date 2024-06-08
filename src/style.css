@@ -4,10 +4,9 @@
   src: url(./font/Montserrat-ExtraBold.ttf) format("TrueType");
 }
 
-/* Find a base font */
-/* Move contact title to top, card to center */
-/* Remove mobile number */
+/* Change landscape nav layout to traditional header style */
 /* Add resume */
+/* Find a base font */
 
 :root {
   --timing-bounce-100: cubic-bezier(0, 0, 0.2, 1);
@@ -48,6 +47,7 @@
   }
 
   /* Scrollbar */
+
   ::-webkit-scrollbar {
     @apply w-5;
   }
@@ -117,7 +117,7 @@
 
   .border-wrapper {
     @apply h-full portrait:h-[calc(100%+16px)] w-full portrait:w-[calc(100%+16px)] p-1 rounded-md;
-    background: linear-gradient(to bottom, var(--theme), transparent);
+    background: linear-gradient(to bottom left, var(--theme), transparent 70%);
   }
 
   .border-inner-wrapper {
@@ -160,12 +160,12 @@
     @apply bg-theme-2-fade hover:bg-theme-2 text-theme;
   }
 
-  .article-title {
-    @apply bg-theme-2 w-full sticky landscape:-top-14 portrait:top-14 z-[96];
-  }
-
   .article-inner-wrapper {
     @apply flex flex-col gap-7;
+  }
+
+  .article-title {
+    @apply bg-theme-2 w-full sticky landscape:-top-14 portrait:top-14 z-[96];
   }
 
   .timeline {
@@ -406,8 +406,7 @@ a,
 }
 
 #bg-right.shrink ~ #bg-left {
-  @apply rounded-lg;
-  opacity: 0.5;
+  @apply rounded-lg opacity-75;
 }
 
 #bg-intro,
@@ -450,8 +449,11 @@ nav.hide,
 
 /* ANIMATION */
 
-.animate-hello {
+[class^="animate"] {
   will-change: animation;
+}
+
+.animate-hello {
   animation: slide-up 1.5s 1;
   animation-fill-mode: forwards;
 }
@@ -467,7 +469,6 @@ nav.hide,
 }
 
 .animate-appear {
-  will-change: animation;
   animation: appear 1.5s 1 1.5s;
   animation-fill-mode: forwards;
 }
@@ -485,29 +486,24 @@ nav.hide,
 /* Tailwind Bounce Custom */
 
 .animate-bounce-x {
-  will-change: animation;
   animation: bounce-x 1s infinite;
 }
 
 .animate-bounce-y {
-  will-change: animation;
   animation: bounce-y 3s infinite;
 }
 
 .animate-bounce-y-r {
-  will-change: animation;
   animation: bounce-y-r 3s infinite;
 }
 
 .animate-bounce-y-90 {
   transform: rotate(90deg);
-  will-change: animation;
   animation: bounce-y-90 3s infinite;
 }
 
 .animate-bounce-y-n90 {
   transform: rotate(-90deg);
-  will-change: animation;
   animation: bounce-y-n90 3s infinite;
 }
 
