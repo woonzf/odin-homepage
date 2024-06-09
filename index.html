@@ -96,7 +96,6 @@
       >
         <div
           class="text-[10vw] portrait:text-[15vw] leading-[0.8] flex flex-col absolute top-[50%] left-[50%] translate-y-[-50%] translate-x-[-50%] overflow-y-clip montserrat"
-          id="intro"
         >
           <div class="h-full" id="hello-wrapper">
             <div class="h-full overflow-hidden hello">
@@ -106,6 +105,64 @@
               <h1 class="h-full animate-hello">
                 LLO<span class="text-theme" id="hello-dot">.</span>
               </h1>
+            </div>
+          </div>
+        </div>
+        <div
+          class="w-full absolute bottom-0 portrait:bottom-14 portrait:left-full portrait:-rotate-90 origin-bottom-left overflow-hidden"
+        >
+          <div
+            class="flex portrait:flex-row-reverse justify-end gap-5"
+            id="info-wrapper"
+          >
+            <div class="landscape:text-end flex flex-col montserrat">
+              <div class="overflow-hidden">
+                <div class="text-lg md:text-xl animate-hello">
+                  <span class="text-theme">W</span>OON
+                  <span class="text-theme">Z</span>HEN
+                  <span class="text-theme">F</span>EI
+                </div>
+              </div>
+              <div class="overflow-hidden">
+                <div class="w-full text-base md:text-lg animate-hello">
+                  FRONT END DEV
+                </div>
+              </div>
+            </div>
+            <div class="flex items-center gap-3 animate-appear">
+              <a
+                class="hover:scale-110 portrait:rotate-90"
+                href="https://github.com/woonzf"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <div class="icon-home-link relative">
+                  <i
+                    class="devicon-github-original icon-mode-dark absolute"
+                    title="GitHub"
+                  ></i>
+                  <i
+                    class="devicon-github-original colored icon-mode absolute"
+                    title="GitHub"
+                  ></i>
+                </div>
+              </a>
+              <a
+                class="hover:scale-110 portrait:rotate-90"
+                href="https://www.linkedin.com/in/zhen-fei-woon-a72965147/"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <div class="icon-home-link relative">
+                  <i class="devicon-linkedin-plain icon-mode-dark absolute"></i>
+                  <img
+                    class="icon-mode absolute"
+                    src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/linkedin/linkedin-plain.svg"
+                    alt="LinkedIn"
+                    title="LinkedIn"
+                  />
+                </div>
+              </a>
             </div>
           </div>
         </div>
@@ -398,13 +455,13 @@
                           target="_blank"
                           rel="noreferrer"
                         >
-                          <div class="relative icon-contact-link-wrapper">
+                          <div class="icon-contact-link relative">
                             <i
-                              class="devicon-github-original icon-mode-dark icon-contact-link-i absolute"
+                              class="devicon-github-original icon-mode-dark absolute"
                               title="GitHub"
                             ></i>
                             <i
-                              class="devicon-github-original colored icon-mode icon-contact-link-i absolute"
+                              class="devicon-github-original colored icon-mode absolute"
                               title="GitHub"
                             ></i>
                           </div>
@@ -415,7 +472,7 @@
                           target="_blank"
                           rel="noreferrer"
                         >
-                          <div class="relative icon-contact-link-wrapper">
+                          <div class="icon-contact-link relative">
                             <img
                               class="absolute"
                               src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/linkedin/linkedin-original.svg"
@@ -509,7 +566,7 @@
                 class="btn-nav-wrapper top-[62px] left-[calc(50%-72px)] portrait:hidden"
               >
                 <button
-                  class="btn-nav btn-theme btn-back animate-bounce-y z-[97]"
+                  class="btn-nav btn-theme btn-back animate-bounce-y z-[96]"
                 >
                   <span class="montserrat">BACK</span>
                 </button>
@@ -520,10 +577,20 @@
       </div>
     </main>
     <footer
-      class="bg-theme-2 h-14 w-full landscape:fixed bottom-0 left-0 z-[99]"
+      class="bg-theme-2 h-14 w-full landscape:fixed bottom-0 left-0 z-[97]"
     >
       <div class="h-full flex justify-center items-center">
-        <small class="italic">Copyright &copy; 2024 | WZF</small>
+        <small class="italic">
+          Copyright &copy; 2024 |
+          <a
+            class="underline"
+            href="https://github.com/woonzf"
+            target="_blank"
+            rel="noreferrer"
+          >
+            WZF
+          </a>
+        </small>
       </div>
     </footer>
   </body>
