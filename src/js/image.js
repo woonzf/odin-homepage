@@ -1,5 +1,5 @@
 import imgArrowW50w from "../img/icons/arrow-w-50w.png";
-import imgProfile640w from "../img/profile-2-640w.jpg";
+import imgProfile500w from "../img/profile-500w.jpg";
 
 import imgMenu50w from "../img/icons/poll-50w.png";
 import imgMenuW50w from "../img/icons/poll-w-50w.png";
@@ -29,7 +29,7 @@ const image = (() => {
 
   function init() {
     scroll.src = imgArrowW50w;
-    profile.src = imgProfile640w;
+    profile.src = imgProfile500w;
 
     _setImgSrc(menu, imgMenuW50w, imgMenu50w);
     _setImgSrc(name, imgNameW50w, imgName50w);
