@@ -23,6 +23,33 @@
         <div class="montserrat" id="brand">
           <span class="text-theme">WZF</span>
         </div>
+        <div class="flex items-center gap-10 md:gap-14">
+          <nav
+            class="text-base md:text-md flex gap-5 montserrat animate-appear portrait:hidden"
+          >
+            <button
+              class="first-letter:text-theme rounded-none box-underline relative"
+              id="btn-about-l"
+            >
+              ABOUT
+            </button>
+            <button
+              class="first-letter:text-theme rounded-none box-underline relative"
+              id="btn-projects-l"
+            >
+              PROJECTS
+            </button>
+            <button
+              class="first-letter:text-theme rounded-none box-underline relative"
+              id="btn-contact-l"
+            >
+              CONTACT
+            </button>
+          </nav>
+          <button class="btn-dark-mode portrait:hidden" title="Dark Mode">
+            <div class="dark-mode-ball"></div>
+          </button>
+        </div>
         <button
           class="flex landscape:hidden justify-center items-center rotate-90 -scale-y-100"
           id="btn-menu"
@@ -32,22 +59,20 @@
             <img class="icon-mode absolute" />
           </div>
         </button>
-        <button
-          class="bg-theme h-[24px] aspect-[2] rounded-md shadow-inner btn-dark-mode portrait:hidden"
-          title="Dark Mode"
-        >
-          <div
-            class="bg-theme-2 h-[calc(100%-4px)] aspect-square mx-[2px] rounded-md dark-mode-ball"
-          ></div>
-        </button>
       </div>
     </header>
     <div
       class="h-[calc(100vh-2*56px)] portrait:h-[calc(100svh-56px)] w-[calc(100vw-2*40px)] landscape:md:w-[calc(100vw-2*56px)] portrait:w-full portrait:mt-[56px] flex absolute"
       id="bg-intro"
     >
-      <div class="bg-theme-2 w-full rounded-r-lg order-2" id="bg-right"></div>
-      <div class="bg-theme w-full rounded-l-lg order-1" id="bg-left"></div>
+      <div
+        class="bg-theme-2 w-full landscape:rounded-r-lg order-2"
+        id="bg-right"
+      ></div>
+      <div
+        class="bg-theme w-full landscape:rounded-l-lg order-1"
+        id="bg-left"
+      ></div>
       <nav
         class="bg-theme-2 h-full w-full mt-[-56px] text-base md:text-lg flex flex-col justify-center items-center gap-14 fixed montserrat z-[98] hidden"
         id="menu"
@@ -59,13 +84,8 @@
           <button id="btn-contact-p">CONTACT</button>
         </div>
         <button class="text-theme" id="btn-menu-back">BACK</button>
-        <button
-          class="bg-theme h-[24px] aspect-[2] rounded-md shadow-inner btn-dark-mode"
-          title="Dark Mode"
-        >
-          <div
-            class="bg-theme-2 h-[calc(100%-4px)] aspect-square mx-[2px] rounded-md dark-mode-ball"
-          ></div>
+        <button class="btn-dark-mode" title="Dark Mode">
+          <div class="dark-mode-ball"></div>
         </button>
       </nav>
     </div>
@@ -91,40 +111,6 @@
             </div>
           </div>
         </div>
-        <nav class="h-full w-full absolute montserrat" id="nav-l">
-          <div class="h-full w-full relative animate-appear opacity-0">
-            <div
-              class="btn-nav-wrapper top-[calc(50%-14px)] left-[-28px] portrait:hidden"
-            >
-              <button
-                class="btn-nav btn-theme-2 animate-bounce-y-n90"
-                id="btn-about-l"
-              >
-                <span class="montserrat">ABOUT</span>
-              </button>
-            </div>
-            <div
-              class="btn-nav-wrapper top-[calc(50%-14px)] right-[-28px] portrait:hidden"
-            >
-              <button
-                class="btn-nav btn-theme animate-bounce-y-90"
-                id="btn-projects-l"
-              >
-                <span class="montserrat">PROJECTS</span>
-              </button>
-            </div>
-            <div
-              class="btn-nav-wrapper bottom-[56px] left-[calc(50%-172px)] portrait:hidden"
-            >
-              <button
-                class="btn-nav btn-theme-2 animate-bounce-y-r"
-                id="btn-contact-l"
-              >
-                <span class="montserrat">CONTACT</span>
-              </button>
-            </div>
-          </div>
-        </nav>
         <div
           class="w-36 absolute landscape:hidden bottom-0 right-[50%] translate-y-[-220%] translate-x-[30%] md:translate-x-[25%] -rotate-90"
         >
@@ -146,7 +132,7 @@
         <section class="content-section relative" id="about">
           <article>
             <div class="article-inner-wrapper">
-              <h2 class="article-title portrait:top-[55px] montserrat">
+              <h2 class="article-title montserrat">
                 ABOUT<span class="text-theme">.</span>
               </h2>
               <div
@@ -281,7 +267,7 @@
                   </div>
                 </div>
                 <button
-                  class="first-letter:text-theme hover:scale-110 montserrat hidden"
+                  class="w-fit first-letter:text-theme self-center montserrat hover:scale-110 hidden"
                   id="btn-timeline-toggle"
                 >
                   SHOW ALL

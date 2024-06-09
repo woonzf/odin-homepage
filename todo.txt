@@ -1,0 +1,4 @@
+Add resume
+Add footer
+Add name and link to home
+Listen for back button

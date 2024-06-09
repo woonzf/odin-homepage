@@ -17,7 +17,6 @@ const menu = (() => {
 
   const menu = document.querySelector("#menu");
   const helloWrapper = document.querySelector("#hello-wrapper");
-  const navL = document.querySelector("#nav-l");
 
   const about = document.querySelector("#about");
   const projects = document.querySelector("#projects");
@@ -26,31 +25,25 @@ const menu = (() => {
 
   let isOpenMenu = 0;
   let threshold = 0;
-  let isTabOpen = 0;
+  let isOpenTab = 0;
   let backTarget = [];
 
   function init() {
     threshold = scroll.getScrollThreshold();
 
     btnAboutL.onclick = () => {
-      _openTab(about, 2);
+      _openTab(about, 2, btnAboutL);
     };
     btnProjectsL.onclick = () => {
-      _openTab(projects, 1);
+      _openTab(projects, 1, btnProjectsL);
     };
     btnContactL.onclick = () => {
-      _openTab(contact, 2);
+      _openTab(contact, 2, btnContactL);
     };
 
     btnBacks.forEach((btn) => {
       btn.onclick = () => {
-        const target = backTarget[0];
-        backTarget[0].classList.toggle("active");
-        _toggleBackground(backTarget[1]);
-        setTimeout(() => {
-          backTarget[0].querySelector("article").scrollTo(0, 0);
-          tabClickable.toggle(target);
-        }, 1000);
+        _closeTab();
       };
     });
 
@@ -119,33 +112,37 @@ const menu = (() => {
   }
 
   function resetOnScreenChange() {
-    if (isTabOpen === 1) {
+    if (isOpenTab === 1) {
       btnBacks[0].click();
-      isTabOpen = 0;
+      isOpenTab = 0;
     }
   }
 
-  function _openTab(tab, bg) {
+  function _openTab(tab, bg, btn) {
+    if (isOpenTab === 1) btnBacks[0].click();
+    btn.disabled = true;
     _toggleBackground(bg);
     tabClickable.toggle(tab);
     tab.classList.toggle("active");
-    isTabOpen = 1;
-    backTarget = [tab, bg];
+    isOpenTab = 1;
+    backTarget = [tab, bg, btn];
+  }
+
+  function _closeTab() {
+    const target = backTarget[0];
+    target.classList.toggle("active");
+    _toggleBackground(backTarget[1]);
+    setTimeout(() => {
+      target.querySelector("article").scrollTo(0, 0);
+      tabClickable.toggle(target);
+    }, 1000);
+    isOpenTab = 0;
+    backTarget[2].disabled = false;
   }
 
   function _toggleBackground(bg) {
     helloWrapper.classList.toggle("hide");
     background.shrink(bg);
-
-    if (navL.classList.contains("hidden")) {
-      navL.classList.toggle("hidden");
-      navL.classList.toggle("hide");
-    } else {
-      navL.classList.toggle("hide");
-      setTimeout(() => {
-        navL.classList.toggle("hidden");
-      }, 1000);
-    }
   }
 
   function _toggleMenuCooldown() {
