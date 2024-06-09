@@ -12,15 +12,13 @@
     />
   <script defer src="bundle.js"></script></head>
   <body
-    class="bg-theme-2 w-full text-light dark:text-theme-2 text-sm md:text-lg flex landscape:justify-center landscape:items-center select-none landscape:overflow-hidden relative"
+    class="bg-theme-2 w-full text-light dark:text-theme-2 text-sm md:text-lg flex flex-col landscape:justify-center landscape:items-center select-none landscape:overflow-hidden relative"
   >
-    <header
-      class="bg-theme-2 h-14 w-full text-xl md:text-2xl fixed top-0 left-0 z-[99]"
-    >
+    <header class="bg-theme-2 h-14 w-full fixed top-0 left-0 z-[99]">
       <div
         class="h-full w-full px-10 md:px-14 flex justify-between items-center"
       >
-        <div class="montserrat" id="brand">
+        <div class="text-xl md:text-2xl montserrat" id="brand">
           <span class="text-theme">WZF</span>
         </div>
         <div class="flex items-center gap-10 md:gap-14">
@@ -28,19 +26,19 @@
             class="text-base md:text-md flex gap-5 montserrat animate-appear portrait:hidden"
           >
             <button
-              class="first-letter:text-theme rounded-none box-underline relative"
+              class="first-letter:text-theme box-underline relative"
               id="btn-about-l"
             >
               ABOUT
             </button>
             <button
-              class="first-letter:text-theme rounded-none box-underline relative"
+              class="first-letter:text-theme box-underline relative"
               id="btn-projects-l"
             >
               PROJECTS
             </button>
             <button
-              class="first-letter:text-theme rounded-none box-underline relative"
+              class="first-letter:text-theme box-underline relative"
               id="btn-contact-l"
             >
               CONTACT
@@ -90,7 +88,7 @@
       </nav>
     </div>
     <main
-      class="landscape:h-[100vh] w-full px-10 md:px-14 py-14 portrait:flex portrait:flex-col portrait:gap-14 relative portrait:absolute"
+      class="landscape:h-[100vh] w-full px-10 md:px-14 py-14 portrait:pb-0 portrait:flex portrait:flex-col portrait:gap-14 relative"
     >
       <section
         class="h-full portrait:h-[calc(100svh-56px)] w-full relative"
@@ -523,5 +521,12 @@
         </section>
       </div>
     </main>
+    <footer
+      class="bg-theme-2 h-14 w-full landscape:fixed bottom-0 left-0 z-[99]"
+    >
+      <div class="h-full flex justify-center items-center">
+        <small class="italic">Copyright &copy; 2024 | WZF</small>
+      </div>
+    </footer>
   </body>
 </html>
