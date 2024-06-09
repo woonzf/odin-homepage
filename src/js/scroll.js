@@ -3,6 +3,7 @@ import { background } from "./background";
 const scroll = (() => {
   const sectionIntro = document.querySelector("#section-intro");
   const scroll = document.querySelector("#scroll");
+  const infoName = document.querySelector("#info-wrapper > div");
 
   const threshold = 1;
   let shrink = 0;
@@ -32,6 +33,7 @@ const scroll = (() => {
   function _shrinkIntro() {
     sectionIntro.classList.toggle("shrink");
     scroll.classList.toggle("hide");
+    infoName.classList.toggle("hide");
   }
 
   // https://stackoverflow.com/questions/4770025/how-to-disable-scrolling-temporarily

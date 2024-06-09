@@ -312,13 +312,9 @@
     @apply opacity-100 dark:opacity-0;
   }
 
-  .icon-contact-link-wrapper,
+  .icon-home-link,
   .icon-contact-link {
-    @apply h-[30px] sm:h-[40px] aspect-square;
-  }
-
-  .icon-contact-link-i {
-    @apply text-[30px] sm:text-[40px];
+    @apply h-[30px] sm:h-[40px] text-[30px] sm:text-[40px] aspect-square;
   }
 
   .stroke-contact {
@@ -400,11 +396,13 @@ a,
   opacity: 1;
 }
 
-#hello-wrapper {
+#hello-wrapper,
+#info-wrapper {
   transition: transform 1s ease;
 }
 
-#hello-wrapper.hide {
+#hello-wrapper.hide,
+#info-wrapper.hide {
   transform: translateY(100%);
 }
 
@@ -435,12 +433,14 @@ a,
 }
 
 nav,
-#scroll {
+#scroll,
+#info-wrapper > div {
   transition: opacity 1s ease;
 }
 
 nav.hide,
-#scroll.hide {
+#scroll.hide,
+#info-wrapper > div.hide {
   opacity: 0;
 }
 
@@ -580,6 +580,12 @@ nav.hide,
 
   .border-wrapper {
     background: linear-gradient(to bottom left, var(--theme), transparent 80%);
+  }
+}
+
+@media (orientation: portrait) {
+  html {
+    scrollbar-gutter: stable both-edges;
   }
 }
 

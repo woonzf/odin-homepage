@@ -17,6 +17,7 @@ const menu = (() => {
 
   const menu = document.querySelector("#menu");
   const helloWrapper = document.querySelector("#hello-wrapper");
+  const infoWrapper = document.querySelector("#info-wrapper");
 
   const about = document.querySelector("#about");
   const projects = document.querySelector("#projects");
@@ -56,10 +57,7 @@ const menu = (() => {
       _toggleMenuCooldown();
       scroll.disableScroll();
 
-      if (window.scrollY < threshold) {
-        background.shrink(1);
-        helloWrapper.classList.toggle("hide");
-      }
+      if (window.scrollY < threshold) _toggleBackground(1);
 
       menu.classList.toggle("hidden");
       requestAnimationFrame(() => {
@@ -78,15 +76,8 @@ const menu = (() => {
         menu.classList.toggle("hidden");
       }, 500);
 
-      if (window.scrollY < threshold) {
-        background.shrink(1);
-        helloWrapper.classList.toggle("hide");
-      }
-
-      if (helloWrapper.classList.contains("hide")) {
-        background.shrink(1);
-        helloWrapper.classList.toggle("hide");
-      }
+      if (window.scrollY < threshold || helloWrapper.classList.contains("hide"))
+        _toggleBackground(1);
 
       isOpenMenu = 0;
     };
@@ -141,8 +132,9 @@ const menu = (() => {
   }
 
   function _toggleBackground(bg) {
-    helloWrapper.classList.toggle("hide");
     background.shrink(bg);
+    helloWrapper.classList.toggle("hide");
+    infoWrapper.classList.toggle("hide");
   }
 
   function _toggleMenuCooldown() {
