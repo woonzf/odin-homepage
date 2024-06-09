@@ -1,4 +1,4 @@
 Add resume
-Add footer
+Make profile picture a circle
 Add name and link to home
 Listen for back button
