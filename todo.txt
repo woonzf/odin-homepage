@@ -1,1 +1,2 @@
-Add font size for big screen
+Make project image cycle through light and dark mode
+Make project images expandable

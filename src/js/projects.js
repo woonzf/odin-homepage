@@ -3,10 +3,11 @@ import { tools } from "./tools";
 import { carousel } from "./carousel";
 import { image } from "./image";
 
-import imgYpetD from "../img/projects/ypet-d-450w.png";
-import imgWeatherD from "../img/projects/weather-d-450w.png";
-import imgWeatherM from "../img/projects/weather-m-200w.jpg";
-import imgHomeD from "../img/projects/homepage-d-450w.png";
+import imgYpet from "../img/projects/ypet.png";
+import imgWeather from "../img/projects/weather.png";
+import imgWeatherM from "../img/projects/weather-m.png";
+import imgHomepage from "../img/projects/homepage.png";
+import imgHomepageM from "../img/projects/homepage-m.png";
 
 const projects = (() => {
   const contentProjects = document.querySelector("#content-projects");
@@ -221,7 +222,7 @@ const projects = (() => {
       new Project(
         "Your Personal Expense Tracker",
         "A <i>full stack</i> project that features user create, login and logout, store and display expense data and settings that allow name, password and currency change.",
-        [imgYpetD],
+        [imgYpet],
         "https://github.com/woonzf/cs50x-2023-project",
         "https://www.youtube.com/watch?v=l83kys9yJJs",
         tools.get(
@@ -237,7 +238,7 @@ const projects = (() => {
       new Project(
         "Weather App",
         "A <i>front end</i> project that retrieves and displays user-provided location's weather info from WeatherAPI.com",
-        [imgWeatherD, imgWeatherM],
+        [imgWeather, imgWeatherM],
         "https://github.com/woonzf/odin-weather-app",
         "https://woonzf.github.io/odin-weather-app/",
         tools.get("HTML", "CSS", "JavaScript", "Webpack"),
@@ -245,7 +246,7 @@ const projects = (() => {
       new Project(
         "Homepage",
         "Yes, you are viewing it! My first and current portfolio, a <i>front end</i> project that features interactive layout, responsive design and dark mode option.",
-        [imgHomeD],
+        [imgHomepage, imgHomepageM],
         "https://github.com/woonzf/odin-homepage",
         "https://woonzf.github.io/odin-homepage/",
         tools.get("HTML", "CSS", "JavaScript", "Webpack", "Tailwind CSS"),
