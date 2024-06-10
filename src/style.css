@@ -238,7 +238,7 @@
   }
 
   .img-project-wrapper {
-    @apply w-full flex justify-center items-center;
+    @apply w-full px-3 flex justify-center items-center;
   }
 
   .img-project-inner-wrapper {
