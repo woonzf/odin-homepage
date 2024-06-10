@@ -76,8 +76,8 @@ const menu = (() => {
         menu.classList.toggle("hidden");
       }, 500);
 
-      if (window.scrollY < threshold || helloWrapper.classList.contains("hide"))
-        _toggleBackground(1);
+      if (window.scrollY < threshold) _toggleBackground(1);
+      if (helloWrapper.classList.contains("hide")) _toggleBackground(1);
 
       isOpenMenu = 0;
     };

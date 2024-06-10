@@ -89,12 +89,7 @@ const projects = (() => {
       const divImg = _createElementWithClass("div", "img-project-wrapper");
       const divImgInner = _createElementWithClass("div");
       const img = _createElementWithClass("img", "rounded-sm");
-      const img2 = _createElementWithClass(
-        "img",
-        "rounded-sm",
-        "img-project-m",
-        "absolute",
-      );
+      const img2 = _createElementWithClass("img", "img-project-m", "absolute");
 
       // Info
       index.textContent = count;
