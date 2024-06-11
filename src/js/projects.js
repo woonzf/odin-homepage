@@ -8,6 +8,8 @@ import imgWeather from "../img/projects/weather.png";
 import imgWeatherM from "../img/projects/weather-m.png";
 import imgHomepage from "../img/projects/homepage.png";
 import imgHomepageM from "../img/projects/homepage-m.png";
+import imgHomepageD from "../img/projects/homepage-d.png";
+import imgHomepageMD from "../img/projects/homepage-m-d.png";
 
 const projects = (() => {
   const contentProjects = document.querySelector("#content-projects");
@@ -87,9 +89,13 @@ const projects = (() => {
         "first-letter:text-theme",
       );
       const spanDemo = spanRepo.cloneNode(false);
-      const divImg = _createElementWithClass("div", "img-project-wrapper");
+      const divImgOuter = _createElementWithClass(
+        "div",
+        "img-project-outer-wrapper",
+      );
       const divImgInner = _createElementWithClass("div");
-      const img = _createElementWithClass("img", "rounded-sm");
+      const img = _createElementWithClass("img", "img-project");
+      const imgMirror = _createElementWithClass("img", "img-project-mirror");
       const img2 = _createElementWithClass("img", "img-project-m", "absolute");
 
       // Info
@@ -154,34 +160,80 @@ const projects = (() => {
       divInfo.append(divIndex, title, divDesc, divTools, divLinks, divider);
 
       // Project Image
-      img.src = project.img[0];
-      divImgInner.append(img);
+      // Desktop and Mobile with Dark Mode
+      if (project.img.length > 2) {
+        const divImgInnerMode = _createElementWithClass(
+          "div",
+          "img-project-inner-wrapper-mode",
+        );
 
-      if (project.img.length > 1) {
-        img2.src = project.img[1];
-        divImgInner.append(img2);
+        const imgInnerMode = _createElementWithClass("img", "img-project-mode");
+        const imgInnerModeMirror = _createElementWithClass(
+          "img",
+          "img-project-mode-mirror",
+        );
+        const imgInnerModeDark = _createElementWithClass(
+          "img",
+          "img-project-mode-dark",
+        );
+        const imgInnerModeDarkMirror = _createElementWithClass(
+          "img",
+          "img-project-mode-dark-mirror",
+        );
+        const imgInnerModeM = _createElementWithClass(
+          "img",
+          "img-project-mode-m",
+        );
+        const imgInnerModeMDark = _createElementWithClass(
+          "img",
+          "img-project-mode-m-dark",
+        );
+
+        imgInnerMode.src = project.img[0];
+        imgInnerModeMirror.src = project.img[0];
+        imgInnerModeDark.src = project.img[2];
+        imgInnerModeDarkMirror.src = project.img[2];
+        imgInnerModeM.src = project.img[1];
+        imgInnerModeMDark.src = project.img[3];
+
+        divImgInnerMode.append(
+          imgInnerMode,
+          imgInnerModeMirror,
+          imgInnerModeDark,
+          imgInnerModeDarkMirror,
+          imgInnerModeM,
+          imgInnerModeMDark,
+        );
+        divImgInner.append(divImgInnerMode);
+      } else {
+        // Desktop
+        img.src = project.img[0];
+        imgMirror.src = project.img[0];
+        divImgInner.append(img, imgMirror);
+
+        // Mobile
+        if (project.img.length === 2) {
+          img2.src = project.img[1];
+          divImgInner.append(img2);
+        }
       }
 
-      const divImgInnerMirror = divImgInner.cloneNode(true);
-
       if (count % 2 === 0) {
-        divImgInner.classList.add("img-project-even");
-        divImgInnerMirror.classList.add("img-project-mirror-even");
+        divImgInner.classList.add("img-project-inner-wrapper-even");
         divWrapper.classList.add("landscape:flex-row-reverse");
         divider.classList.add("right");
       } else {
-        divImgInner.classList.add("img-project");
-        divImgInnerMirror.classList.add("img-project-mirror");
+        divImgInner.classList.add("img-project-inner-wrapper");
         divider.classList.add("left");
       }
 
-      const divImgInnerWrapper = _createElementWithClass(
+      const divImgWrapper = _createElementWithClass(
         "div",
-        "img-project-inner-wrapper",
+        "img-project-wrapper",
       );
-      divImgInnerWrapper.append(divImgInner, divImgInnerMirror);
-      divImg.append(divImgInnerWrapper);
-      divWrapper.append(divInfo, divImg);
+      divImgWrapper.append(divImgInner);
+      divImgOuter.append(divImgWrapper);
+      divWrapper.append(divInfo, divImgOuter);
       contentProjects.insertBefore(divWrapper, lastChild);
 
       count++;
@@ -216,7 +268,6 @@ const projects = (() => {
   }
 
   // Project List
-
   function _getProjects() {
     return [
       new Project(
@@ -246,7 +297,7 @@ const projects = (() => {
       new Project(
         "Homepage",
         "Yes, you are viewing it! My first and current portfolio, a <i>front end</i> project that features interactive layout, responsive design and dark mode option.",
-        [imgHomepage, imgHomepageM],
+        [imgHomepage, imgHomepageM, imgHomepageD, imgHomepageMD],
         "https://github.com/woonzf/odin-homepage",
         "https://woonzf.github.io/odin-homepage/",
         tools.get("HTML", "CSS", "JavaScript", "Webpack", "Tailwind CSS"),
