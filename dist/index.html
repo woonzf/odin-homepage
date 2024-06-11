@@ -21,36 +21,12 @@
         <div class="text-xl md:text-2xl montserrat" id="brand">
           <span class="text-theme">WZF</span>
         </div>
-        <div class="flex items-center gap-7">
-          <nav
-            class="text-base md:text-md flex gap-5 montserrat animate-appear portrait:hidden"
-          >
-            <button
-              class="first-letter:text-theme box-underline relative"
-              id="btn-about-l"
-            >
-              ABOUT
-            </button>
-            <button
-              class="first-letter:text-theme box-underline relative"
-              id="btn-projects-l"
-            >
-              PROJECTS
-            </button>
-            <button
-              class="first-letter:text-theme box-underline relative"
-              id="btn-contact-l"
-            >
-              CONTACT
-            </button>
-          </nav>
-          <button class="btn-dark-mode portrait:hidden" title="Dark Mode">
-            <div class="dark-mode-ball"></div>
-          </button>
-        </div>
+        <button class="btn-dark-mode portrait:hidden" title="Dark Mode">
+          <div class="dark-mode-ball"></div>
+        </button>
         <button
           class="flex landscape:hidden justify-center items-center rotate-90 -scale-y-100 animate-appear"
-          id="btn-menu"
+          id="btn-menu-p"
         >
           <div class="h-[24px] aspect-square relative" id="img-menu-wrapper">
             <img class="icon-mode-dark absolute" alt="Menu" />
@@ -68,12 +44,77 @@
         id="bg-right"
       ></div>
       <div
-        class="bg-theme w-full landscape:rounded-l-lg order-1"
+        class="bg-theme w-full landscape:rounded-l-lg order-1 relative overflow-hidden"
         id="bg-left"
-      ></div>
+      >
+        <div
+          class="w-full text-[6vw] leading-[0.8] text-theme-2 dark:text-light flex justify-end absolute top-0 right-[calc(6vw*0.3)] origin-right -rotate-90 montserrat"
+        >
+          <div class="h-[calc(6vw*0.8)] w-full relative">
+            <span class="h-full text-end absolute right-0" id="bg-left-menu"
+              >MENU</span
+            >
+            <span class="h-full text-end absolute right-0" id="bg-left-about"
+              >ABOUT</span
+            >
+            <span class="h-full text-end absolute right-0" id="bg-left-projects"
+              >PROJECTS</span
+            >
+            <span class="h-full text-end absolute right-0" id="bg-left-contact"
+              >CONTACT</span
+            >
+          </div>
+        </div>
+      </div>
+      <div
+        class="flex flex-row-reverse absolute top-[50%] translate-y-[-50%] -right-7 portrait:hidden z-[99]"
+      >
+        <button
+          class="w-20 rounded-md rotate-90 animate-appear"
+          id="btn-menu-l"
+        >
+          <div class="animate-bounce-y">
+            <div class="h-[30px] flex justify-center items-center relative">
+              <img
+                class="h-full icon-mode-dark absolute"
+                src="./4d8aed824bc8afe6bca7.png"
+              />
+              <img
+                class="h-full icon-mode absolute"
+                src="./f20aa6171e22e91ae131.png"
+              />
+            </div>
+            <span class="montserrat box-underline"
+              ><span class="text-theme">M</span>ENU</span
+            >
+          </div>
+        </button>
+        <nav class="flex flex-col gap-10 montserrat hidden" id="menu-l">
+          <div class="flex flex-col gap-5">
+            <button class="first-letter:text-theme text-end" id="btn-about-l">
+              <span class="box-underline">ABOUT</span>
+            </button>
+            <button
+              class="first-letter:text-theme text-end"
+              id="btn-projects-l"
+            >
+              <span class="box-underline">PROJECTS</span>
+            </button>
+            <button class="first-letter:text-theme text-end" id="btn-contact-l">
+              <span class="box-underline">CONTACT</span>
+            </button>
+          </div>
+          <button
+            class="text-theme text-end hover:text-light dark:hover:text-theme-2"
+            id="btn-menu-back-l"
+          >
+            <span>BACK</span>
+          </button>
+        </nav>
+      </div>
       <nav
         class="bg-theme-2 h-full w-full mt-[-56px] text-base md:text-lg flex flex-col justify-center items-center gap-14 fixed montserrat z-[98] hidden"
-        id="menu"
+        id="menu-p"
       >
         <button id="btn-home-p">HOME</button>
         <div class="flex flex-col justify-center items-center gap-1">
@@ -81,7 +122,7 @@
           <button id="btn-projects-p">PROJECTS</button>
           <button id="btn-contact-p">CONTACT</button>
         </div>
-        <button class="text-theme" id="btn-menu-back">BACK</button>
+        <button class="text-theme" id="btn-menu-back-p">BACK</button>
         <button class="btn-dark-mode" title="Dark Mode">
           <div class="dark-mode-ball"></div>
         </button>
@@ -95,7 +136,7 @@
         id="section-intro"
       >
         <div
-          class="text-[10vw] portrait:text-[15vw] leading-[0.8] flex flex-col absolute top-[50%] left-[50%] translate-y-[-50%] translate-x-[-50%] overflow-y-clip montserrat"
+          class="text-[10vw] portrait:text-[15vw] leading-[0.8] flex absolute top-[50%] left-[50%] translate-y-[-50%] translate-x-[-50%] overflow-y-clip montserrat"
         >
           <div class="h-full" id="hello-wrapper">
             <div class="h-full overflow-hidden hello">
@@ -186,7 +227,7 @@
           </div>
         </div>
       </section>
-      <div class="content-wrapper landscape:translate-x-[-150%]">
+      <div class="content-wrapper">
         <section class="content-section relative" id="about">
           <article>
             <div class="article-inner-wrapper">
@@ -344,7 +385,7 @@
           </div>
         </section>
       </div>
-      <div class="content-wrapper landscape:translate-x-[150%]">
+      <div class="content-wrapper">
         <section class="content-section relative" id="projects">
           <article id="article-projects">
             <div class="article-inner-wrapper">
@@ -399,7 +440,7 @@
           </div>
         </section>
       </div>
-      <div class="content-wrapper landscape:translate-y-[150%]">
+      <div class="content-wrapper">
         <section class="content-section relative" id="contact">
           <article class="portrait:sm:pb-7">
             <div class="article-inner-wrapper landscape:gap-20">

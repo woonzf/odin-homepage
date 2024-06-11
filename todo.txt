@@ -1,1 +1,5 @@
-Make project images expandable
+Remake nav layout in landscape mode
+Rotate menu button when menu is open in portrait mode
+Optimize image src
+Optimize z index
+Add Inspired by Wokine in Footer
